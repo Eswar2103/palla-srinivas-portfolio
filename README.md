@@ -1,1 +1,1 @@
-Andhra Pradesh Telugu Desam Party state president portfolio page.   
+Andhra Pradesh Telugu Desam Party state president portfolio page.
