@@ -9,9 +9,10 @@ export default defineConfig([
   globalIgnores(["dist"]),
   {
     files: ["**/*.{js,jsx}"],
+    plugins: { react, reactHooks, reactRefresh },
     extends: [
       js.configs.recommended,
-      react.configs.recommended,
+      react.configs.flat.recommended,
       reactHooks.configs["recommended-latest"],
       reactRefresh.configs.vite,
     ],
@@ -28,10 +29,16 @@ export default defineConfig([
       "no-unused-vars": "warn",
       "react/prop-types": "off",
       "react/forbid-prop-types": "off",
+      "react/react-in-jsx-scope": "off",
       "react-refresh/only-export-components": [
         "warn",
         { allowConstantExport: true },
       ],
+    },
+    settings: {
+      react: {
+        version: "detect",
+      },
     },
   },
 ]);
