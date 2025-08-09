@@ -20,11 +20,11 @@ const menuData = [
 
 function Menu() {
   return (
-    <menu className="flex gap-x-2">
+    <menu className="flex gap-x-2 capitalize">
       {menuData.map((menu) => (
         <Link
           key={menu.key}
-          className="text-brown-900 text-md rounded-2xl border px-1.5 py-1 font-bold hover:bg-amber-300 md:text-sm"
+          className="text-brown-900 text-md rounded-2xl border px-2 py-1 font-bold hover:bg-amber-300 md:text-sm"
           to={menu.to}
         >
           {menu.item}
