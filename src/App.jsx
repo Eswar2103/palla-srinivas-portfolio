@@ -1,7 +1,9 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import AppLayout from "./ui/AppLayout";
-import Error from "./ui/Error";
-import Home from "./ui/Home";
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import AppLayout from './ui/AppLayout';
+import Error from './ui/Error';
+import Home from './ui/Home';
+import About from './ui/About';
+import Connect from './ui/Connect';
 
 function App() {
   const router = createBrowserRouter([
@@ -10,8 +12,16 @@ function App() {
       errorElement: <Error />,
       children: [
         {
-          path: "/",
+          path: '/',
           element: <Home />,
+        },
+        {
+          path: '/about',
+          element: <About />,
+        },
+        {
+          path: '/connect',
+          element: <Connect />,
         },
       ],
     },
