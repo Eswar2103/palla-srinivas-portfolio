@@ -129,15 +129,23 @@ function Connect() {
       </div>
       <div className="flex flex-col gap-y-3">
         <p className="flex items-center gap-2">
-          <span className="text-amber-500"><FaLocationDot /></span>
+          <span className="text-amber-500">
+            <FaLocationDot />
+          </span>
           Location of gajuvaka TDP office
         </p>
         <p className="flex items-center gap-2">
-          <span className="text-amber-500"><FaPhone /></span>
-          940xxx... helpline number of gajuvaka tdp</p>
+          <span className="text-amber-500">
+            <FaPhone />
+          </span>
+          940xxx... helpline number of gajuvaka tdp
+        </p>
         <p className="flex items-center gap-2">
-          <span className="text-amber-500"><IoIosMail /></span>
-          mail.gmail.com</p>
+          <span className="text-amber-500">
+            <IoIosMail />
+          </span>
+          mail.gmail.com
+        </p>
       </div>
     </div>
   );
