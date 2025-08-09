@@ -10,11 +10,19 @@
 }
 
 @layer components {
+  body {
+    @apply font-sans;
+  }
+
   .input {
-    @apply rounded-full border border-stone-300 px-3 py-1 text-sm transition-all duration-300 placeholder:text-stone-400 focus:outline-none focus:ring-1 focus:ring-yellow-400 w-1/2 md:px-6 md:py-3;
+    @apply rounded-full border border-stone-300 bg-white px-3 py-1 text-sm transition-all duration-300 placeholder:text-stone-400 focus:outline-none focus:ring-1 focus:ring-yellow-400 w-1/2 md:px-6 md:py-3;
   }
 
   .description {
-    @apply rounded-2xl border border-stone-300 px-3 py-2 text-sm transition-all duration-300 placeholder:text-stone-400 focus:outline-none focus:ring-1 focus:ring-yellow-400 h-[300px] overflow-auto md:px-6 md:py-3;
+    @apply rounded-2xl border border-stone-300 bg-white px-3 py-2 text-sm transition-all duration-300 placeholder:text-stone-400 focus:outline-none focus:ring-1 focus:ring-yellow-400 h-[300px] overflow-auto md:px-6 md:py-3;
+  }
+
+  .input-base {
+    @apply mb-5 w-2xl flex flex-col justify-center sm:flex-row sm:items-center;
   }
 }
