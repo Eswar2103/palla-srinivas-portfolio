@@ -1,5 +1,8 @@
 import { useRef, useState } from "react";
 import { Form } from "react-router-dom";
+import { FaLocationDot } from "react-icons/fa6";
+import { FaPhone } from "react-icons/fa6";
+import { IoIosMail } from "react-icons/io";
 
 function Connect() {
   const [description, setDescription] = useState("");
@@ -26,7 +29,7 @@ function Connect() {
     console.log("data-----:", data);
   }
   return (
-    <div className="flex justify-evenly items-center bg-stone-300/20">
+    <div className="flex gap-x-[140px] items-center bg-stone-300/20">
       <div className="flex my-4 py-4">
         <Form
           method="POST"
@@ -124,8 +127,17 @@ function Connect() {
           </div>
         </Form>
       </div>
-      <div className="max-w-lg flex">
-        <p className="break-words">hdhdhdh</p>
+      <div className="flex flex-col gap-y-3">
+        <p className="flex items-center gap-2">
+          <span className="text-amber-500"><FaLocationDot /></span>
+          Location of gajuvaka TDP office
+        </p>
+        <p className="flex items-center gap-2">
+          <span className="text-amber-500"><FaPhone /></span>
+          940xxx... helpline number of gajuvaka tdp</p>
+        <p className="flex items-center gap-2">
+          <span className="text-amber-500"><IoIosMail /></span>
+          mail.gmail.com</p>
       </div>
     </div>
   );
