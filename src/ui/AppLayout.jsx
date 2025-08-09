@@ -6,7 +6,7 @@ function AppLayout() {
   return (
     <>
       <Header />
-      <div className="overflow-auto">
+      <div className="overflow-auto min-h-[100vh]">
         <Outlet />
       </div>
       <Footer />
