@@ -29,7 +29,7 @@ function Connect() {
     console.log("data-----:", data);
   }
   return (
-    <div className="flex gap-x-[140px] items-center bg-stone-300/20">
+    <div className="flex gap-x-[60px] items-center bg-stone-300/20">
       <div className="flex my-4 py-4">
         <Form
           method="POST"
@@ -128,6 +128,15 @@ function Connect() {
         </Form>
       </div>
       <div className="flex flex-col gap-y-3">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d94859.0267220378!2d83.06453704833987!3d17.71183612855708!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a3969cfbf0f83c7%3A0xd0f54d57c514de18!2sTDP%20OFFICE!5e1!3m2!1sen!2sin!4v1755364196402!5m2!1sen!2sin"
+          width="600"
+          height="450"
+          style={{ border: 0 }}
+          allowfullscreen=""
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+        ></iframe>
         <p className="flex items-center gap-2">
           <span className="text-amber-500">
             <FaLocationDot />

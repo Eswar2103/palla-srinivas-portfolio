@@ -6,7 +6,7 @@ import { FaSquareInstagram } from "react-icons/fa6";
 
 function Footer() {
   return (
-    <footer className="bg-amber-400 bottom-0 py-4 px-10 mt-10 flex flex-col gap-y-4 items-center justify-center">
+    <footer className="bg-amber-400 bottom-0 py-4 px-10 flex flex-col gap-y-4 items-center justify-center">
       <div className="flex gap-4">
         <a
           href="https://www.telugudesam.org/"
