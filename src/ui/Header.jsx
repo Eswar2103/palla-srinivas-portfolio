@@ -21,10 +21,10 @@ function Header() {
 
   return (
     <header className={`sticky top-0 z-50 flex items-center justify-between bg-amber-400 px-6 py-${scroll} duration-300 transition-all ease-linear`}>
-      <img className={`h-9 w-9 duration-300 transition-all rounded-full`} src="/dummy-profile.jpg" />
+      <img className={`h-11 w-11 duration-300 transition-all rounded-xl`} src="/tdp-logo.jpg" />
       <div className="flex items-center gap-x-3">
         <Menu />
-        <img className={`h-9 w-9 duration-300 transition-all rounded-full`} src="/dummy-profile-pic.jpg" />
+        {/* <img className={`h-11 w-11 duration-300 transition-all rounded-xl`} src="/palla-image.jpg" /> */}
       </div>
     </header>
   );

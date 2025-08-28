@@ -7,11 +7,11 @@ function Corousel() {
   const intervalRef = useRef(0);
   const images = [
     {
-      url: "/img1.jpg",
+      url: "palla.jpg",
       key: "abc",
     },
     {
-      url: "/img2.jpeg",
+      url: "palla1.jpg",
       key: "def",
     },
     {
@@ -29,13 +29,14 @@ function Corousel() {
   }, []);
 
   function imageCorouselInterval() {
+    clearInterval(intervalRef.current);
     intervalRef.current = setInterval(() => {
       const lenght = images.length - 1;
       setCorouselImageIndex((prev) => {
         const value = prev === lenght ? 0 : prev + 1;
         return value;
       });
-    }, 4000);
+    }, 5000);
   }
 
   function handleCorouselImage(direction) {
