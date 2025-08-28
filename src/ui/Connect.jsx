@@ -3,6 +3,7 @@ import { Form } from "react-router-dom";
 import { FaLocationDot } from "react-icons/fa6";
 import { FaPhone } from "react-icons/fa6";
 import { IoIosMail } from "react-icons/io";
+import { storeData } from "../utils/utils";
 
 function Connect() {
   const [description, setDescription] = useState("");
@@ -20,13 +21,13 @@ function Connect() {
     }
   }
 
-  function handleFormData(e) {
+  async function handleFormData(e) {
     e.preventDefault();
     const formData = new FormData(e.target);
     const data = Object.fromEntries(formData.entries());
     formRef.current.reset();
     setDescription("");
-    console.log("data-----:", data);
+    await storeData(data);
   }
   return (
     <div className="flex gap-x-[60px] items-center bg-stone-300/20">
@@ -127,13 +128,14 @@ function Connect() {
           </div>
         </Form>
       </div>
+      {/* *********** Geolocation *********** */}
       <div className="flex flex-col gap-y-3">
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d94859.0267220378!2d83.06453704833987!3d17.71183612855708!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a3969cfbf0f83c7%3A0xd0f54d57c514de18!2sTDP%20OFFICE!5e1!3m2!1sen!2sin!4v1755364196402!5m2!1sen!2sin"
           width="600"
           height="450"
           style={{ border: 0 }}
-          allowfullscreen=""
+          allowFullScreen=""
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
         ></iframe>
