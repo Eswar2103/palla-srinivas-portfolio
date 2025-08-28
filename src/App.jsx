@@ -1,9 +1,12 @@
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import AppLayout from './ui/AppLayout';
-import Error from './ui/Error';
-import Home from './ui/Home';
-import About from './ui/About';
-import Connect from './ui/Connect';
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { Suspense, lazy } from "react";
+import AppLayout from "./ui/AppLayout";
+import Error from "./ui/Error";
+import LoadingScreen from "./components/LoadingScreen";
+
+const Home = lazy(() => import("./ui/Home"));
+const About = lazy(() => import("./ui/About"));
+const Connect = lazy(() => import("./ui/Connect"));
 
 function App() {
   const router = createBrowserRouter([
@@ -12,16 +15,28 @@ function App() {
       errorElement: <Error />,
       children: [
         {
-          path: '/',
-          element: <Home />,
+          path: "/",
+          element: (
+            <Suspense fallback={<LoadingScreen />}>
+              <Home />
+            </Suspense>
+          ),
         },
         {
-          path: '/about',
-          element: <About />,
+          path: "/about",
+          element: (
+            <Suspense fallback={<LoadingScreen />}>
+              <About />
+            </Suspense>
+          ),
         },
         {
-          path: '/connect',
-          element: <Connect />,
+          path: "/connect",
+          element: (
+            <Suspense fallback={<LoadingScreen />}>
+              <Connect />
+            </Suspense>
+          ),
         },
       ],
     },
