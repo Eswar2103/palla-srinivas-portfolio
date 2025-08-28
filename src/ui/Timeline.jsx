@@ -3,60 +3,28 @@ import { useState } from "react";
 function Timeline() {
   const events = [
     {
-      year: "2025",
-      title: "Started React Portfolio",
-      description:
-        "Began building my personal portfolio using React and Tailwind CSS.",
+      year: "2024",
+      description: "June, appointed as Telugu Desam Party state PRESIDENT.",
     },
     {
       year: "2024",
-      title: "Joined TDP",
-      description: "Became an active member of the Telugu Desam Party.",
-    },
-    {
-      year: "2023",
-      title: "Graduated",
-      description: "Completed my degree in Computer Science.",
-    },
-    {
-      year: "2022",
-      title: "Internship",
-      description: "Completed internship at XYZ Company.",
+      description: "Won in the Andhra Pradesh state elections as an MLA from Gajuwaka with the state highest majority of 95,235 votes.",
     },
     {
       year: "2021",
-      title: "Hackathon Winner",
-      description: "Won 1st place in ABC Hackathon.",
-    },
-    {
-      year: "2020",
-      title: "Started College",
-      description: "Began undergraduate studies.",
+      description: "February 2021, Lead a hunger strike against Vizag Steel plant privatization.",
     },
     {
       year: "2019",
-      title: "High School",
-      description: "Graduated from high school.",
+      description: "Contested in state assembly elections and lost.",
     },
     {
-      year: "2018",
-      title: "Volunteering",
-      description: "Volunteered at local NGO.",
+      year: "2014",
+      description: "Won in the Andhra Pradesh state elections as an MLA from Gajuwaka with 21,702 majority.",
     },
     {
-      year: "2017",
-      title: "Coding Club",
-      description: "Joined school coding club.",
-    },
-    {
-      year: "2016",
-      title: "First Website",
-      description: "Built my first website.",
-    },
-    {
-      year: "2015",
-      title: "Started Coding",
-      description: "Wrote my first line of code.",
+      year: "2009",
+      description: "Contested as MP from Vishakapatanam.",
     },
     // Add more if needed
   ];
@@ -104,11 +72,11 @@ function Timeline() {
               >
                 <div className="w-5 h-5 bg-amber-400 rounded-full border-4 border-white z-10"></div>
                 <div className="mt-4 text-center">
-                  <p className="text-sm text-gray-500">{event.year}</p>
-                  <p className="font-semibold text-lg text-amber-700">
+                  <p className="text-sm font-bold text-gray-500">{event.year}</p>
+                  {/* <p className="font-semibold text-lg text-amber-700">
                     {event.title}
-                  </p>
-                  <p className="text-gray-700">{event.description}</p>
+                  </p> */}
+                  <p className="text-gray-700 font-semibold text-lg">{event.description}</p>
                 </div>
               </div>
             ))}

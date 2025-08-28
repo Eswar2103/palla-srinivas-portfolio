@@ -1,10 +1,15 @@
 import { FaHandshake } from "react-icons/fa";
 import { BiDonateHeart } from "react-icons/bi";
-import { FaSquareXTwitter } from "react-icons/fa6";
-import { FaFacebookSquare } from "react-icons/fa";
-import { FaSquareInstagram } from "react-icons/fa6";
+import { SocialMediaLinks } from "./utils";
+// import { FaSquareXTwitter } from "react-icons/fa6";
+// import { FaFacebookSquare } from "react-icons/fa";
+// import { FaSquareInstagram } from "react-icons/fa6";
 
 function Footer() {
+  const insta = "https://www.instagram.com/jai_tdp?igsh=dnp0dzRrNTlvd3o2";
+  const fb = "https://www.facebook.com/share/1CJQDSg85g";
+  const x = "https://x.com/JaiTDP?t=diPS0f68rgN3JOhJ6DRMQQ&s=08";
+
   return (
     <footer className="bg-amber-400 bottom-0 py-4 px-10 flex flex-col gap-y-4 items-center justify-center">
       <div className="flex gap-4">
@@ -40,18 +45,7 @@ function Footer() {
         </a>
       </div>
       <div>
-        <p className="text-xl mb-3">Follow</p>
-        <div className="flex gap-4 text-3xl">
-          <a>
-            <FaSquareXTwitter />
-          </a>
-          <a>
-            <FaFacebookSquare />
-          </a>
-          <a>
-            <FaSquareInstagram />
-          </a>
-        </div>
+        <SocialMediaLinks insta={insta} fb={fb} x={x} entity="TDP" />
       </div>
       <p>Copyright @2025. All rights reserved.</p>
     </footer>
