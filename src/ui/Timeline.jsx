@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { BsChevronCompactLeft, BsChevronCompactRight } from "react-icons/bs";
 
 function Timeline() {
   const events = [
@@ -8,11 +9,13 @@ function Timeline() {
     },
     {
       year: "2024",
-      description: "Won in the Andhra Pradesh state elections as an MLA from Gajuwaka with the state highest majority of 95,235 votes.",
+      description:
+        "Won in the Andhra Pradesh state elections as an MLA from Gajuwaka with the state highest majority of 95,235 votes.",
     },
     {
       year: "2021",
-      description: "February 2021, Lead a hunger strike against Vizag Steel plant privatization.",
+      description:
+        "February 2021, Lead a hunger strike against Vizag Steel plant privatization.",
     },
     {
       year: "2019",
@@ -20,7 +23,8 @@ function Timeline() {
     },
     {
       year: "2014",
-      description: "Won in the Andhra Pradesh state elections as an MLA from Gajuwaka with 21,702 majority.",
+      description:
+        "Won in the Andhra Pradesh state elections as an MLA from Gajuwaka with 21,702 majority.",
     },
     {
       year: "2009",
@@ -51,10 +55,12 @@ function Timeline() {
         <button
           onClick={handlePrev}
           disabled={index === 0}
-          className="rounded-full bg-amber-400 hover:bg-amber-500 text-white px-3 py-1.5 disabled:opacity-50"
+          className="rounded-full bg-amber-400 hover:bg-amber-500 text-white px-3 py-3 disabled:opacity-50"
           aria-label="Previous"
         >
-          &#8592;
+          <BsChevronCompactLeft
+            style={{ color: "black", fontWeight: "bold", fontSize: "1.2rem" }}
+          />
         </button>
         <div className="overflow-hidden w-full max-w-[930px] h-auto py-4">
           {/* <div className="overflow-x-scroll overflow-y-hidden flex items-center w-full max-w-[800px] h-[250px] px-4 py-8 border-4 border-red-800"> */}
@@ -72,11 +78,15 @@ function Timeline() {
               >
                 <div className="w-5 h-5 bg-amber-400 rounded-full border-4 border-white z-10"></div>
                 <div className="mt-4 text-center">
-                  <p className="text-sm font-bold text-gray-500">{event.year}</p>
+                  <p className="text-sm font-bold text-gray-500">
+                    {event.year}
+                  </p>
                   {/* <p className="font-semibold text-lg text-amber-700">
                     {event.title}
                   </p> */}
-                  <p className="text-gray-700 font-semibold text-lg">{event.description}</p>
+                  <p className="text-gray-700 font-semibold text-lg">
+                    {event.description}
+                  </p>
                 </div>
               </div>
             ))}
@@ -85,10 +95,12 @@ function Timeline() {
         <button
           onClick={handleNext}
           disabled={index == maxIndex}
-          className="rounded-full bg-amber-400 hover:bg-amber-500 text-white px-3 py-1.5 disabled:opacity-50"
+          className="rounded-full bg-amber-400 hover:bg-amber-500 text-white px-3 py-3 disabled:opacity-50"
           aria-label="Next"
         >
-          &#8594;
+          <BsChevronCompactRight
+            style={{ color: "black", fontWeight: "bold", fontSize: "1.2rem" }}
+          />
         </button>
       </div>
     </div>

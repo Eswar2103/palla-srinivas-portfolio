@@ -2,14 +2,18 @@ import Timeline from "./Timeline";
 import { SocialMediaLinks } from "./utils";
 
 function About() {
-  const insta = "https://www.instagram.com/palla_srinivas_tdp?igsh=MTRvMGc1ZWZpNTFqaQ";
+  const insta =
+    "https://www.instagram.com/palla_srinivas_tdp?igsh=MTRvMGc1ZWZpNTFqaQ";
   const fb = "https://www.facebook.com/share/19fkMd55UU/";
   const x = "https://x.com/Pallasrinivas4u?t=kX_PeiyuX5qX2i-Di0qLiA&s=08";
   return (
     <div className="my-8">
       <div className="flex justify-evenly">
         <div className="flex flex-col items-center">
-          <img className="rounded-full h-[380px] w-[380px] mb-10" src="/media.jpg" />
+          <img
+            className="rounded-full h-[380px] w-[380px] mb-10"
+            src="/media.jpg"
+          />
           <SocialMediaLinks insta={insta} fb={fb} x={x} />
         </div>
         <div className="max-w-[600px]">
