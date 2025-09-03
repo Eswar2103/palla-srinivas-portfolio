@@ -15,13 +15,13 @@ function Corousel() {
       key: "def",
     },
     {
-      url: "/img3.jpg",
+      url: "/palla2.jpg",
       key: "ghi",
     },
-    {
-      url: "/img4.jpg",
-      key: "yah",
-    },
+    // {
+    //   url: "/img4.jpg",
+    //   key: "yah",
+    // },
   ];
 
   useEffect(() => {
@@ -43,7 +43,7 @@ function Corousel() {
     if (!images.length) {
       return;
     }
-    clearInterval(intervalRef.current);
+    // clearInterval(intervalRef.current);
     const imageLength = images.length - 1;
     if (direction === "left") {
       if (corouselImageIndex > 0) {
@@ -76,12 +76,12 @@ function Corousel() {
     imageCorouselInterval();
   }
   return (
-    <div
-      className="relative group w-full"
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-    >
-      <div className="overflow-hidden w-full">
+    <div className="relative group w-full">
+      <div
+        className="overflow-hidden w-full"
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+      >
         <div
           className="flex transition-transform duration-700 ease-out"
           style={{ transform: `translateX(-${corouselImageIndex * 100}%)` }}
