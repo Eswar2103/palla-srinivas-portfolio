@@ -27,26 +27,6 @@
   }
 
   .grid-auto-fit {
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-}
-}
-
-@keyframes showAnimation {
-  from {
-    transform: translateX(100%);
-  }
-
-  to {
-    transform: translateX(0%);
-  }
-}
-
-@keyframes hideAnimation {
-  from {
-    transform: translateX(0%);
-  }
-
-  to {
-    transform: translateX(-100%);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   }
 }

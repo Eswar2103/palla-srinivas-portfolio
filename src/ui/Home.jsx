@@ -1,4 +1,4 @@
-import Corousel from "../components/corousel";
+import Corousel from "../components/Corousel";
 import Guarantees from "../components/guarantees";
 
 function Home() {

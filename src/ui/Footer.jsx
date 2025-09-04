@@ -47,7 +47,7 @@ function Footer() {
       <div>
         <SocialMediaLinks insta={insta} fb={fb} x={x} entity="TDP" />
       </div>
-      <p>Copyright @2025. All rights reserved.</p>
+      <p>Copyright @2025. All rights reserved by TDP.</p>
     </footer>
   );
 }

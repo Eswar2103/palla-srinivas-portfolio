@@ -88,7 +88,7 @@ function Guarantees() {
     },
   ];
   return (
-    <div className="flex justify-center">
+    <div className="flex justify-center bg-yellow-300/10">
     <div className="grid grid-auto-fit items-stretch gap-4 justify-center p-4 w-[1200px]">
       {data.map((item, index) => (
         <div key={index}>

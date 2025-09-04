@@ -27,7 +27,7 @@ function Corousel() {
   useEffect(() => {
     imageCorouselInterval();
   }, []);
-
+  const imageLength = images.length - 1;
   function imageCorouselInterval() {
     clearInterval(intervalRef.current);
     intervalRef.current = setInterval(() => {
@@ -39,27 +39,22 @@ function Corousel() {
     }, 5000);
   }
 
-  function handleCorouselImage(direction) {
-    if (!images.length) {
-      return;
-    }
-    // clearInterval(intervalRef.current);
-    const imageLength = images.length - 1;
-    if (direction === "left") {
-      if (corouselImageIndex > 0) {
+  function handleCorouselLeft() {
+    if (corouselImageIndex > 0) {
         setCorouselImageIndex((img) => img - 1);
       } else if (corouselImageIndex == 0) {
         setCorouselImageIndex(imageLength);
       }
       imageCorouselInterval();
-    } else if (direction === "right") {
-      if (corouselImageIndex < imageLength) {
+  }
+
+  function handlerCorouselRight() {
+    if (corouselImageIndex < imageLength) {
         setCorouselImageIndex((img) => img + 1);
       } else if (corouselImageIndex == imageLength) {
         setCorouselImageIndex(0);
       }
       imageCorouselInterval();
-    }
   }
 
   function goToSlide(index) {
@@ -78,18 +73,19 @@ function Corousel() {
   return (
     <div className="relative group w-full">
       <div
-        className="overflow-hidden w-full"
+        className="overflow-hidden flex flex-col w-full"
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
       >
         <div
           className="flex transition-transform duration-700 ease-out"
-          style={{ transform: `translateX(-${corouselImageIndex * 100}%)` }}
+          // style={{ transform: `translateX(-${corouselImageIndex * 100}%)` }}
         >
           {images.map((image, index) => (
+            console.log(image, index),
             <img
               key={image.key}
-              src={image.url}
+              src={images[corouselImageIndex].url}
               alt="corousel image"
               aria-hidden={index === corouselImageIndex}
               className="h-[600px] w-screen flex-shrink-0"
@@ -100,7 +96,7 @@ function Corousel() {
       <button
         aria-label="Previous slide"
         role="button"
-        onClick={() => handleCorouselImage("left")}
+        onClick={() => handleCorouselLeft()}
         className="hidden group-hover:block absolute -translate-x-0 translate-y-[-50%] top-[50%] z-10 left-5 text-2xl rounded-2xl bg-black/50 p-[5px] text-stone-400 hover:text-stone-100 cursor-pointer"
       >
         <BsChevronCompactLeft />
@@ -108,7 +104,7 @@ function Corousel() {
       <button
         aria-label="Next slide"
         role="button"
-        onClick={() => handleCorouselImage("right")}
+        onClick={() => handlerCorouselRight()}
         className="hidden group-hover:block absolute -translate-x-0 translate-y-[-50%] top-[50%] z-10 right-5 text-2xl rounded-2xl bg-black/50 p-[5px] text-stone-400 hover:text-stone-100 cursor-pointer"
       >
         <BsChevronCompactRight />

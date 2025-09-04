@@ -31,7 +31,7 @@ function Connect() {
     await storeData(data);
   }
   return (
-    <div className="flex gap-x-[60px] items-center bg-stone-300/20">
+    <div className="flex gap-x-[60px] items-center bg-yellow-300/10">
       <div className="flex my-4 py-4">
         <Form
           method="POST"
@@ -79,28 +79,30 @@ function Connect() {
                   name="type"
                   id="suggestion"
                   value="suggestion"
+                  className="accent-green-600"
                 />
                 <label htmlFor="suggestion">Suggestion</label>
               </div>
               <div className="flex gap-x-1">
-                <input type="radio" name="type" id="concern" value="concern" />
+                <input type="radio" name="type" id="concern" value="concern" className="accent-red-600" />
                 <label htmlFor="concern">Concern</label>
               </div>
               <div className="flex gap-x-1">
                 <input
                   type="radio"
                   name="type"
-                  id="complaint"
+                  id="feedback"
                   value="feedback"
+                  className="accent-amber-600"
                 />
                 <label htmlFor="feedback">Feedback</label>
               </div>
             </div>
           </div>
           <div className="input-base">
-            <label className="sm:basis-30" htmlFor="description">
+            {/* <label className="sm:basis-30" htmlFor="description">
               Description
-            </label>
+            </label> */}
             <div className="flex w-1/2 flex-col">
               <textarea
                 className="description"
@@ -119,9 +121,9 @@ function Connect() {
             </div>
           </div>
           <div className="input-base">
-            <span className="sm:basis-40"></span>
+            <span></span>
             <button
-              className="rounded-xl w-xl font-bold border border-black/40 px-3 py-1 bg-amber-300 hover:bg-amber-500 left-2"
+              className="rounded-xl w-[30rem] font-bold border border-black/40 px-3 py-1 bg-amber-300 hover:bg-amber-500 left-2"
               type="submit"
             >
               Submit

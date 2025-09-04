@@ -13,7 +13,7 @@ function Header() {
       const scrollPercent = (scrollTop / docHeight) * 100;
       if (scrollPercent <= 0) {
         setScroll(4);
-      } else if (scrollPercent >= 20) {
+      } else if (scrollPercent >= 10) {
         setScroll(1);
       }
     }
