@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Timeline from "./Timeline";
+import Timeline from "../components/Timeline";
 import { SocialMediaLinks } from "./utils";
 
 function About() {

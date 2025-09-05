@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import Menu from "./Menu";
+import Menu from "../components/Menu";
 import { Link } from "react-router-dom";
 
 function Header() {

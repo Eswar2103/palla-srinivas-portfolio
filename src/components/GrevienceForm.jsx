@@ -1,0 +1,149 @@
+import { Form } from "react-router-dom";
+import { useRef, useState } from "react";
+import { storeData } from "../utils/utils";
+
+function GrevienceForm() {
+  const [description, setDescription] = useState("");
+  const [isLenghtExcluded, setIsLengthExcluded] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const formRef = useRef(null);
+  function handleChange(e) {
+    const maxWords = 250;
+    const inputText = e.target.value;
+    const words = inputText.trim().split(/\s+/);
+    if (words.length <= maxWords) {
+      setDescription(inputText);
+      setIsLengthExcluded(false);
+    } else {
+      setIsLengthExcluded(true);
+    }
+  }
+
+  async function handleFormData(e) {
+    e.preventDefault();
+    setIsLoading(true);
+    const formData = new FormData(e.target);
+    const data = Object.fromEntries(formData.entries());
+    formRef.current.reset();
+    setDescription("");
+    await storeData(data);
+    setIsLoading(false);
+  }
+  return (
+    <div className="flex my-4 py-4 w-1/2 justify-center items-center">
+      <Form
+        method="POST"
+        onSubmit={handleFormData}
+        ref={formRef}
+        onKeyDown={(e) => e.key === "Enter" && handleFormData}
+      >
+        <div className="input-base">
+          <label htmlFor="name" className="sm:basis-30">
+            Full Name
+          </label>
+          <input
+            className="input"
+            name="name"
+            type="text"
+            required
+            placeholder="full name"
+          />
+        </div>
+        <div className="input-base">
+          <label htmlFor="phone" className="sm:basis-30">
+            Phone Number
+          </label>
+          <input
+            className="input"
+            name="phone"
+            type="tel"
+            pattern="[0-9]{10}"
+            maxLength="10"
+            required
+            placeholder="phone number"
+            onInvalid={(e) =>
+              e.target.setCustomValidity(
+                "Please enter a valid 10-digit phone number"
+              )
+            }
+            onChange={(e) => e.target.setCustomValidity("")}
+          />
+        </div>
+        <div className="input-base">
+          <div className="flex flex-row items-center gap-x-6">
+            <div className="flex gap-x-1">
+              <input
+                type="radio"
+                name="type"
+                id="suggestion"
+                value="suggestion"
+                className="accent-green-600"
+              />
+              <label htmlFor="suggestion">Suggestion</label>
+            </div>
+            <div className="flex gap-x-1">
+              <input
+                type="radio"
+                name="type"
+                id="concern"
+                value="concern"
+                className="accent-red-600"
+              />
+              <label htmlFor="concern">Concern</label>
+            </div>
+            <div className="flex gap-x-1">
+              <input
+                type="radio"
+                name="type"
+                id="feedback"
+                value="feedback"
+                className="accent-amber-600"
+              />
+              <label htmlFor="feedback">Feedback</label>
+            </div>
+          </div>
+        </div>
+        <div className="input-base">
+          {/* <label className="sm:basis-30" htmlFor="description">
+              Description
+            </label> */}
+          <div className="flex w-1/2 flex-col">
+            <textarea
+              className="description"
+              name="description"
+              type="text"
+              placeholder="Enter upto 250 words..."
+              onChange={handleChange}
+              value={description}
+              required
+            />
+            {isLenghtExcluded && (
+              <p className="mt-2 mb-2 rounded-full bg-red-100 px-2 py-1 text-center text-xs text-red-500 sm:text-sm">
+                Only 250 words are allowed to send as a message
+              </p>
+            )}
+          </div>
+        </div>
+        <div className="input-base">
+          <button
+            className={`rounded-xl w-[30rem] font-bold border border-black/40 px-3 py-1 bg-amber-400 left-2 ${isLoading ? "cursor-not-allowed" : "hover:bg-amber-500"}`}
+            type="submit" disabled={isLoading}
+          >
+            {isLoading ? <Loading /> : "Submit"}
+          </button>
+        </div>
+      </Form>
+    </div>
+  );
+}
+
+function Loading() {
+  return (
+    <div className="flex items-center justify-center">
+      <div className="animate-spin rounded-full h-4 w-4 border-t-4 border-black border-solid mr-4"></div>
+      <span className="text-sm text-black font-semibold">Submitting...</span>
+    </div>
+  );
+}
+
+export default GrevienceForm;
