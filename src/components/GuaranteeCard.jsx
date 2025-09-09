@@ -18,7 +18,7 @@ function GuaranteeCard({ item }) {
         <h3>{item.title}</h3>
         <p
           className={`capitalize border border-stone-100 rounded-2xl px-2 py-0.5 ${chooseStatusClass(
-            item.status
+            item.status,
           )}`}
         >
           {item.status}

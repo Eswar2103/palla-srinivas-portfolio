@@ -37,7 +37,11 @@ function App() {
               <Connect />
             </Suspense>
           ),
-        }
+        },
+        {
+          path: "*",
+          element: <Error />,
+        },
       ],
     },
   ]);

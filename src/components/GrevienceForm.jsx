@@ -63,7 +63,7 @@ function GrevienceForm() {
             placeholder="phone number"
             onInvalid={(e) =>
               e.target.setCustomValidity(
-                "Please enter a valid 10-digit phone number"
+                "Please enter a valid 10-digit phone number",
               )
             }
             onChange={(e) => e.target.setCustomValidity("")}
@@ -127,7 +127,8 @@ function GrevienceForm() {
         <div className="input-base">
           <button
             className={`rounded-xl w-[30rem] font-bold border border-black/40 px-3 py-1 bg-amber-400 left-2 ${isLoading ? "cursor-not-allowed" : "hover:bg-amber-500"}`}
-            type="submit" disabled={isLoading}
+            type="submit"
+            disabled={isLoading}
           >
             {isLoading ? <Loading /> : "Submit"}
           </button>

@@ -82,7 +82,7 @@ function About() {
   };
   const [aboutOf, setAboutOf] = useState("mla");
   return (
-    <div className="py-8 bg-yellow-300/10">
+    <div className="pt-18">
       <div className="flex justify-evenly">
         <div className="flex flex-col items-center">
           <img

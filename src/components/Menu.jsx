@@ -1,20 +1,20 @@
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 const menuData = [
   {
-    item: 'Home',
-    to: '/',
-    key: '123',
+    item: "Home",
+    to: "/",
+    key: "123",
   },
   {
-    item: 'About',
-    to: '/about',
-    key: '456',
+    item: "About",
+    to: "/about",
+    key: "456",
   },
   {
-    item: 'Connect with leader',
-    to: '/connect',
-    key: '789',
+    item: "Connect with leader",
+    to: "/connect",
+    key: "789",
   },
 ];
 

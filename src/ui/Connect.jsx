@@ -3,7 +3,7 @@ import GrevienceForm from "../components/GrevienceForm";
 
 function Connect() {
   return (
-    <div className="flex gap-x-[60px] items-center bg-yellow-300/10">
+    <div className="flex gap-x-[60px] items-center">
       <GrevienceForm />
       <ShowMap />
     </div>

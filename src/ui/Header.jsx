@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import Menu from "../components/Menu";
 import { Link } from "react-router-dom";
+import ResponsiveHeader from "../components/ResponsiveHeader";
 
 function Header() {
   const [scroll, setScroll] = useState(4);
@@ -31,9 +32,16 @@ function Header() {
           src="/tdp-logo.jpg"
         />
       </Link>
-      <div className="flex items-center gap-x-3">
-        <Menu />
-        {/* <img className={`h-11 w-11 duration-300 transition-all rounded-xl`} src="/palla-image.jpg" /> */}
+      <div className="hidden md:block">
+        <div className="flex items-center gap-x-3">
+          <Menu />
+          {/* <img className={`h-11 w-11 duration-300 transition-all rounded-xl`} src="/palla-image.jpg" /> */}
+        </div>
+      </div>
+      <div className="md:hidden">
+        <div>
+          <ResponsiveHeader />
+        </div>
       </div>
     </header>
   );

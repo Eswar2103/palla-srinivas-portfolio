@@ -41,20 +41,20 @@ function Corousel() {
 
   function handleCorouselLeft() {
     if (corouselImageIndex > 0) {
-        setCorouselImageIndex((img) => img - 1);
-      } else if (corouselImageIndex == 0) {
-        setCorouselImageIndex(imageLength);
-      }
-      imageCorouselInterval();
+      setCorouselImageIndex((img) => img - 1);
+    } else if (corouselImageIndex == 0) {
+      setCorouselImageIndex(imageLength);
+    }
+    imageCorouselInterval();
   }
 
   function handlerCorouselRight() {
     if (corouselImageIndex < imageLength) {
-        setCorouselImageIndex((img) => img + 1);
-      } else if (corouselImageIndex == imageLength) {
-        setCorouselImageIndex(0);
-      }
-      imageCorouselInterval();
+      setCorouselImageIndex((img) => img + 1);
+    } else if (corouselImageIndex == imageLength) {
+      setCorouselImageIndex(0);
+    }
+    imageCorouselInterval();
   }
 
   function goToSlide(index) {
@@ -81,16 +81,20 @@ function Corousel() {
           className="flex transition-transform duration-700 ease-out"
           // style={{ transform: `translateX(-${corouselImageIndex * 100}%)` }}
         >
-          {images.map((image, index) => (
-            console.log(image, index),
-            <img
-              key={image.key}
-              src={images[corouselImageIndex].url}
-              alt="corousel image"
-              aria-hidden={index === corouselImageIndex}
-              className="h-[600px] w-screen flex-shrink-0"
-            />
-          ))}
+          {images.map(
+            (image, index) => (
+              console.log(image, index),
+              (
+                <img
+                  key={image.key}
+                  src={images[corouselImageIndex].url}
+                  alt="corousel image"
+                  aria-hidden={index === corouselImageIndex}
+                  className="h-[600px] w-screen flex-shrink-0"
+                />
+              )
+            ),
+          )}
         </div>
       </div>
       <button
