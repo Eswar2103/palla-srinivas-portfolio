@@ -1,10 +1,13 @@
 import { useState, useEffect } from "react";
-import Menu from "../components/Menu";
 import { Link } from "react-router-dom";
+import { RxHamburgerMenu } from "react-icons/rx";
+import { FaTimes } from "react-icons/fa";
+import Menu from "../components/Menu";
 import ResponsiveHeader from "../components/ResponsiveHeader";
 
 function Header() {
   const [scroll, setScroll] = useState(4);
+  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     function onScroll() {
@@ -23,27 +26,37 @@ function Header() {
   }, []);
 
   return (
-    <header
-      className={`sticky top-0 z-50 flex items-center justify-between bg-amber-400 px-6 py-${scroll} duration-300 transition-all ease-linear`}
-    >
-      <Link to="/">
-        <img
-          className={`h-11 w-11 duration-300 transition-all rounded-xl`}
-          src="/tdp-logo.jpg"
-        />
-      </Link>
-      <div className="hidden md:block">
-        <div className="flex items-center gap-x-3">
-          <Menu />
-          {/* <img className={`h-11 w-11 duration-300 transition-all rounded-xl`} src="/palla-image.jpg" /> */}
+    <>
+      <header
+        className={`sticky top-0 z-50 flex items-center justify-between bg-amber-400 px-6 py-${scroll} duration-300 transition-all ease-linear`}
+      >
+        <Link to="/">
+          <img
+            className={`h-11 w-11 duration-300 transition-all rounded-xl`}
+            src="/tdp-logo.jpg"
+          />
+        </Link>
+        <div className="hidden md:block">
+          <menu className="flex gap-x-2">
+            <Menu />
+          </menu>
         </div>
-      </div>
-      <div className="md:hidden">
-        <div>
-          <ResponsiveHeader />
+        <div className="md:hidden">
+          {isOpen ? (
+            <FaTimes
+              className="text-3xl cursor-pointer"
+              onClick={() => setIsOpen(false)}
+            />
+          ) : (
+            <RxHamburgerMenu
+              className="text-3xl cursor-pointer"
+              onClick={() => setIsOpen(true)}
+            />
+          )}
         </div>
-      </div>
-    </header>
+      </header>
+      <ResponsiveHeader isOpen={isOpen} />
+    </>
   );
 }
 
