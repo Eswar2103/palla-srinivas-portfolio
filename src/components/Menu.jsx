@@ -24,7 +24,7 @@ function Menu() {
       {menuData.map((menu) => (
         <Link
           key={menu.key}
-          className="text-brown-900 w-40 md:w-auto rounded-2xl border-[1.5px] px-2 py-1 font-bold hover:bg-amber-300 text-sm text-center"
+          className="text-brown-900 w-40 sm:w-auto rounded-2xl border-[1.5px] px-2 py-1 font-bold hover:bg-amber-300 text-sm text-center"
           to={menu.to}
         >
           {menu.item}

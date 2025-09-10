@@ -18,10 +18,6 @@ function Corousel() {
       url: "/palla2.jpg",
       key: "ghi",
     },
-    // {
-    //   url: "/img4.jpg",
-    //   key: "yah",
-    // },
   ];
 
   useEffect(() => {
@@ -90,10 +86,10 @@ function Corousel() {
                   src={images[corouselImageIndex].url}
                   alt="corousel image"
                   aria-hidden={index === corouselImageIndex}
-                  className="h-[600px] w-screen flex-shrink-0"
+                  className="h-[200px] sm:h-[600px] w-screen flex-shrink-0"
                 />
               )
-            ),
+            )
           )}
         </div>
       </div>

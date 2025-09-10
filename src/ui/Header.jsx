@@ -36,12 +36,12 @@ function Header() {
             src="/tdp-logo.jpg"
           />
         </Link>
-        <div className="hidden md:block">
+        <div className="hidden sm:block">
           <menu className="flex gap-x-2">
             <Menu />
           </menu>
         </div>
-        <div className="md:hidden">
+        <div className="sm:hidden">
           {isOpen ? (
             <FaTimes
               className="text-3xl cursor-pointer"
