@@ -86,7 +86,7 @@ function Corousel() {
                   src={images[corouselImageIndex].url}
                   alt="corousel image"
                   aria-hidden={index === corouselImageIndex}
-                  className="h-[200px] sm:h-[600px] w-screen flex-shrink-0"
+                  className="h-[200px] sm:h-[350px] md:h-[650px] w-screen flex-shrink-0"
                 />
               )
             )
