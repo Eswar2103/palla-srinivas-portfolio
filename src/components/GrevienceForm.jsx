@@ -38,7 +38,10 @@ function GrevienceForm() {
         onKeyDown={(e) => e.key === "Enter" && handleFormData}
       >
         <div className="input-base">
-          <label htmlFor="name" className="basis-20 sm:basis-30">
+          <label
+            htmlFor="name"
+            className="basis-20 sm:basis-30 text-sm sm:text-lg"
+          >
             Full Name
           </label>
           <input
@@ -46,11 +49,14 @@ function GrevienceForm() {
             name="name"
             type="text"
             required
-            placeholder="full name"
+            placeholder="Full Name"
           />
         </div>
         <div className="input-base">
-          <label htmlFor="phone" className="basis-20 sm:basis-30">
+          <label
+            htmlFor="phone"
+            className="basis-20 sm:basis-30 text-sm sm:text-lg"
+          >
             Phone Number
           </label>
           <input
@@ -60,7 +66,7 @@ function GrevienceForm() {
             pattern="[0-9]{10}"
             maxLength="10"
             required
-            placeholder="phone number"
+            placeholder="Phone Number"
             onInvalid={(e) =>
               e.target.setCustomValidity(
                 "Please enter a valid 10-digit phone number"
