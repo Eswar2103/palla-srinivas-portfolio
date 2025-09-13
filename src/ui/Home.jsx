@@ -1,11 +1,16 @@
 import Corousel from "../components/Corousel";
-import Guarantees from "../components/guarantees";
+import News from "../components/News";
+import Schedules from "../components/Schedules";
+// import Guarantees from "../components/guarantees";
 
 function Home() {
   return (
     <>
       <Corousel />
-      <Guarantees />
+      {/* <Guarantees /> */}
+      <p>Coming soon</p>
+      <News />
+      <Schedules />
     </>
   );
 }

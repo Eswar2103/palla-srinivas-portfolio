@@ -55,7 +55,10 @@ function Header() {
           )}
         </div>
       </header>
-      <ResponsiveHeader isOpen={isOpen} />
+      <ResponsiveHeader
+        isOpen={isOpen}
+        onMenuItemClick={() => setIsOpen(false)}
+      />
     </>
   );
 }

@@ -30,7 +30,7 @@ function GrevienceForm() {
     setIsLoading(false);
   }
   return (
-    <div className="flex my-4 py-4 w-1/2 justify-center items-center">
+    <div className="flex py-4 justify-center items-center">
       <Form
         method="POST"
         onSubmit={handleFormData}
@@ -38,7 +38,7 @@ function GrevienceForm() {
         onKeyDown={(e) => e.key === "Enter" && handleFormData}
       >
         <div className="input-base">
-          <label htmlFor="name" className="sm:basis-30">
+          <label htmlFor="name" className="basis-20 sm:basis-30">
             Full Name
           </label>
           <input
@@ -50,7 +50,7 @@ function GrevienceForm() {
           />
         </div>
         <div className="input-base">
-          <label htmlFor="phone" className="sm:basis-30">
+          <label htmlFor="phone" className="basis-20 sm:basis-30">
             Phone Number
           </label>
           <input
@@ -63,7 +63,7 @@ function GrevienceForm() {
             placeholder="phone number"
             onInvalid={(e) =>
               e.target.setCustomValidity(
-                "Please enter a valid 10-digit phone number",
+                "Please enter a valid 10-digit phone number"
               )
             }
             onChange={(e) => e.target.setCustomValidity("")}
@@ -97,7 +97,7 @@ function GrevienceForm() {
                 name="type"
                 id="feedback"
                 value="feedback"
-                className="accent-amber-600"
+                className="accent-amber-300"
               />
               <label htmlFor="feedback">Feedback</label>
             </div>
@@ -107,7 +107,7 @@ function GrevienceForm() {
           {/* <label className="sm:basis-30" htmlFor="description">
               Description
             </label> */}
-          <div className="flex w-1/2 flex-col">
+          <div className="flex w-2/3 flex-col">
             <textarea
               className="description"
               name="description"
@@ -126,7 +126,7 @@ function GrevienceForm() {
         </div>
         <div className="input-base">
           <button
-            className={`rounded-xl w-[30rem] font-bold border border-black/40 px-3 py-1 bg-amber-400 left-2 ${isLoading ? "cursor-not-allowed" : "hover:bg-amber-500"}`}
+            className={`rounded-xl w-[15rem] sm:w-[30rem] font-bold border border-black/40 px-3 py-1 bg-amber-400 left-2 ${isLoading ? "cursor-not-allowed" : "hover:bg-amber-500"}`}
             type="submit"
             disabled={isLoading}
           >

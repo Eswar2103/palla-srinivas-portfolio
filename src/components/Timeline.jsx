@@ -1,25 +1,11 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { BsChevronCompactLeft, BsChevronCompactRight } from "react-icons/bs";
 
 function Timeline() {
   const events = [
     {
-      year: "2024",
-      description: "June, appointed as Telugu Desam Party state PRESIDENT.",
-    },
-    {
-      year: "2024",
-      description:
-        "Won in the Andhra Pradesh state elections as an MLA from Gajuwaka with the state highest majority of 95,235 votes.",
-    },
-    {
-      year: "2021",
-      description:
-        "February 2021, Lead a hunger strike against Vizag Steel plant privatization.",
-    },
-    {
-      year: "2019",
-      description: "Contested in state assembly elections and lost.",
+      year: "2009",
+      description: "Contested as MP from Vishakapatanam.",
     },
     {
       year: "2014",
@@ -27,17 +13,49 @@ function Timeline() {
         "Won in the Andhra Pradesh state elections as an MLA from Gajuwaka with 21,702 majority.",
     },
     {
-      year: "2009",
-      description: "Contested as MP from Vishakapatanam.",
+      year: "2019",
+      description: "Contested in state assembly elections and lost.",
     },
-    // Add more if needed
+    {
+      year: "2021",
+      description:
+        "February 2021, Lead a hunger strike against Vizag Steel plant privatization.",
+    },
+    {
+      year: "2024",
+      description:
+        "Won in the Andhra Pradesh state elections as an MLA from Gajuwaka with the state highest majority of 95,235 votes.",
+    },
+    {
+      year: "2024",
+      description: "June, appointed as Telugu Desam Party state PRESIDENT.",
+    },
   ];
 
   const cardWidth = 308;
-  const visibleCards = 3;
-  const maxIndex = events.length - visibleCards;
+  // const cardWidth = 250;
+  // const visibleCards = 3;
 
   const [index, setIndex] = useState(0);
+  const [visibleCards, setVisibleCards] = useState(1);
+
+  useEffect(() => {
+    function handleResize() {
+      const innerWidth = window.innerWidth;
+      if (innerWidth >= 1024) {
+        setVisibleCards(3);
+      } else if (innerWidth >= 640) {
+        setVisibleCards(2);
+      } else {
+        setVisibleCards(1);
+      }
+    }
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const maxIndex = events.length - visibleCards;
   const handlePrev = () => {
     setIndex((prev) => Math.max(prev - 1, 0));
   };
@@ -47,11 +65,11 @@ function Timeline() {
   };
 
   return (
-    <div className="mt-25">
+    <div className="mt-25 px-1 sm:px-0">
       <h2 className="text-2xl font-bold mb-8 text-amber-600 text-center">
         Journey
       </h2>
-      <div className="flex justify-center items-center justify-items-center gap-x-8 h-auto">
+      <div className="flex justify-center items-center gap-x-0 sm:gap-x-8 h-auto">
         <button
           onClick={handlePrev}
           disabled={index === 0}
@@ -65,7 +83,7 @@ function Timeline() {
         <div className="overflow-hidden w-full max-w-[930px] h-auto py-4">
           {/* <div className="overflow-x-scroll overflow-y-hidden flex items-center w-full max-w-[800px] h-[250px] px-4 py-8 border-4 border-red-800"> */}
           <div
-            className="flex h-[250px] max-w-[930px] justify-evenly items-center px-2 gap-x-2 duration-500 ease-in-out"
+            className="flex h-[250px] max-w-[930px] justify-evenly items-center px-0 gap-x-2 duration-500 ease-in-out"
             style={{
               transform: `translateX(-${index * cardWidth}px)`,
             }}
@@ -73,7 +91,7 @@ function Timeline() {
             {events.map((event, idx) => (
               <div
                 key={idx}
-                className={`flex flex-col items-center justify-start flex-shrink-0 h-[250px] w-[300px]`}
+                className={`flex flex-col items-center justify-start flex-shrink-0 h-[250px] w-[300px] px-2`}
                 // className="flex flex-col items-center justify-center flex-shrink-0 w-[250px] h-[240px] py-4 border-2 border-green-600"
               >
                 <div className="w-5 h-5 bg-amber-400 rounded-full border-4 border-white z-10"></div>
@@ -84,7 +102,7 @@ function Timeline() {
                   {/* <p className="font-semibold text-lg text-amber-700">
                     {event.title}
                   </p> */}
-                  <p className="text-gray-700 font-semibold text-lg">
+                  <p className="text-gray-700 font-semibold text-md sm:text-lg">
                     {event.description}
                   </p>
                 </div>

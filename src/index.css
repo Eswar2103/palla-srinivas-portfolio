@@ -23,7 +23,7 @@
   }
 
   .input-base {
-    @apply mb-5 w-2xl flex flex-col justify-center sm:flex-row sm:items-center;
+    @apply mb-5 w-md sm:w-2xl flex justify-center flex-row items-center;
   }
 
   .grid-auto-fit {

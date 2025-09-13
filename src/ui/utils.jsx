@@ -6,7 +6,7 @@ export function SocialMediaLinks({ insta, fb, x, entity }) {
   return (
     <>
       <p className="text-xl mb-3">Follow {entity}</p>
-      <div className="flex gap-4 text-3xl">
+      <div className="flex gap-8 sm:gap-6 text-3xl">
         <SocialMediaButton onClick={() => window.open(x, "_blank")}>
           <FaSquareXTwitter />
         </SocialMediaButton>
