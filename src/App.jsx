@@ -3,6 +3,7 @@ import { Suspense, lazy } from "react";
 import AppLayout from "./ui/AppLayout";
 import Error from "./ui/Error";
 import LoadingScreen from "./components/LoadingScreen";
+import ErrorPage from "./ui/ErrorPage";
 
 const Home = lazy(() => import("./ui/Home"));
 const About = lazy(() => import("./ui/About"));
@@ -12,7 +13,7 @@ function App() {
   const router = createBrowserRouter([
     {
       element: <AppLayout />,
-      errorElement: <Error />,
+      errorElement: <ErrorPage />,
       children: [
         {
           path: "/",

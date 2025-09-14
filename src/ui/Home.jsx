@@ -8,9 +8,8 @@ function Home() {
     <>
       <Corousel />
       {/* <Guarantees /> */}
-      <p>Coming soon</p>
-      <News />
       <Schedules />
+      <News />
     </>
   );
 }
