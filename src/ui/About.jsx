@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Timeline from "../components/Timeline";
 import { SocialMediaLinks } from "./utils";
+import Biography from "../components/Biography";
 
 function About() {
   const insta =
@@ -114,6 +115,14 @@ function About() {
             {about[aboutOf]}
           </div>
         </div>
+      </div>
+      <div>
+        <div className="font-bold uppercase pb-4 pt-10 flex justify-center">
+          <p className="text-center border rounded-2xl bg-yellow-400 px-5 py-1">
+            Biography
+          </p>
+        </div>
+        <Biography />
       </div>
       <Timeline />
     </div>

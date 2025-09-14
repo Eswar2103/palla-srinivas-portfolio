@@ -72,7 +72,7 @@ function Schedules() {
     },
   ];
   return (
-    <section className="px-4 mb-5">
+    <section className="mb-5 px-10 sm:px-30 py-10">
       <div className="font-bold uppercase pb-5 flex justify-center">
         <p className="text-center border rounded-2xl bg-yellow-400 px-5 py-1">
           Latest schedules
