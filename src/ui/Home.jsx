@@ -3,6 +3,7 @@ import Biography from "../components/Biography";
 import Corousel from "../components/Corousel";
 import News from "../components/News";
 import Schedules from "../components/Schedules";
+import Speeches from "../components/Speeches";
 // import Guarantees from "../components/guarantees";
 
 function Home() {
@@ -30,6 +31,7 @@ function Home() {
           Palla Srinivasa Rao
         </p>
       </div>
+      <Speeches />
     </>
   );
 }

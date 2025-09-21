@@ -17,6 +17,10 @@ function Timeline() {
       description: "Contested in state assembly elections and lost.",
     },
     {
+      year: "2020",
+      description: "Vishakapatanam TDP parlimentry party president.",
+    },
+    {
       year: "2021",
       description:
         "February 2021, Lead a hunger strike against Vizag Steel plant privatization.",

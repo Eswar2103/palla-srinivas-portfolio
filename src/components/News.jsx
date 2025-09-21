@@ -57,15 +57,13 @@ function News() {
               key={n.publishedOn}
               className="border-none rounded-b-2xl px-2 py-2 h-[140px] flex flex-col justify-between bg-stone-200 hover:bg-amber-400 hover:scale-105 duration-300"
             >
-              <a
-                href={n.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:underline"
-              >
+              <a href={n.link} target="_blank" rel="noopener noreferrer">
                 {n.title}
               </a>
-              <p className="text-end">{n.publishedOn}</p>
+              <div className="flex justify-between px-2">
+                <p className="capitalize">{n.source}</p>
+                <p>{n.publishedOn}</p>
+              </div>
             </div>
           );
         })}

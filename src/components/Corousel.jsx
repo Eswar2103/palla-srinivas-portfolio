@@ -11,6 +11,10 @@ function Corousel() {
       key: "abc",
     },
     {
+      url: "/palla4.jpg",
+      key: "2j4",
+    },
+    {
       url: "palla1.jpg",
       key: "def",
     },
@@ -86,7 +90,7 @@ function Corousel() {
                   src={images[corouselImageIndex].url}
                   alt="corousel image"
                   aria-hidden={index === corouselImageIndex}
-                  className="h-[200px] sm:h-[350px] md:h-[650px] w-screen flex-shrink-0"
+                  className="h-[250px] sm:h-[350px] md:h-[650px] w-screen flex-shrink-0"
                 />
               )
             )

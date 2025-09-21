@@ -1,0 +1,152 @@
+function MLA() {
+  const agendas = [
+    {
+      agenda:
+        "Water and other basic amenities problems in Hill areas would be resolved on war foot basis.",
+      url: "https://www.facebook.com/share/v/17J6PGPx5K/",
+      color: "red",
+    },
+    {
+      agenda: "Removal of Aganampudi NH 5 toll gate.",
+      url: "https://www.facebook.com/share/v/15TMnUUkqz/",
+      color: "purple",
+    },
+    {
+      agenda: "Rajiv Gruha Kalpa Houses allotment to poor people.",
+      url: "https://www.facebook.com/share/v/1AGS7rBWod/",
+      color: "green",
+    },
+    {
+      agenda:
+        "Will Take appropriate action on controlling pollution which is due to GANGAVARAM PORT, for better livelihood of Gangavaram people.",
+      url: "https://www.facebook.com/share/v/1BUENK5HKc/",
+      color: "blue",
+    },
+    {
+      agenda:
+        "Promised to establish Polytechnic and Degree colleges in Gajuwaka constituency.",
+      url: "https://www.facebook.com/share/v/1CXaexmMQJ/",
+      color: "pink",
+    },
+    {
+      agenda:
+        "Promised to work for betterment of basic amenities to all the people of gajuwaka.",
+      url: "https://www.facebook.com/share/v/1BHbd3p9SS/",
+      color: "orange",
+    },
+    {
+      agenda: "Promised to fight for stopping vizag steel plant privatization.",
+      url: "https://www.facebook.com/share/v/1BJcDKNkLd/",
+      color: "green",
+    },
+  ];
+
+  return (
+    <div>
+      <p className="font-bold text-red-600 text-3xl sm:text-4xl text-center mt-6 mb-2">
+        Mana Gajuwaka
+      </p>
+      <div className="mx-5 sm:mx-35 border border-none rounded-2xl bg-stone-50 shadow-xl/30 py-5">
+        <p className="font-bold text-red-600 text-2xl sm:text-3xl text-center">
+          Mana Manifesto
+        </p>
+        <div className="flex justify-center">
+          <div className="px-4 sm:px-35 flex flex-col justify-center mt-7 gap-y-5">
+            {agendas.map((a, i) => {
+              return (
+                <div
+                  key={a.url}
+                  className={`bg-stone-200 px-5 py-2 border-t-2 rounded-2xl shadow-md transition-transform duration-300 ease-in-out 
+            hover:-translate-y-2 hover:shadow-xl`}
+                  style={{ borderColor: `${a.color}` }}
+                >
+                  <p className="text-blue-600 text-md sm:text-[18px]">
+                    Agenda {i + 1}
+                  </p>
+                  <div className="text-center text-md sm:text-[18px]">
+                    {a.agenda}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+      <div className="mx-5 sm:mx-35 border border-none rounded-2xl bg-stone-50 shadow-xl/30 py-5 mt-15 px-4">
+        <p className="font-bold text-red-600 text-2xl sm:text-3xl text-center">
+          Key Developmental Initiatives
+        </p>
+        <p className="px-0 mt-3 text-md sm:text-[16px]">
+          Under the Leadership of MLA Shri Palla Srinivasa Rao garu, Gajuwaka is
+          undergoing significant development, with various infrastructure
+          projects and real estate initiatives. Here are some key developments.
+        </p>
+        <p className="font-bold mt-4 underline text-xl sm:text-[18px]">
+          Infrastructure Projects:
+        </p>
+        <ul className="text-md sm:text-[16px]">
+          Construction of VRCC drains in different areas, such as from
+          D.No.2-7-1 to near Sony Grand and from Vivekananda Colony to Gail
+          compound wall, with values of ₹1.34 crore and ₹1.07 crore,
+          respectively.
+          <br />
+          <br />
+          Construction of Retaining Wall: A retaining wall is being built from
+          (link unavailable)-41-21/1 to 23-41-21/3 at Dayal Nagar Lova in Ward
+          74 of Gajuwaka, with a value of ₹15.90 lakh.
+          <br />
+          <br />
+          Laying of internal CC roads, CC drains, and CC culverts near
+          Kurmanaplaem Ramalyam, in Ward 86 Gajuwaka valued at ₹15.90 lakh.
+        </ul>
+        <p className="font-bold mt-4 underline text-xl sm:text-[18px]">
+          Statue Erection:
+        </p>
+        <ul className="text-md sm:text-[16px]">
+          A statue of Alluri Sita Rama Raju is being erected at a park in HB
+          Colony in Ward No.76 in Gajuwaka, with a value of ₹13.59 lakh.
+        </ul>
+        <p className="font-bold mt-4 underline text-xl sm:text-[18px]">
+          Power Line Modifications:
+        </p>
+        <ul className="text-md sm:text-[16px]">
+          Shifting/modifications of 220 kV power line crossing works are being
+          done for maintaining required railway crossing clearances between Loc
+          No.880/5 S-880/6 S.
+        </ul>
+        <p className="font-bold mt-4 underline text-xl sm:text-[18px]">
+          Land Rights:
+        </p>
+        <ul className="text-md sm:text-[16px]">
+          The government has issued GO No. 44, granting land rights to thousands
+          of residents living on government lands in Gajuwaka, benefiting around
+          23,500 families.
+        </ul>
+        <p className="font-bold mt-4 underline text-xl sm:text-[18px]">
+          Working Women&#39;s Hostel:
+        </p>
+        <ul className="text-md sm:text-[16px]">
+          A working women&#39;s hostel is being constructed in Gajuwaka under
+          the Special Assistance to States for Capital Investment 2024-25
+          (SASCI), valued at ₹22.44 crore.
+        </ul>
+        <p className="font-bold mt-4 underline text-xl sm:text-[18px]">
+          Other:
+        </p>
+        <ul className="text-md sm:text-[16px]">
+          The Visakhapatnam Metropolitan Regional Development Authority (VMRDA)
+          is setting up a massive open auditorium in Gajuwaka, expected to boost
+          the local economy.
+          <br />
+          <br />
+          Gajuwaka is experiencing growth due to its proximity to industries, IT
+          parks, and educational institutions, making it an attractive location
+          for residential and commercial real estate investments.
+        </ul>
+      </div>
+      <p>Photo gallery section coming soon.</p>
+    </div>
+  );
+}
+
+export default MLA;
