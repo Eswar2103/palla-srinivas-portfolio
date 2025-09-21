@@ -144,7 +144,9 @@ function MLA() {
           for residential and commercial real estate investments.
         </ul>
       </div>
-      <p>Photo gallery section coming soon.</p>
+      <p className="text-center font-bold mt-10">
+        Photo gallery section coming soon.
+      </p>
     </div>
   );
 }
