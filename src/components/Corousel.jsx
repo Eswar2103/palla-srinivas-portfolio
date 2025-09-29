@@ -63,20 +63,9 @@ function Corousel() {
     imageCorouselInterval();
   }
 
-  function handleMouseEnter() {
-    clearInterval(intervalRef.current);
-  }
-
-  function handleMouseLeave() {
-    imageCorouselInterval();
-  }
   return (
     <div className="relative group w-full">
-      <div
-        className="overflow-hidden flex flex-col w-full"
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
-      >
+      <div className="overflow-hidden flex flex-col w-full">
         <div
           className="flex transition-transform duration-700 ease-out"
           // style={{ transform: `translateX(-${corouselImageIndex * 100}%)` }}

@@ -60,7 +60,7 @@ function GrevienceForm() {
             Phone Number
           </label>
           <input
-            className="input"
+            className="input valid:border-green-500 invalid:border-red-500"
             name="phone"
             type="tel"
             pattern="[0-9]{10}"

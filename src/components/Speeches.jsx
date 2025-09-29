@@ -20,7 +20,7 @@ function Speeches() {
           Speeches
         </p>
       </div>
-      <div className="grid grid-auto-fit-speeches gap-x-12 gap-y-10">
+      <div className="grid grid-auto-fit-speeches gap-x-18 gap-y-10">
         {speeches.map((s) => {
           return (
             <div key={s.url} className="flex flex-col items-center gap-y-3">
