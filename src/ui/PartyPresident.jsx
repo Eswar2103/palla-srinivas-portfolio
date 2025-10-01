@@ -80,9 +80,10 @@ function PartyPresident() {
       </div>
       <div className="max-w-5xl mx-auto p-6 space-y-10">
         <section>
-          <h2 className="text-2xl font-semibold mb-6 underline">
+          <h2 className="text-2xl font-semibold mb-6 underline text-red-600">
             Key Milestones
           </h2>
+
           <div className="grid gap-6">
             <div className="bg-white shadow p-6 rounded-xl md:col-span-2">
               <h3 className="text-xl font-bold mb-3">
