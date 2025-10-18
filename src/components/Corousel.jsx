@@ -5,6 +5,7 @@ import { RxDotFilled, RxDot } from "react-icons/rx";
 function Corousel() {
   const [corouselImageIndex, setCorouselImageIndex] = useState(0);
   const intervalRef = useRef(0);
+  const corouselRef = useRef(null);
   const images = [
     {
       url: "palla.jpg",
@@ -26,10 +27,34 @@ function Corousel() {
 
   useEffect(() => {
     imageCorouselInterval();
+
+    const hiddenVisibility = () =>
+      document.hidden ? stopCarousel() : imageCorouselInterval();
+    document.addEventListener("visibilitychange", hiddenVisibility);
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) imageCorouselInterval();
+        else stopCarousel();
+      },
+      {
+        threshold: 0.5,
+      }
+    );
+
+    if (corouselRef.current) {
+      observer.observe(corouselRef.current);
+    }
+
+    return () => {
+      stopCarousel();
+      document.removeEventListener("visibilitychange", hiddenVisibility);
+    };
   }, []);
+
   const imageLength = images.length - 1;
   function imageCorouselInterval() {
-    clearInterval(intervalRef.current);
+    stopCarousel();
     intervalRef.current = setInterval(() => {
       const lenght = images.length - 1;
       setCorouselImageIndex((prev) => {
@@ -38,6 +63,10 @@ function Corousel() {
       });
     }, 5000);
   }
+
+  const stopCarousel = () => {
+    if (intervalRef.current) clearInterval(intervalRef.current);
+  };
 
   function handleCorouselLeft() {
     if (corouselImageIndex > 0) {
@@ -58,32 +87,27 @@ function Corousel() {
   }
 
   function goToSlide(index) {
-    clearInterval(intervalRef.current);
+    stopCarousel();
     setCorouselImageIndex(index);
     imageCorouselInterval();
   }
 
   return (
-    <div className="relative group w-full">
+    <div className="relative group w-full" ref={corouselRef}>
       <div className="overflow-hidden flex flex-col w-full">
         <div
           className="flex transition-transform duration-700 ease-out"
           // style={{ transform: `translateX(-${corouselImageIndex * 100}%)` }}
         >
-          {images.map(
-            (image, index) => (
-              console.log(image, index),
-              (
-                <img
-                  key={image.key}
-                  src={images[corouselImageIndex].url}
-                  alt="corousel image"
-                  aria-hidden={index === corouselImageIndex}
-                  className="h-[250px] sm:h-[350px] md:h-[650px] w-screen flex-shrink-0"
-                />
-              )
-            )
-          )}
+          {images.map((image, index) => (
+            <img
+              key={image.key}
+              src={images[corouselImageIndex].url}
+              alt="corousel image"
+              aria-hidden={index === corouselImageIndex}
+              className="h-[250px] sm:h-[350px] md:h-[700px] w-screen flex-shrink-0"
+            />
+          ))}
         </div>
       </div>
       <button
