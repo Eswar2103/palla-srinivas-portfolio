@@ -87,7 +87,7 @@ function Schedules() {
           Latest schedules
         </p>
       </div>
-      <div className="border border-none">
+      <div className="border border-none shadow-xl/30">
         <div className="grid-auto-fit gap-4">
           {schedules.map((s) => {
             const { date, place, events } = s;

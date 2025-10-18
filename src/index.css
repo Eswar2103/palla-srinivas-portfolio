@@ -38,7 +38,7 @@
 
 @layer base {
   .custom-calendar .react-calendar {
-    @apply border-0 shadow-none rounded-4xl w-[337px] sm:w-[400px];
+    @apply border-0 shadow-none rounded-4xl w-[338px] sm:w-[400px];
   }
 
   .custom-calendar .react-calendar__tile {
