@@ -1,4 +1,5 @@
 import { FaLocationDot } from "react-icons/fa6";
+import { FaRegClock } from "react-icons/fa6";
 import Calender from "./Calendar";
 
 function Schedules() {
@@ -108,18 +109,21 @@ function Schedules() {
                     {events.map((e) => (
                       <div
                         key={e.time}
-                        className="py-2 flex justify-between gap-x-2"
+                        className="py-2 flex flex-col sm:flex-row justify-between gap-x-2 gap-y-3"
                       >
-                        <div className="flex items-center justify-center">
+                        <div className="flex items-center justify-center gap-x-1">
+                          <span>
+                            <FaRegClock />
+                          </span>
                           <strong>{e.time}</strong>
                         </div>
                         <div className="text-center flex flex-col gap-y-2">
                           <strong>{e.name}</strong>
-                          <div className="flex items-start sm:items-center">
+                          <div className="flex items-center justify-center">
                             <span className="text-amber-400">
                               <FaLocationDot className="font-light" />
                             </span>
-                            <p className="text-stone-700/50 sm:text-stone-700/80">
+                            <p className="text-stone-700/60 sm:text-stone-700/80">
                               {e.venue}
                             </p>
                           </div>

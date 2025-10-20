@@ -3,12 +3,12 @@ import { useState } from "react";
 function PartyPresident() {
   const [showInfo, setShowInfo] = useState(false);
   return (
-    <section className="px-6 sm:px-40 py-10 text-lg">
+    <section className="px-2 sm:px-40 py-10 text-lg">
       <header className="text-center bg-yellow-200 p-8 rounded-2xl shadow mb-5">
         <h1 className="text-4xl font-bold">Palla Srinivasa Rao</h1>
         <p className="text-lg mt-2">State President, Telugu Desam Party</p>
       </header>
-      <div className="flex flex-col items-center gap-y-3 py-4 border-amber-500 border-4 rounded-2xl">
+      <div className="px-2 flex flex-col items-center gap-y-3 py-4 border-amber-500 border-4 rounded-2xl">
         <div className="flex flex-col sm:flex-row gap-x-20 gap-y-6 px-2 justify-center">
           <img
             className="w-[400px] h-[350px] sm:w-[400px] sm:h-[400px]"
@@ -29,7 +29,7 @@ function PartyPresident() {
           </span>
         </p>
       </div>
-      <div className="px-10 sm:px-20 mt-6 text-lg/6 font-[500]">
+      <div className="px-4 sm:px-20 mt-6 text-lg/6 font-[500]">
         <p>
           With the triumph victory as MLA with state highest majority in 2024
           General Elections, TDP Supremo and Chief Minister Shri Nara Chandra
@@ -78,7 +78,7 @@ function PartyPresident() {
           </button>
         )}
       </div>
-      <div className="max-w-5xl mx-auto p-6 space-y-10">
+      <div className="max-w-5xl mx-auto px-3 py-6 space-y-10">
         <section>
           <h2 className="text-2xl font-semibold mb-6 underline text-red-600">
             Key Milestones

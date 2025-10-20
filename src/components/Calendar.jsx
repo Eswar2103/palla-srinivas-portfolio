@@ -8,7 +8,7 @@ function Calendar() {
   return (
     <div>
       {console.log("value------:", value)}
-      <Cal onChange={setValue} showWeekNumbers value={value} />
+      <Cal onChange={setValue} value={value} />
     </div>
   );
 }
