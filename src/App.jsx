@@ -4,6 +4,8 @@ import AppLayout from "./ui/AppLayout";
 import Error from "./ui/Error";
 import LoadingScreen from "./components/LoadingScreen";
 import ErrorPage from "./ui/ErrorPage";
+import Admin from "./ui/Admin";
+import UpdateSchedules from "./components/UpdateSchedules";
 
 const Home = lazy(() => import("./ui/Home"));
 const About = lazy(() => import("./ui/About"));
@@ -56,6 +58,23 @@ function App() {
               <Connect />
             </Suspense>
           ),
+        },
+        {
+          path: "/admin",
+          children: [
+            {
+              index: true,
+              element: (
+                <Suspense fallback={<LoadingScreen />}>
+                  <Admin />
+                </Suspense>
+              ),
+            },
+            {
+              path: "update-schedule",
+              element: <UpdateSchedules />,
+            },
+          ],
         },
         {
           path: "*",
