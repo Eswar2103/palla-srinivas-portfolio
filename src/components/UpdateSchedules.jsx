@@ -22,6 +22,7 @@ function UpdateSchedules() {
     passwordRef.current.value = "";
     setPlace("");
     setDate("");
+    setEventsList([]);
   }
 
   function handleStoreEvent(event) {
@@ -46,7 +47,7 @@ function UpdateSchedules() {
 
   return (
     <div className="flex justify-center mt-15">
-      <div className="mt-8">
+      <Form className="mt-8">
         <div className="input-base">
           <label
             htmlFor="place"
@@ -81,7 +82,12 @@ function UpdateSchedules() {
             onChange={(e) => setDate(e.target.value)}
           />
         </div>
-      </div>
+        <div className="flex justify-center">
+          <div className="bg-white h-[500px] w-[500px] border border-none rounded-2xl p-4 overflow-auto whitespace-pre">
+            {JSON.stringify(eventsList, null, 2)}
+          </div>
+        </div>
+      </Form>
       <div>
         <Form method="POST" onSubmit={handleStoreEvent} ref={formRef}>
           <p className="flex justify-center font-bold">Add scheduled Events</p>
@@ -148,7 +154,7 @@ function UpdateSchedules() {
             </button>
           </div>
         </Form>
-        <div>
+        <Form onSubmit={handleSubmit}>
           <div className="input-base mt-3">
             <label
               htmlFor="password"
@@ -176,13 +182,12 @@ function UpdateSchedules() {
           <div className="flex justify-center">
             <button
               className="cursor-pointer font-bold text-black px-3 py-2 bg-amber-400 rounded-lg hover:bg-amber-500"
-              type="button"
-              onClick={handleSubmit}
+              type="submit"
             >
               Push to database
             </button>
           </div>
-        </div>
+        </Form>
       </div>
     </div>
   );
