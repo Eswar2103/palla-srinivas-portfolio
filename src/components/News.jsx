@@ -50,20 +50,18 @@ function News() {
     },
   ];
   return (
-    <div className="px-10 sm:px-30">
+    <div className="px-10 sm:px-20">
       <div className="font-bold uppercase pb-5 flex justify-center">
-        <p className="text-center border rounded-2xl bg-yellow-400 px-5 py-1">
-          News
-        </p>
+        <p className="text-center rounded-2xl bg-yellow-400 px-5 py-1">News</p>
       </div>
-      <div className="grid-auto-fit gap-4">
+      <div className="grid-auto-fit justify-center gap-4">
         {news.map((n) => {
           return (
             <div
               key={n.publishedOn}
               className="border-none rounded-b-2xl px-2 py-2 flex flex-col justify-between bg-stone-300 hover:bg-amber-400 hover:scale-105 duration-300"
             >
-              <img src={n.image} className="w-[290px] h-[180px] mb-2" />
+              <img src={n.image} className="w-auto h-[200px] mb-2" />
               <a href={n.link} target="_blank" rel="noopener noreferrer">
                 {n.title}
               </a>

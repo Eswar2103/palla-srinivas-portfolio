@@ -8,15 +8,15 @@ function PartyPresident() {
         <h1 className="text-4xl font-bold">Palla Srinivasa Rao</h1>
         <p className="text-lg mt-2">State President, Telugu Desam Party</p>
       </header>
-      <div className="px-2 flex flex-col items-center gap-y-3 py-4 border-amber-500 border-4 rounded-2xl">
+      <div className="px-2 flex flex-col items-center gap-y-3 py-4 border-amber-500 border-4 rounded-3xl">
         <div className="flex flex-col sm:flex-row gap-x-20 gap-y-6 px-2 justify-center">
           <img
-            className="w-[400px] h-[350px] sm:w-[400px] sm:h-[400px]"
+            className="w-[400px] h-[400px] sm:w-[400px] sm:h-[400px] rounded-4xl"
             src="./SPP2.jpg"
             alt="palla srinivas and chandra babu naidu photo"
           />
           <img
-            className="w-[400px] h-[300px] sm:w-[400px] sm:h-[400px]"
+            className="w-[400px] h-[300px] sm:w-[400px] sm:h-[400px] rounded-4xl"
             src="./SPP_photo.jpg"
             alt="palla srinivas and lokesh photo"
           />

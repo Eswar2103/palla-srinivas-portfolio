@@ -34,7 +34,7 @@ function Menu({ onMenuItemClick }) {
       {menuData.map((menu) => (
         <Link
           key={menu.key}
-          className="capitalize text-brown-900 w-40 sm:w-auto rounded-2xl border-[1.5px] px-2 py-1 font-bold hover:bg-amber-300 text-sm text-center"
+          className="capitalize text-black rounded-2xl px-2 py-1 font-bold hover:bg-amber-300 text-md text-center"
           to={menu.to}
           onClick={onMenuItemClick}
         >

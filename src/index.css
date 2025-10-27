@@ -10,10 +10,6 @@
 }
 
 @layer components {
-  body {
-    @apply font-sans;
-  }
-
   .input {
     @apply rounded-full border border-stone-300 bg-white px-3 py-1 text-sm transition-all duration-300 placeholder:text-stone-400 focus:outline-none focus:ring-1 focus:ring-yellow-400 w-1/2 md:px-6 md:py-3;
   }
@@ -28,7 +24,7 @@
 
   .grid-auto-fit {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 375px));
   }
   .grid-auto-fit-speeches {
     display: grid;

@@ -11,10 +11,10 @@ export function SocialMediaLinks({ insta, fb, x, entity }) {
           <FaSquareXTwitter />
         </SocialMediaButton>
         <SocialMediaButton onClick={() => window.open(fb, "_blank")}>
-          <FaFacebookSquare />
+          <FaFacebookSquare className="text-blue-700" />
         </SocialMediaButton>
         <SocialMediaButton onClick={() => window.open(insta, "_blank")}>
-          <FaSquareInstagram />
+          <FaSquareInstagram className="text-pink-700" />
         </SocialMediaButton>
       </div>
     </>
@@ -25,7 +25,7 @@ function SocialMediaButton({ children, onClick }) {
   return (
     <button
       onClick={onClick}
-      className="text-stone-900 hover:text-black text-3xl cursor-pointer transition-all duration-200 hover:scale-120"
+      className="text-3xl cursor-pointer transition-all duration-200 hover:scale-120"
     >
       {children}
     </button>

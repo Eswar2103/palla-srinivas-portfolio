@@ -41,7 +41,7 @@ function Timeline() {
   // const visibleCards = 3;
 
   const [index, setIndex] = useState(0);
-  const [visibleCards, setVisibleCards] = useState(1);
+  const [visibleCards, setVisibleCards] = useState(2);
 
   useEffect(() => {
     function handleResize() {
@@ -68,6 +68,8 @@ function Timeline() {
     setIndex((prev) => Math.min(prev + 1, maxIndex));
   };
 
+  const translateX = index * cardWidth;
+
   return (
     <div className="mt-10 px-1 sm:px-0">
       <h2 className="text-2xl font-bold mb-8 text-amber-600 text-center">
@@ -89,7 +91,7 @@ function Timeline() {
           <div
             className="flex h-[250px] max-w-[930px] justify-evenly items-center px-0 gap-x-2 duration-500 ease-in-out"
             style={{
-              transform: `translateX(-${index * cardWidth}px)`,
+              transform: `translateX(-${translateX}px)`,
             }}
           >
             {events.map((event, idx) => (
@@ -100,13 +102,11 @@ function Timeline() {
               >
                 <div className="w-5 h-5 bg-amber-400 rounded-full border-4 border-white z-10"></div>
                 <div className="mt-4 text-center">
-                  <p className="text-sm font-bold text-gray-500">
-                    {event.year}
-                  </p>
+                  <p className="text-lg font-bold text-black">{event.year}</p>
                   {/* <p className="font-semibold text-lg text-amber-700">
                     {event.title}
                   </p> */}
-                  <p className="text-gray-700 font-semibold text-md sm:text-lg">
+                  <p className="text-black font-semibold text-md sm:text-lg">
                     {event.description}
                   </p>
                 </div>
