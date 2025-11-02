@@ -96,17 +96,21 @@ function Corousel() {
     <div className="relative group w-full" ref={corouselRef}>
       <div className="overflow-hidden flex flex-col w-full">
         <div
-          className="flex transition-transform duration-700 ease-out"
+          className="flex transition-transform duration-700 ease-out "
           // style={{ transform: `translateX(-${corouselImageIndex * 100}%)` }}
         >
           {images.map((image, index) => (
-            <img
+            <div
               key={image.key}
-              src={images[corouselImageIndex].url}
-              alt="corousel image"
-              aria-hidden={index === corouselImageIndex}
-              className="h-[250px] sm:h-[350px] md:h-[700px] w-screen flex-shrink-0"
-            />
+              className="bg-amber-400 w-screen h-[250px] sm:h-[350px] md:h-[720px] flex-shrink-0 flex justify-center items-center"
+            >
+              <img
+                src={images[corouselImageIndex].url}
+                alt="corousel image"
+                aria-hidden={index === corouselImageIndex}
+                className="h-[250px] sm:h-[350px] md:h-[700px] w-[1300px] sm:rounded-3xl"
+              />
+            </div>
           ))}
         </div>
       </div>
