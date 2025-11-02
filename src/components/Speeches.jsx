@@ -25,11 +25,11 @@ function Speeches() {
 
   return (
     <section className="py-10 px-4 sm:px-30 gap-y-3 flex flex-col justify-center items-center">
-      <div className="font-bold uppercase pb-8 flex justify-center">
-        {/* <p className="text-center rounded-2xl bg-yellow-400 px-5 py-1">
+      {/* <div className="font-bold uppercase pb-8 flex justify-center"> */}
+      {/* <p className="text-center rounded-2xl bg-yellow-400 px-5 py-1">
           Speeches
         </p> */}
-      </div>
+      {/* </div> */}
       <div className="w-full max-w-[1300px] overflow-hidden">
         <div
           className="flex transition-transform duration-300 ease-in-out"
