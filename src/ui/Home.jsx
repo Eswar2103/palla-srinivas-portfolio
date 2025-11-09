@@ -1,6 +1,7 @@
 // import { Link } from "react-router-dom";
 // import Biography from "../components/Biography";
 import Corousel from "../components/Corousel";
+import Events from "../components/Events";
 import Impact from "../components/Impact";
 import News from "../components/News";
 // import Schedules from "../components/Schedules";
@@ -16,6 +17,7 @@ function Home() {
       <Impact />
       {/* <Schedules /> */}
       <News />
+      <Events />
     </>
   );
 }

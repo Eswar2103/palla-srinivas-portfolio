@@ -16,7 +16,7 @@ function AppLayout() {
   return (
     <>
       <Header />
-      <div className="overflow-auto pb-16 bg-yellow-300/10 min-h-[550px]">
+      <div className="overflow-auto bg-yellow-300/10 min-h-[550px]">
         <ScrollToTop />
         <Outlet />
       </div>

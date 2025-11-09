@@ -6,6 +6,13 @@ import { useEffect, useState } from "react";
 function About() {
   const [showText, setShowText] = useState(false);
 
+  const aim = {
+    mission:
+      "To serve the people with integrity, compassion, and vision,prioritizing the well-being of the most vulnerable, promoting social justice, and driving economic growth through transparent, accountable, and collaborative governance.",
+    vision:
+      "Transforming Gajuwaka into a thriving, sustainable, and inclusive hub, where every citizen enjoys access to quality infrastructure, healthcare, education, and economic opportunities, while preserving the environment and promoting social justice.",
+  };
+
   useEffect(() => {
     setShowText(true);
   }, []);
@@ -25,10 +32,10 @@ function About() {
           />
           <SocialMediaLinks insta={insta} fb={fb} x={x} entity="on" />
         </div>
-        <div className="flex justify-center">
+        <div className="flex justify-center sm:justify-start">
           <div className="flex flex-col justify-center items-center w-3/4">
             <p
-              className={`capitalize text-2xl sm:text-4xl text-amber-500 font-bold transition-all ease-in duration-700 ${
+              className={`capitalize text-2xl sm:text-4xl text-amber-500 font-extrabold transition-all ease-in duration-700 ${
                 showText
                   ? "opacity-100 translate-y-0"
                   : "opacity-0 translate-y-8"
@@ -97,6 +104,16 @@ function About() {
           </p>
         </div>
         <Biography />
+      </div>
+      <div className="flex flex-col justify-center items-center px-10 sm:px-50 font-serif py-14 text-md sm:text-xl gap-y-8">
+        <div className="border border-gray-300 rounded-lg p-6 m-4 max-w-4xl w-full bg-yellow-50 shadow-xl shadow-amber-300 ">
+          <p className="font-extrabold text-center mb-5 text-2xl">Mission</p>
+          <p className="tracking-wide">{aim.mission}</p>
+        </div>
+        <div className="border border-gray-300 rounded-lg p-6 m-4 max-w-4xl w-full bg-yellow-50 shadow-xl shadow-amber-300">
+          <p className="font-extrabold text-center mb-5 text-2xl">Vision</p>
+          <p className="tracking-wide">{aim.vision}</p>
+        </div>
       </div>
       <Timeline />
     </div>

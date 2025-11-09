@@ -12,6 +12,7 @@ const About = lazy(() => import("./ui/About"));
 const Connect = lazy(() => import("./ui/Connect"));
 const MLA = lazy(() => import("./ui/MLA"));
 const PartyPresident = lazy(() => import("./ui/PartyPresident"));
+const EventsPage = lazy(() => import("./ui/EventsPage"));
 
 function App() {
   const router = createBrowserRouter([
@@ -56,6 +57,14 @@ function App() {
           element: (
             <Suspense fallback={<LoadingScreen />}>
               <Connect />
+            </Suspense>
+          ),
+        },
+        {
+          path: "/events",
+          element: (
+            <Suspense fallback={<LoadingScreen />}>
+              <EventsPage />
             </Suspense>
           ),
         },

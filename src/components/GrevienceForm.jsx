@@ -60,7 +60,7 @@ function GrevienceForm() {
             Phone Number
           </label>
           <input
-            className="input valid:border-green-500 invalid:border-red-500"
+            className="input valid:border-green-500 invalid:[&:not(:placeholder-shown)]:border-red-500"
             name="phone"
             type="tel"
             pattern="[0-9]{10}"
@@ -103,7 +103,7 @@ function GrevienceForm() {
                 name="type"
                 id="feedback"
                 value="feedback"
-                className="accent-amber-300"
+                className="accent-amber-500"
               />
               <label htmlFor="feedback">Feedback</label>
             </div>

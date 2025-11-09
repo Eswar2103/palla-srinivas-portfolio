@@ -15,7 +15,7 @@ function Footer() {
           target="_blank"
           rel="noopener noreferrer"
           // className="text-brown-900 text-md rounded-2xl border px-3 py-1 font-bold hover:bg-amber-500 md:text-sm capitalize"
-          className="flex items-center capitalize text-brown-900 text-[12px] border px-2 py-1 sm:text-[16px] font-bold rounded-2xl hover:bg-amber-500 shrink-0"
+          className="flex items-center capitalize text-[12px] border px-2 py-1 sm:text-[16px] font-bold rounded-2xl hover:bg-amber-500 shrink-0"
         >
           Telugu Desam party
         </a>
@@ -23,7 +23,7 @@ function Footer() {
           href="https://telugudesam.org/membership-2024-26/"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center gap-2 text-[12px] text-stone-100 rounded-2xl border sm:text-[16px] border-brown-900 px-3 py-1 font-bold bg-red-600 hover:bg-red-700 shrink-0"
+          className="flex items-center gap-2 text-[12px] text-stone-100 rounded-2xl border sm:text-[16px] border-none px-3 py-1 font-bold bg-red-600 hover:bg-red-700 shrink-0"
         >
           <span>
             <FaHandshake />
@@ -34,7 +34,7 @@ function Footer() {
           href="https://tdpforandhra.com/"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center gap-2 text-stone-100 border-brown-900 text-[12px] rounded-2xl border px-2 py-1 font-bold bg-green-600 hover:bg-green-700 sm:text-[16px]"
+          className="flex items-center gap-2 text-stone-100 border-none text-[12px] rounded-2xl border px-2 py-1 font-bold bg-green-600 hover:bg-green-700 sm:text-[16px]"
         >
           <span>
             <BiDonateHeart />

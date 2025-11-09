@@ -78,15 +78,35 @@ function PartyPresident() {
           </button>
         )}
       </div>
-      <div className="max-w-5xl mx-auto px-3 py-6 space-y-10">
+      {/* <div className="flex justify-center items-center  font-serif py-14 gap-x-4">
+        <div className="border border-gray-300 rounded-lg p-6 m-4 max-w-4xl w-full bg-yellow-50 shadow-xl shadow-amber-300 h-[250px]">
+          <p className="font-extrabold text-center mb-5 text-2xl">Mission</p>
+          <p className="tracking-wide">
+            To serve the people of Gajuwaka with dedication and integrity,
+            prioritizing their needs and concerns, and working tirelessly.
+          </p>
+        </div>
+        <div className="border border-gray-300 rounded-lg p-6 m-4 max-w-4xl w-full bg-yellow-50 shadow-xl shadow-amber-300 h-[250px]">
+          <p className="font-extrabold text-center mb-5 text-2xl">Vision</p>
+          <p className="tracking-wide">
+            Transforming Gajuwaka into a thriving, sustainable, and inclusive
+            hub, where every citizen enjoys access to quality infrastructure,
+            healthcare, education, and economic opportunities, while preserving
+            the environment and promoting social justice.
+          </p>
+        </div>
+      </div> */}
+      <div className="max-w-6xl mx-auto px-3 py-6 space-y-10">
         <section>
-          <h2 className="text-2xl font-semibold mb-6 underline text-red-600">
-            Key Milestones
-          </h2>
+          <div className="flex flex-col mb-6 justify-center items-center gap-y-1">
+            <h2 className="text-4xl font-extrabold">Key Milestones</h2>
+            <p className="w-[120px] bg-amber-400 h-1 rounded-2xl"></p>
+          </div>
 
           <div className="grid gap-6">
             <div className="bg-white shadow p-6 rounded-xl md:col-span-2">
-              <h3 className="text-xl font-bold mb-3">
+              <h3 className="text-xl font-bold mb-3 flex items-center gap-x-3">
+                <img src="./announcement.png" className="w-12 h-12" />
                 Super Six Super Hit Program (Anantapur)
               </h3>
               <p className="mb-2">
@@ -94,17 +114,17 @@ function PartyPresident() {
                 initiatives.
               </p>
               <ul className="list-disc pl-5 space-y-1">
-                <li>Over 3 lakh people attended.</li>
-                <li>
+                <ul>Over 3 lakh people attended.</ul>
+                <ul>
                   Chief Minister Nara Chandrababu Naidu, Deputy CM Pawan Kalyan,
                   and BJP AP President Madhav participated.
-                </li>
-                <li>
+                </ul>
+                <ul>
                   Palla Srinivasa Rao played a key role in organizing and
                   promoting the event.
-                </li>
+                </ul>
               </ul>
-              <p className="mt-3 text-sm text-blue-600 underline">
+              <p className="mt-3 text-md font-bold text-purple-500 hover:underline">
                 <a href="https://share.google/u4Kf0NkwKb4QjuJyY">
                   Read more: The Hindu Coverage
                 </a>
@@ -112,11 +132,12 @@ function PartyPresident() {
             </div>
 
             <div className="bg-white shadow p-6 rounded-xl">
-              <h3 className="text-xl font-bold mb-3">
+              <h3 className="text-xl font-bold mb-3 flex items-center gap-x-3">
+                <img src="./membership.png" className="w-12 h-12" />
                 TDP 1 Crore Party Membership Drive
               </h3>
-              <ul className="list-disc pl-5 space-y-1">
-                <li>
+              <ul className="list-disc pl-5 space-y-4">
+                <ul>
                   <strong>Innovative Use of Technology:</strong> Nara
                   Lokesh&#39;s idea to use of technology, enabled seamless
                   registration and provided real-time insights into grassroots
@@ -124,37 +145,40 @@ function PartyPresident() {
                   membership drive, which successfully registered over one crore
                   members. This achievement highlights the party&#39;s growing
                   influence and increasing support from the people.
-                </li>
-                <li>
+                </ul>
+                <ul>
                   <strong>Leadership and Coordination:</strong> His leadership
                   was instrumental in registering over 1 crore members.
-                </li>
-                <li>
+                </ul>
+                <ul>
                   <strong>Ground Monitoring:</strong> Personally monitored
                   progress and engaged with workers and leaders.
-                </li>
+                </ul>
               </ul>
             </div>
 
             <div className="bg-white shadow p-6 rounded-xl">
-              <h3 className="text-xl font-bold mb-3">Vizag Mayor Elections</h3>
+              <h3 className="text-xl font-bold mb-3 flex items-center gap-x-3">
+                <img src="./election.png" className="w-12 h-12" />
+                Vizag Mayor Elections
+              </h3>
               <p className="mb-2">
                 Mastermind behind TDP-led alliance victory.
               </p>
-              <ul className="list-disc pl-5 space-y-1">
-                <li>
+              <ul className="list-disc pl-5 space-y-3">
+                <ul>
                   <strong>Strategic Leadership:</strong> Palla Srinivasa Rao
                   spearheaded the alliance&#39;s strategy, building a strong
                   coalition with Jana Sena and BJP. He ensured corporators were
                   aligned and present for critical GVMC council meetings.
-                </li>
-                <li>
+                </ul>
+                <ul>
                   <strong>Key Architect:</strong> Palla Srinivasa Rao&#39;s
                   efforts were instrumental in passing the no- confidence motion
                   against the YSRCP mayor, paving the way for TDP&#39;s Peela
                   Srinivasa Rao to be elected unanimously as Mayor.
-                </li>
-                <li>
+                </ul>
+                <ul>
                   <strong>Party Strengthener:</strong> Palla Srinivasa Rao’s
                   grassroots efforts and leadership helped build the TDP&#39;s
                   presence in Vizag, contributing to the party&#39;s success in
@@ -163,45 +187,48 @@ function PartyPresident() {
                   were key to the alliance&#39;s victory, highlighting his
                   ability to bring together diverse groups and achieve a common
                   goal.
-                </li>
+                </ul>
               </ul>
             </div>
           </div>
         </section>
 
         <div className="bg-gray-100 shadow p-6 rounded-xl">
-          <h3 className="text-xl font-bold">Mahanadu 2025 (Kadapa)</h3>
+          <h3 className="text-xl font-bold flex items-center gap-x-3">
+            <img src="./meeting.png" className="w-12 h-12" />
+            Mahanadu 2025 (Kadapa)
+          </h3>
           <blockquote className="italic text-lg text-gray-700 my-3">
             Palla Srinivasa Rao played a crucial role in the success of Mahanadu
             in Kadapa, serving as the state president of the Telugu Desam Party
             (TDP).
           </blockquote>
-          <ul className="list-disc pl-5 space-y-1">
-            <li>
+          <ul className="list-disc pl-5 space-y-3">
+            <ul>
               <strong>Leadership:</strong> Palla Srinivasa Rao led the
               coordination meeting at the Mahanadu venue, ensuring preparations
               were on track for the massive event, which drew a huge gathering
               of five lakh people on its last day.
-            </li>
-            <li>
+            </ul>
+            <ul>
               <strong>Organizational Skills:</strong> He oversaw the formation
               of committees to manage various aspects of the Mahanadu,
               highlighting his ability to organize and execute large-scale
               events.
-            </li>
-            <li>
+            </ul>
+            <ul>
               <strong>Strategic Planning:</strong> Palla Srinivasa Rao&#39;s
               experience and strategic thinking were instrumental in choosing
               Kadapa as the venue for Mahanadu, a decision that helped the TDP
               strengthen its presence in the region.
-            </li>
-            <li>
+            </ul>
+            <ul>
               <strong>Party Promotion:</strong> Through Mahanadu, Palla
               Srinivasa Rao promoted the TDP&#39;s ideology and vision,
               highlighting the party&#39;s commitment to the people of Andhra
               Pradesh.
-            </li>
-            <li>
+            </ul>
+            <ul>
               <strong>Community Engagement:</strong> His efforts ensured that
               the event was well-attended and engaging for the local community,
               fostering a sense of connection between the party and its
@@ -209,37 +236,40 @@ function PartyPresident() {
               <br /> Overall, Palla Srinivasa Rao&#39;s leadership and
               organizational skills were vital to the success of Mahanadu in
               Kadapa, demonstrating his importance within the TDP.
-            </li>
+            </ul>
           </ul>
         </div>
 
         <div className="bg-white shadow p-6 rounded-xl">
-          <h3 className="text-xl font-bold mb-3">Elections</h3>
-          <h4 className="font-semibold underline">Graduate MLC Elections</h4>
-          <ul className="list-disc pl-5 mb-3 space-y-1">
-            <li>
+          <h3 className="text-xl font-bold mb-3 flex items-center gap-x-3">
+            <img src="./election.png" className="w-12 h-12" />
+            Elections
+          </h3>
+          <h4 className="font-semibold">Graduate MLC Elections</h4>
+          <ul className="list-disc pl-5 mb-3 space-y-3">
+            <ul>
               <strong>Candidate Selection:</strong>
               Palla Srinivasa Rao announced the TDP candidates for the
               Krishna-Guntur and East Godavari-West Godavari graduate MLC seats.
               Alapati Rajendra Prasad was selected for the Interna l
               Krishna-Guntur seat, while Perabattula Rajasekhar contested the
               East Godavari-West Godavari district seat.
-            </li>
-            <li>
+            </ul>
+            <ul>
               <strong>TDP&#39;s Electoral Efforts:</strong> The TDP&#39;s
               efforts in the elections were focused on securing seats in the
               Andhra Pradesh Legislative Council, with Palla Srinivasa Rao&#39;s
               guidance playing a crucial role in the party&#39;s candidate
               selection and campaign.
-            </li>
+            </ul>
           </ul>
-          <h4 className="font-semibold underline">Local Body By-Elections</h4>
+          <h4 className="font-semibold">Local Body By-Elections</h4>
           <ul className="list-disc pl-5 space-y-1">
-            <li>
+            <ul>
               Under his dynamic leadership, the party successfully conducted the
               historic Mahanadu in Kadapa and achieved a stunning victory in the
               ZPTC elections in the opposition&#39;s own stronghold.
-            </li>
+            </ul>
           </ul>
         </div>
       </div>

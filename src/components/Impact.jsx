@@ -23,15 +23,15 @@ function Impact() {
         <div>
           <div
             className={`flex flex-col border-2 border-amber-500 rounded-4xl w-80 h-80 text-center pulse-border items-center justify-center font-bold text-orange-600 ${isOpen && "bg-amber-500 text-white"} duration-500`}
+            onClick={() => {
+              setIsOpen((prev) => !prev);
+              setIsChildOpen(null);
+            }}
           >
             <p className="text-5xl leading-14">20 years in Public Life</p>
             <p className="text-xl mt-12">more info here</p>
             <p
               className={`text-2xl mt-4 ${isOpen ? `rotate-180 duration-200` : `duration-200`}`}
-              onClick={() => {
-                setIsOpen((prev) => !prev);
-                setIsChildOpen(null);
-              }}
             >
               <FaRegArrowAltCircleDown />
             </p>
@@ -70,14 +70,14 @@ function Impact() {
             <div
               key={d.title}
               className={`pulse-border px-5 flex flex-col justify-center items-center text-center border-2 rounded-4xl w-60 h-60 border-amber-500 text-2xl font-bold text-orange-600  ${isChildOpen === idx && "bg-amber-500 text-white"} duration-500`}
+              onClick={() => {
+                setIsChildOpen(idx === isChildOpen ? null : idx);
+                setIsOpen(false);
+              }}
             >
               <p>{d.title}</p>
               <p
                 className={`text-2xl mt-8 ${isChildOpen === idx ? `rotate-180 duration-200` : `duration-200`}`}
-                onClick={() => {
-                  setIsChildOpen(idx === isChildOpen ? null : idx);
-                  setIsOpen(false);
-                }}
               >
                 <FaRegArrowAltCircleDown />
               </p>

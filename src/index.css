@@ -28,7 +28,7 @@
   }
   .grid-auto-fit-speeches {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(750px, 1fr));
   }
 }
 
