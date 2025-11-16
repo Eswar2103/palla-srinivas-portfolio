@@ -54,19 +54,29 @@ function News() {
       <div className="font-bold uppercase pb-5 flex justify-center">
         <p className="text-center rounded-2xl bg-yellow-400 px-5 py-1">News</p>
       </div>
-      <div className="grid-auto-fit justify-center gap-4">
+      <div className="grid-auto-fit justify-center gap-6">
         {news.map((n) => {
           return (
             <div
               key={n.publishedOn}
-              className="border-none rounded-b-2xl px-2 py-2 flex flex-col justify-between bg-stone-300 hover:bg-amber-400 hover:scale-105 duration-300"
+              className="border-none rounded-b-2xl px-2 py-2 flex flex-col justify-between bg-stone-300 hover:bg-amber-400 hover:scale-105 duration-300 cursor-pointer"
+              onClick={() => {
+                window.open(n.link, "_blank");
+              }}
             >
               <img src={n.image} className="w-auto h-[200px] mb-2" />
-              <a href={n.link} target="_blank" rel="noopener noreferrer">
+              <p
+                // href={n.link}
+                // target="_blank"
+                // rel="noopener noreferrer"
+                className="mb-2 px-2"
+              >
                 {n.title}
-              </a>
+              </p>
               <div className="flex justify-between px-2">
-                <p className="capitalize">{n.source}</p>
+                <p className="capitalize font-bold text-[#942222]">
+                  {n.source}
+                </p>
                 <p>{n.publishedOn}</p>
               </div>
             </div>

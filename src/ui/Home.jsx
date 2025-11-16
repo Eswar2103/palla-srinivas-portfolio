@@ -17,7 +17,7 @@ function Home() {
       <Impact />
       {/* <Schedules /> */}
       <News />
-      <Events />
+      <Events type="home" />
     </>
   );
 }

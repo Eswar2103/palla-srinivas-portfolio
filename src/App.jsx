@@ -6,13 +6,16 @@ import LoadingScreen from "./components/LoadingScreen";
 import ErrorPage from "./ui/ErrorPage";
 import Admin from "./ui/Admin";
 import UpdateSchedules from "./components/UpdateSchedules";
+// import ViewEvents from "./components/ViewEvents";
+// import Events from "./components/Events";
 
 const Home = lazy(() => import("./ui/Home"));
 const About = lazy(() => import("./ui/About"));
 const Connect = lazy(() => import("./ui/Connect"));
 const MLA = lazy(() => import("./ui/MLA"));
 const PartyPresident = lazy(() => import("./ui/PartyPresident"));
-const EventsPage = lazy(() => import("./ui/EventsPage"));
+const Events = lazy(() => import("./components/Events"));
+const Gallery = lazy(() => import("./components/Gallery"));
 
 function App() {
   const router = createBrowserRouter([
@@ -64,7 +67,15 @@ function App() {
           path: "/events",
           element: (
             <Suspense fallback={<LoadingScreen />}>
-              <EventsPage />
+              <Events type="page" />
+            </Suspense>
+          ),
+        },
+        {
+          path: "/gallery",
+          element: (
+            <Suspense fallback={<LoadingScreen />}>
+              <Gallery />
             </Suspense>
           ),
         },

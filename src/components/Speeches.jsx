@@ -44,8 +44,8 @@ function Speeches() {
               className="w-[1300px] grid grid-rows sm:grid-cols-2 items-center"
             >
               <EmbeddedVideo url={s.url} title={s.title} />
-              <p className="font-bold italic text-xl sm:text-3xl mx-10 text-purple-700">
-                {s.description}
+              <p className="font-bold text-xl sm:text-3xl mx-10 text-[#942222]">
+                {`"${s.description}"`}
               </p>
             </div>
           ))}

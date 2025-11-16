@@ -42,10 +42,86 @@ function Footer() {
           Donate
         </a>
       </div>
+      <div className="my-5 flex flex-col justify-center items-center ">
+        <p className="font-bold text-center mb-5 uppercase tracking-wider font-serif text-lg">
+          Quick links
+        </p>
+        <div className="flex justify-center items-center gap-x-15 font-bold text-[#450404]">
+          <div className="flex flex-col gap-1.5 *:hover:text-[#ab1818]">
+            <a
+              href="https://www.telugudesam.org/our-philosophy/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className=""
+            >
+              Our Philosophy
+            </a>
+            <a
+              href="https://www.telugudesam.org/jai-hind-and-jai-telugu-desam/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className=""
+            >
+              Jai hind - Jai Telugu Desam
+            </a>
+            <a
+              href="https://www.telugudesam.org/tdp-history/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className=""
+            >
+              TDP History
+            </a>
+            <a
+              href="https://www.telugudesam.org/tdp-impact-on-the-nation/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className=""
+            >
+              TDP impact on the Nation
+            </a>
+          </div>
+          <div className="flex flex-col gap-1.5 *:hover:text-[#ab1818]">
+            <a
+              href="https://www.telugudesam.org/life-and-history-of-our-founder/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className=""
+            >
+              Founder&apos;s Biography
+            </a>
+            <a
+              href="https://www.telugudesam.org/life-and-history-of-our-leader-ncbn/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className=""
+            >
+              Life and History of our Leader N CBN
+            </a>
+            <a
+              href="https://www.telugudesam.org/role-in-building-the-nation/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className=""
+            >
+              Role in Building the Nation
+            </a>
+            <a
+              href="https://www.telugudesam.org/praja-manifesto-2024/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className=""
+            >
+              Manifesto
+            </a>
+          </div>
+        </div>
+      </div>
       <div>
+        <p className="text-xl mb-3">Follow TDP</p>
         <SocialMediaLinks insta={insta} fb={fb} x={x} entity="TDP" />
       </div>
-      <p className="text-[12px]">
+      <p className="text-[16px] font-sans font-bold">
         Copyright @2025. All rights reserved by TDP.
       </p>
     </footer>

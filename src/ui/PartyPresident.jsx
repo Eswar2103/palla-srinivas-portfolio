@@ -29,7 +29,7 @@ function PartyPresident() {
           </span>
         </p>
       </div>
-      <div className="px-4 sm:px-20 mt-6 text-lg/6 font-[500]">
+      <div className="px-4 sm:px-20 mt-6 text-lg/6 font-[500] text-justify">
         <p>
           With the triumph victory as MLA with state highest majority in 2024
           General Elections, TDP Supremo and Chief Minister Shri Nara Chandra
@@ -104,7 +104,7 @@ function PartyPresident() {
           </div>
 
           <div className="grid gap-6">
-            <div className="bg-white shadow p-6 rounded-xl md:col-span-2">
+            <div className="bg-white shadow p-6 rounded-xl md:col-span-2 text-justify">
               <h3 className="text-xl font-bold mb-3 flex items-center gap-x-3">
                 <img src="./announcement.png" className="w-12 h-12" />
                 Super Six Super Hit Program (Anantapur)
@@ -131,7 +131,7 @@ function PartyPresident() {
               </p>
             </div>
 
-            <div className="bg-white shadow p-6 rounded-xl">
+            <div className="bg-white shadow p-6 rounded-xl text-justify">
               <h3 className="text-xl font-bold mb-3 flex items-center gap-x-3">
                 <img src="./membership.png" className="w-12 h-12" />
                 TDP 1 Crore Party Membership Drive
@@ -157,7 +157,7 @@ function PartyPresident() {
               </ul>
             </div>
 
-            <div className="bg-white shadow p-6 rounded-xl">
+            <div className="bg-white shadow p-6 rounded-xl text-justify">
               <h3 className="text-xl font-bold mb-3 flex items-center gap-x-3">
                 <img src="./election.png" className="w-12 h-12" />
                 Vizag Mayor Elections
@@ -193,7 +193,7 @@ function PartyPresident() {
           </div>
         </section>
 
-        <div className="bg-gray-100 shadow p-6 rounded-xl">
+        <div className="bg-gray-100 shadow p-6 rounded-xl text-justify">
           <h3 className="text-xl font-bold flex items-center gap-x-3">
             <img src="./meeting.png" className="w-12 h-12" />
             Mahanadu 2025 (Kadapa)
@@ -240,7 +240,7 @@ function PartyPresident() {
           </ul>
         </div>
 
-        <div className="bg-white shadow p-6 rounded-xl">
+        <div className="bg-white shadow p-6 rounded-xl text-justify">
           <h3 className="text-xl font-bold mb-3 flex items-center gap-x-3">
             <img src="./election.png" className="w-12 h-12" />
             Elections

@@ -30,7 +30,10 @@ function About() {
             className="rounded-full h-[200px] w-[200px] sm:h-[380px] sm:w-[400px] mb-10"
             src="/media.jpg"
           />
-          <SocialMediaLinks insta={insta} fb={fb} x={x} entity="on" />
+          <div>
+            <p className="text-xl mb-3">Follow on</p>
+            <SocialMediaLinks insta={insta} fb={fb} x={x} entity="on" />
+          </div>
         </div>
         <div className="flex justify-center sm:justify-start">
           <div className="flex flex-col justify-center items-center w-3/4">
@@ -46,7 +49,7 @@ function About() {
                 - A People&#8217;s Leader
               </span>
             </p>
-            <div className="text-md font-semibold sm:text-lg py-8">
+            <div className="text-md font-semibold sm:text-lg py-8 text-justify">
               <p
                 className={`transition-all ease-in duration-1000 ${
                   showText

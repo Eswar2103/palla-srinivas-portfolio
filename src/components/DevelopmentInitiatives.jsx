@@ -1,6 +1,6 @@
 function DevelopmentInitiatives() {
   return (
-    <div className="mx-5 sm:mx-35 border border-none rounded-2xl bg-stone-50 shadow-xl/30 py-5 mt-15 px-4">
+    <div className="mx-5 sm:mx-35 border border-none rounded-2xl bg-stone-50 shadow-xl/30 py-5 mt-15 px-4 text-justify">
       <p className="font-bold text-2xl sm:text-3xl text-center">
         Key Developmental Initiatives
       </p>
@@ -12,7 +12,7 @@ function DevelopmentInitiatives() {
         </strong>
       </p>
       <section className="grid sm:grid-cols-2 grid-cols-1 grid-rows-3 gap-x-4 gap-y-4">
-        <div className="bg-gray-200 shadow p-2 rounded-xl row-span-2">
+        <div className="bg-gray-200 shadow py-2 px-6 rounded-xl row-span-2">
           <p className="font-bold mt-4 text-xl sm:text-[18px] mb-4 flex items-center gap-x-3">
             <img src="./infra.png" className="w-12 h-12" />
             Infrastructure Projects:
@@ -33,7 +33,7 @@ function DevelopmentInitiatives() {
             Kurmanaplaem Ramalyam, in Ward 86 Gajuwaka valued at ₹15.90 lakh.
           </ul>
         </div>
-        <div className="bg-gray-200 shadow p-2 rounded-xl">
+        <div className="bg-gray-200 shadow py-2 px-6 rounded-xl">
           <p className="font-bold mt-4 text-xl sm:text-[18px] mb-4 flex items-center gap-x-3">
             <img src="./statue.png" className="w-12 h-12" />
             Statue Erection:
@@ -43,7 +43,7 @@ function DevelopmentInitiatives() {
             Colony in Ward No.76 in Gajuwaka, with a value of ₹13.59 lakh.
           </ul>
         </div>
-        <div className="bg-gray-200 shadow p-2 rounded-xl">
+        <div className="bg-gray-200 shadow py-2 px-6 rounded-xl">
           <p className="font-bold mt-4  text-xl sm:text-[18px] mb-4 flex items-center gap-x-3">
             <img src="./power.png" className="w-12 h-12" />
             Power Line Modifications:
@@ -54,7 +54,7 @@ function DevelopmentInitiatives() {
             Loc No.880/5 S-880/6 S.
           </ul>
         </div>
-        <div className="bg-gray-200 shadow p-2 rounded-xl">
+        <div className="bg-gray-200 shadow py-2 px-6 rounded-xl">
           <p className="font-bold mt-4  text-xl sm:text-[18px] mb-4 flex items-center gap-x-3">
             <img src="./land_rights.png" className="w-12 h-12" />
             Land Rights:
@@ -65,7 +65,7 @@ function DevelopmentInitiatives() {
             benefiting around 23,500 families.
           </ul>
         </div>
-        <div className="bg-gray-200 shadow p-2 rounded-xl">
+        <div className="bg-gray-200 shadow py-2 px-6 rounded-xl">
           <p className="font-bold mt-4  text-xl sm:text-[18px] mb-4 flex items-center gap-x-3">
             <img src="./womens_hostel.png" className="w-12 h-12" />
             Working Women&#39;s Hostel:
@@ -77,7 +77,7 @@ function DevelopmentInitiatives() {
           </ul>
         </div>
       </section>
-      <div className="bg-gray-200 shadow p-2 rounded-xl my-3">
+      <div className="bg-gray-200 shadow py-2 px-4 rounded-xl my-3">
         <p className="font-bold mt-4  text-xl sm:text-[18px] mb-4 flex items-center gap-x-3">
           <img src="./other.png" className="w-12 h-12" />
           Other:
