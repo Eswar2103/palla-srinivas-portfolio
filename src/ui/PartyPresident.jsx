@@ -12,18 +12,18 @@ function PartyPresident() {
         <div className="flex flex-col sm:flex-row gap-x-20 gap-y-6 px-2 justify-center">
           <img
             className="w-[400px] h-[400px] sm:w-[400px] sm:h-[400px] rounded-4xl"
-            src="./SPP2.jpg"
+            src="/images/MLA.jpg"
             alt="palla srinivas and chandra babu naidu photo"
           />
           <img
             className="w-[400px] h-[300px] sm:w-[400px] sm:h-[400px] rounded-4xl"
-            src="./SPP_photo.jpg"
+            src="/images/SPP_photo.jpg"
             alt="palla srinivas and lokesh photo"
           />
         </div>
-        <p className="text-xl px-2">
+        <p className="text-xl px-2 capitalize">
           Taken charge as <span className="font-bold">Telugu Desam Party</span>{" "}
-          Andhra Pradesh state president on{" "}
+          Andhra Pradesh state party president on{" "}
           <span className="text-red-700 uppercase font-bold">
             JUNE 28, 2024
           </span>
@@ -106,7 +106,7 @@ function PartyPresident() {
           <div className="grid gap-6">
             <div className="bg-white shadow p-6 rounded-xl md:col-span-2 text-justify">
               <h3 className="text-xl font-bold mb-3 flex items-center gap-x-3">
-                <img src="./announcement.png" className="w-12 h-12" />
+                <img src="/icons/announcement.png" className="w-12 h-12" />
                 Super Six Super Hit Program (Anantapur)
               </h3>
               <p className="mb-2">
@@ -133,7 +133,7 @@ function PartyPresident() {
 
             <div className="bg-white shadow p-6 rounded-xl text-justify">
               <h3 className="text-xl font-bold mb-3 flex items-center gap-x-3">
-                <img src="./membership.png" className="w-12 h-12" />
+                <img src="/icons/membership.png" className="w-12 h-12" />
                 TDP 1 Crore Party Membership Drive
               </h3>
               <ul className="list-disc pl-5 space-y-4">
@@ -159,7 +159,7 @@ function PartyPresident() {
 
             <div className="bg-white shadow p-6 rounded-xl text-justify">
               <h3 className="text-xl font-bold mb-3 flex items-center gap-x-3">
-                <img src="./election.png" className="w-12 h-12" />
+                <img src="/icons/election.png" className="w-12 h-12" />
                 Vizag Mayor Elections
               </h3>
               <p className="mb-2">
@@ -195,7 +195,7 @@ function PartyPresident() {
 
         <div className="bg-gray-100 shadow p-6 rounded-xl text-justify">
           <h3 className="text-xl font-bold flex items-center gap-x-3">
-            <img src="./meeting.png" className="w-12 h-12" />
+            <img src="/icons/meeting.png" className="w-12 h-12" />
             Mahanadu 2025 (Kadapa)
           </h3>
           <blockquote className="italic text-lg text-gray-700 my-3">
@@ -242,7 +242,7 @@ function PartyPresident() {
 
         <div className="bg-white shadow p-6 rounded-xl text-justify">
           <h3 className="text-xl font-bold mb-3 flex items-center gap-x-3">
-            <img src="./election.png" className="w-12 h-12" />
+            <img src="/icons/election.png" className="w-12 h-12" />
             Elections
           </h3>
           <h4 className="font-semibold">Graduate MLC Elections</h4>

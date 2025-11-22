@@ -33,7 +33,7 @@ function Header() {
         <Link to="/">
           <img
             className={`h-11 w-11 duration-300 transition-all rounded-xl`}
-            src="/tdp-logo.jpg"
+            src="/images/tdp-logo.jpg"
           />
         </Link>
         <div className="hidden sm:block">

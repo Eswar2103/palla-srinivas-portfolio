@@ -12,8 +12,8 @@ function ViewEvents({ type, ModalContext }) {
     publishedOn: "2024-07-15",
     description:
       "This is a detailed description of the event. It provides insights into what the event is about, its significance, and other relevant information that attendees might find useful.This is a detailed description of the event. It provides insights into what the event is about, its significance, and other relevant information that attendees might find useful. It provides insights into what the event is about, its significance, and other relevant information that attendees might find useful. It provides insights into what the event is about, its significance, and other relevant information that attendees might find useful.",
-    coverPhoto: "/palla.jpg",
-    photos: ["/palla1.jpg", "/palla2.jpg", "/palla4.jpg"],
+    coverPhoto: "/images/palla.jpg",
+    photos: ["/images/palla1.jpg", "/images/palla2.jpg", "/images/palla4.jpg"],
   };
 
   function handleEventClick(event) {
@@ -27,49 +27,49 @@ function ViewEvents({ type, ModalContext }) {
       publishedOn: "2024-07-15",
       description:
         "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-      mainImage: "/palla-news1.png",
+      mainImage: "/images/palla-news1.png",
     },
     {
       title: "Event 2",
       publishedOn: "2024-07-15",
       description: "Description for Event 1",
-      mainImage: "/palla-news1.png",
+      mainImage: "/images/palla-news1.png",
     },
     {
       title: "Event 3",
       publishedOn: "2024-07-15",
       description: "Description for Event 2",
-      mainImage: "/palla-news1.png",
+      mainImage: "/images/palla-news1.png",
     },
     {
       title: "Event 4",
       publishedOn: "2024-07-15",
       description: "Description for Event 3",
-      mainImage: "/palla-news1.png",
+      mainImage: "/images/palla-news1.png",
     },
     {
       title: "Event 5",
       publishedOn: "2024-07-15",
       description: "Description for Event 4",
-      mainImage: "/palla-news1.png",
+      mainImage: "/images/palla-news1.png",
     },
     {
       title: "Event 6",
       publishedOn: "2024-07-15",
       description: "Description for Event 5",
-      mainImage: "/palla-news1.png",
+      mainImage: "/images/palla-news1.png",
     },
     {
       title: "Event 7",
       publishedOn: "2024-07-15",
       description: "Description for Event 6",
-      mainImage: "/palla-news1.png",
+      mainImage: "/images/palla-news1.png",
     },
     {
       title: "Event 8",
       publishedOn: "2024-07-15",
       description: "Description for Event 7",
-      mainImage: "/palla-news1.png",
+      mainImage: "/images/palla-news1.png",
     },
   ];
 

@@ -28,7 +28,7 @@ function About() {
         <div className="flex flex-col items-center">
           <img
             className="rounded-full h-[200px] w-[200px] sm:h-[380px] sm:w-[400px] mb-10"
-            src="/media.jpg"
+            src="/images/media.jpg"
           />
           <div>
             <p className="text-xl mb-3">Follow on</p>

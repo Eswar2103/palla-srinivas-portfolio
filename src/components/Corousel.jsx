@@ -8,20 +8,20 @@ function Corousel() {
   const corouselRef = useRef(null);
   const images = [
     {
-      url: "palla.jpg",
+      url: "/images/palla2.jpg",
+      key: "ghi",
+    },
+    {
+      url: "/images/palla.jpg",
       key: "abc",
     },
     {
-      url: "/palla4.jpg",
+      url: "/images/palla4.jpg",
       key: "2j4",
     },
     {
-      url: "palla1.jpg",
+      url: "/images/palla1.jpg",
       key: "def",
-    },
-    {
-      url: "/palla2.jpg",
-      key: "ghi",
     },
   ];
 

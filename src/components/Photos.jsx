@@ -11,32 +11,32 @@ function Photos({ type, ModalContext }) {
 
   const images = [
     {
-      src: ["./palla-news1.png", "./palla-news2.png"],
+      src: ["/images/palla-news1.png", "/images/palla-news2.png"],
       description: "Test description for image gallery.",
       publishedOn: "Nov 15, 2025",
     },
     {
-      src: ["./palla-news2.png"],
+      src: ["/images/palla-news2.png"],
       description: "Test description for image gallery.",
       publishedOn: "Nov 15, 2025",
     },
     {
-      src: ["./palla-news3.png"],
+      src: ["/images/palla-news3.png"],
       description: "Test description for image gallery.",
       publishedOn: "Nov 15, 2025",
     },
     {
-      src: ["./palla1.jpg", "./palla-news2.png"],
+      src: ["/images/palla1.jpg", "/images/palla-news2.png"],
       description: "Test description for image gallery.",
       publishedOn: "Nov 15, 2025",
     },
     {
-      src: ["./SPP_photo.jpg"],
+      src: ["/images/SPP_photo.jpg"],
       description: "Test description for image gallery.",
       publishedOn: "Nov 15, 2025",
     },
     {
-      src: ["./palla-news2.png"],
+      src: ["/images/palla-news2.png"],
       description: "Test description for image gallery.",
       publishedOn: "Nov 15, 2025",
     },
