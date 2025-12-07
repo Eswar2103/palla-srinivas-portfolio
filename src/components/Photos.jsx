@@ -51,7 +51,7 @@ function Photos({ type, ModalContext }) {
             Image Gallery
           </p>
         </div>
-        <div className="grid grid-flow-row sm:grid-cols-3 justify-items-center sm:px-40 gap-y-8">
+        <div className="grid  sm:grid-cols-2 md:grid-cols-3 justify-items-center gap-y-8 sm:px-5 md:px-15 lg:px-30">
           {imagesToShow.map((img) => {
             return (
               <ImageCard

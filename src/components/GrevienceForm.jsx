@@ -20,13 +20,26 @@ function GrevienceForm() {
   }
 
   async function handleFormData(e) {
+    const url =
+      "https://18en4k39hg.execute-api.ap-south-2.amazonaws.com/default/connectWithLeader";
     e.preventDefault();
     setIsLoading(true);
     const formData = new FormData(e.target);
-    const data = Object.fromEntries(formData.entries());
-    formRef.current.reset();
+    const { name, phone, type, description } = Object.fromEntries(
+      formData.entries()
+    );
+    const params = {
+      method: "POST",
+      headers: {
+        "x-full-name": name,
+        "x-phone-number": phone,
+        "x-message-type": type,
+      },
+      body: description,
+    };
+    await storeData(url, params);
     setDescription("");
-    await storeData(data);
+    formRef.current.reset();
     setIsLoading(false);
   }
   return (

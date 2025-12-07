@@ -102,7 +102,7 @@ function Corousel() {
           {images.map((image, index) => (
             <div
               key={image.key}
-              className="bg-amber-400 w-screen h-[250px] sm:h-[350px] md:h-[720px] flex-shrink-0 flex justify-center items-center"
+              className="bg-amber-400 w-full h-[250px] sm:h-[350px] md:h-[720px] flex-shrink-0 flex justify-center items-center"
             >
               <img
                 src={images[corouselImageIndex].url}

@@ -5,9 +5,6 @@ import Error from "./ui/Error";
 import LoadingScreen from "./components/LoadingScreen";
 import ErrorPage from "./ui/ErrorPage";
 import Admin from "./ui/Admin";
-import UpdateSchedules from "./components/UpdateSchedules";
-// import ViewEvents from "./components/ViewEvents";
-// import Events from "./components/Events";
 
 const Home = lazy(() => import("./ui/Home"));
 const About = lazy(() => import("./ui/About"));
@@ -16,6 +13,11 @@ const MLA = lazy(() => import("./ui/MLA"));
 const PartyPresident = lazy(() => import("./ui/PartyPresident"));
 const Events = lazy(() => import("./components/Events"));
 const Gallery = lazy(() => import("./components/Gallery"));
+const AddNews = lazy(() => import("./admin-components/AddNews"));
+const AddEvents = lazy(() => import("./admin-components/AddEvents"));
+const AddGalleryImages = lazy(
+  () => import("./admin-components/AddGalleryImages")
+);
 
 function App() {
   const router = createBrowserRouter([
@@ -91,8 +93,16 @@ function App() {
               ),
             },
             {
-              path: "update-schedule",
-              element: <UpdateSchedules />,
+              path: "add-news",
+              element: <AddNews />,
+            },
+            {
+              path: "add-events",
+              element: <AddEvents />,
+            },
+            {
+              path: "add-gallery-images",
+              element: <AddGalleryImages />,
             },
           ],
         },
