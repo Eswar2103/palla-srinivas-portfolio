@@ -1,30 +1,35 @@
 import { useRef, useState } from "react";
 import { Form } from "react-router-dom";
-import { storeData } from "../utils/utils";
+import { storeData, compressImage } from "../utils/utils";
 
 function AddGalleryImages() {
   const formRef = useRef(null);
   const [files, setFiles] = useState([]);
   const [error, setError] = useState(null);
 
-  function handleImages(e) {
-    const files = e.target.files;
-    if (!files) return;
-    const data = Object.values(files);
-    console.log("file----:", data);
-    setError(null);
-    data.map((f) => {
-      const d = { fileName: f.name, fileType: f.type };
-      const reader = new FileReader();
-      reader.readAsDataURL(f);
-      reader.onloadend = function () {
-        d.data = reader.result.split(",")[1];
-      };
-      reader.onerror = function () {
-        setError(reader.error);
-      };
-      setFiles((prev) => [...prev, d]);
-    });
+  async function handleImages(e) {
+    try {
+      const files = e.target.files;
+      if (!files) return;
+      const data = Object.values(files);
+      setError(null);
+      const f = await Promise.all(
+        data.map(async (file) => {
+          const size = file.size / (1024 * 1024);
+          if (size.toFixed(2) > 2) {
+            file = await compressImage(file);
+          }
+          return file;
+        })
+      );
+      setFiles(f);
+    } catch (err) {
+      console.error("Error during image handling:", err);
+      setError(
+        "An error occurred while processing the images, please check and upload again."
+      );
+      return;
+    }
   }
 
   async function handleSubmit(e) {
@@ -33,13 +38,12 @@ function AddGalleryImages() {
       setError("Please select a cover photo");
       return;
     }
-    console.log("Form submitted", files);
     const formData = new FormData(formRef.current);
-    const data = Object.fromEntries(formData.entries());
-    data.photos = files;
-    data.id = `${Date.now()}-${Math.floor(Math.random() * 10000)}`;
-    delete data["cover-photo"];
-    console.log("data-----:", data);
+    formData.delete("cover-photo");
+    formData.append("id", `${Date.now()}-${Math.floor(Math.random() * 10000)}`);
+    files.forEach((f) => {
+      formData.append(`photos`, f, f.name);
+    });
     const url =
       "https://18en4k39hg.execute-api.ap-south-2.amazonaws.com/default/StoreNewsImages";
     const params = {
@@ -47,7 +51,7 @@ function AddGalleryImages() {
       headers: {
         "x-type": "gallery",
       },
-      body: JSON.stringify(data),
+      body: formData,
     };
     await storeData(url, params);
     formRef.current.reset();
@@ -100,7 +104,7 @@ function AddGalleryImages() {
           {files &&
             files.map((f, idx) => (
               <p key={idx} className="ml-4 text-md font-bold">
-                {f.fileName}
+                {f.name}
               </p>
             ))}
           {error && <p className="text-red-500 text-sm">{error}</p>}

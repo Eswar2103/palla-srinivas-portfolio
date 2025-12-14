@@ -1,32 +1,25 @@
 import { useRef, useState } from "react";
 import { Form } from "react-router-dom";
-import { storeData } from "../utils/utils";
+import { storeData, compressImage } from "../utils/utils";
 
 function AddNews() {
   const formRef = useRef(null);
-  const [fileName, setFileName] = useState(null);
-  const [fileType, setFileType] = useState(null);
   const [file, setFile] = useState(null);
   const [error, setError] = useState(null);
-  function handleImage(e) {
+  async function handleImage(e) {
     const data = e.target.files[0];
     if (!data) return;
-    console.log("file----:", data);
     setError(null);
     if (!["image/jpeg", "image/png", "image/jpg"].includes(data.type)) {
       setError("Please select a valid image file (jpg or png or jpeg)");
       return;
     }
-    setFileType(data.type);
-    const reader = new FileReader();
-    reader.readAsDataURL(data);
-    reader.onloadend = function () {
-      setFile(reader.result.split(",")[1]);
-    };
-    reader.onerror = function () {
-      setError(reader.error);
-    };
-    setFileName(data.name);
+    let f = data;
+    const size = f.size / (1024 * 1024);
+    if (size.toFixed(2) > 2.5) {
+      f = await compressImage(f);
+    }
+    setFile(f);
   }
 
   async function handleSubmit(e) {
@@ -35,17 +28,10 @@ function AddNews() {
       setError("Please select a cover photo");
       return;
     }
-    console.log("Form submitted");
     const formData = new FormData(formRef.current);
-    const data = Object.fromEntries(formData.entries());
-    data.photo = {
-      fileName,
-      fileType,
-      data: file,
-    };
-    data.id = `${Date.now()}-${Math.floor(Math.random() * 10000)}`;
-    delete data["cover-photo"];
-    console.log("data-----:", data);
+    formData.delete("cover-photo");
+    formData.append("photo", file, file.name);
+    formData.append("id", `${Date.now()}-${Math.floor(Math.random() * 10000)}`);
     const url =
       "https://18en4k39hg.execute-api.ap-south-2.amazonaws.com/default/StoreNewsImages";
     const params = {
@@ -53,15 +39,12 @@ function AddNews() {
       headers: {
         "x-type": "news",
       },
-      body: JSON.stringify(data),
+      body: formData,
     };
     await storeData(url, params);
     formRef.current.reset();
     setFile(null);
-    setFileName(null);
-    setFileType(null);
   }
-
   return (
     <div className="flex justify-center mt-15">
       <Form onSubmit={handleSubmit} ref={formRef}>
@@ -134,7 +117,7 @@ function AddNews() {
             accept="image/*"
             onChange={handleImage}
           />
-          {file && <p className="ml-4 text-md font-bold">{fileName}</p>}
+          {file && <p className="ml-4 text-md font-bold">{file.name}</p>}
           {error && <p className="text-red-500 text-sm">{error}</p>}
         </div>
         <div className="flex justify-center mt-8">

@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 import { Form } from "react-router-dom";
-import { storeData } from "../utils/utils";
+import { storeData, compressImage } from "../utils/utils";
 
 function AddEvents() {
   const formRef = useRef(null);
@@ -11,42 +11,58 @@ function AddEvents() {
   const [isLenghtExcluded, setIsLengthExcluded] = useState(false);
   const [subFiles, setSubFiles] = useState([]);
 
-  function handleImage(e) {
-    const data = e.target.files[0];
-    if (!data) return;
-    console.log("file----:", data);
-    setMainPhotoError(null);
-    const d = { fileName: data.name, fileType: data.type };
-    const reader = new FileReader();
-    reader.readAsDataURL(data);
-    reader.onloadend = function () {
-      d.data = reader.result.split(",")[1];
-    };
-    reader.onerror = function () {
-      setMainPhotoError(reader.error);
+  async function handleImage(e) {
+    try {
+      const data = e.target.files[0];
+      if (!data) return;
+      setMainPhotoError(null);
+      if (!["image/jpeg", "image/png", "image/jpg"].includes(data.type)) {
+        setMainPhotoError(
+          "Please select a valid image file (jpg or png or jpeg)"
+        );
+        return;
+      }
+      let f = data;
+      const size = f.size / (1024 * 1024);
+      if (size.toFixed(2) > 2.5) {
+        f = await compressImage(f);
+      }
+      setFile(f);
+    } catch (error) {
+      console.error("Error during image handling:", error);
+      setMainPhotoError(
+        "An error occurred while processing the cover photo, please check and upload again."
+      );
       return;
-    };
-    setFile(d);
+    }
   }
 
-  function handleSubImages(e) {
-    const files = e.target.files;
-    if (!files) return;
-    const data = Object.values(files);
-    console.log("file----:", data);
-    setSubPhotosError(null);
-    data.map((f) => {
-      const d = { fileName: f.name, fileType: f.type };
-      const reader = new FileReader();
-      reader.readAsDataURL(f);
-      reader.onloadend = function () {
-        d.data = reader.result.split(",")[1];
-      };
-      reader.onerror = function () {
-        setSubPhotosError(reader.error);
-      };
-      setSubFiles((prev) => [...prev, d]);
-    });
+  async function handleSubImages(e) {
+    try {
+      const files = e.target.files;
+      if (!files) return;
+      const data = Object.values(files);
+      if (data.length === 0) return;
+      let compress = true;
+      if (data.length < 3) compress = false;
+      setSubPhotosError(null);
+      const f = await Promise.all(
+        data.map(async (file) => {
+          const size = file.size / (1024 * 1024);
+          if (size.toFixed(2) > 1.5 && compress) {
+            file = await compressImage(file);
+          }
+          return file;
+        })
+      );
+      setSubFiles(f);
+    } catch (error) {
+      console.error("Error during sub image handling:", error);
+      setSubPhotosError(
+        "An error occurred while processing sub photos, please check and upload again."
+      );
+      return;
+    }
   }
 
   function handleDescription(e) {
@@ -63,7 +79,7 @@ function AddEvents() {
 
   async function handleSubmit(e) {
     e.preventDefault();
-    if (!file.data) {
+    if (!file.name) {
       setMainPhotoError("Please select a cover photo");
       return;
     }
@@ -71,25 +87,24 @@ function AddEvents() {
       setSubPhotosError("Please select sub photos");
       return;
     }
-    console.log("Form submitted");
     const formData = new FormData(formRef.current);
-    const data = Object.fromEntries(formData.entries());
-    data.mainPhoto = file;
-    data.subPhotos = subFiles;
-    data.id = `${Date.now()}-${Math.floor(Math.random() * 10000)}`;
-    delete data["cover-photo"];
-    delete data["sub-photos"];
-    console.log("data-----:", data);
+    formData.delete("cover-photo");
+    formData.delete("sub-photos");
+    formData.append("mainPhoto", file, file.name);
+    subFiles.forEach((f) => {
+      formData.append(`subPhotos`, f, f.name);
+    });
+    formData.append("id", `${Date.now()}-${Math.floor(Math.random() * 10000)}`);
     const url =
       "https://18en4k39hg.execute-api.ap-south-2.amazonaws.com/default/storeEvents";
     const params = {
       method: "PUT",
-      body: JSON.stringify(data),
+      body: formData,
     };
     await storeData(url, params);
-    // formRef.current.reset();
-    // setFile({});
-    // setSubFiles([]);
+    formRef.current.reset();
+    setFile({});
+    setSubFiles([]);
   }
 
   return (
@@ -158,7 +173,7 @@ function AddEvents() {
             accept="image/*"
             onChange={handleImage}
           />
-          {file && <p className="ml-4 text-md font-bold">{file.fileName}</p>}
+          {file && <p className="ml-4 text-md font-bold">{file.name}</p>}
           {mainPhotoerror && (
             <p className="text-red-500 text-sm">{mainPhotoerror}</p>
           )}
@@ -180,9 +195,9 @@ function AddEvents() {
             onChange={handleSubImages}
           />
           {subFiles &&
-            subFiles.map((f, idx) => (
-              <p key={idx} className="ml-4 text-md font-bold">
-                {f.fileName}
+            subFiles.map((f) => (
+              <p key={f.name} className="ml-4 text-md font-bold">
+                {f.name}
               </p>
             ))}
           {subPhotoserror && (
