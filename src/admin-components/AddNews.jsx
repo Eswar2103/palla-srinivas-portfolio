@@ -1,11 +1,15 @@
 import { useRef, useState } from "react";
-import { Form } from "react-router-dom";
+import { Form, useNavigate } from "react-router-dom";
 import { storeData, compressImage } from "../utils/utils";
+import { LoadingButton } from "../ui/utils";
 
 function AddNews() {
   const formRef = useRef(null);
+  const navigate = useNavigate();
   const [file, setFile] = useState(null);
   const [error, setError] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
+
   async function handleImage(e) {
     const data = e.target.files[0];
     if (!data) return;
@@ -24,6 +28,7 @@ function AddNews() {
 
   async function handleSubmit(e) {
     e.preventDefault();
+    setIsLoading(true);
     if (!file) {
       setError("Please select a cover photo");
       return;
@@ -38,12 +43,17 @@ function AddNews() {
       method: "PUT",
       headers: {
         "x-type": "news",
+        "x-api-key": localStorage.getItem("token"),
       },
       body: formData,
     };
-    await storeData(url, params);
+    const res = await storeData(url, params);
     formRef.current.reset();
     setFile(null);
+    setIsLoading(false);
+    if (res === "unauthorized") {
+      navigate("/admin", { replace: true });
+    }
   }
   return (
     <div className="flex justify-center mt-15">
@@ -121,12 +131,11 @@ function AddNews() {
           {error && <p className="text-red-500 text-sm">{error}</p>}
         </div>
         <div className="flex justify-center mt-8">
-          <button
-            className="cursor-pointer font-bold text-black px-3 py-2 bg-amber-400 rounded-lg hover:bg-amber-500"
-            type="submit"
-          >
-            Upload
-          </button>
+          <LoadingButton
+            text1="Uploading..."
+            text2="Upload"
+            isLoading={isLoading}
+          />
         </div>
       </Form>
     </div>

@@ -1,10 +1,17 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import {
+  createBrowserRouter,
+  RouterProvider,
+  Navigate,
+  Outlet,
+} from "react-router-dom";
 import { Suspense, lazy } from "react";
 import AppLayout from "./ui/AppLayout";
 import Error from "./ui/Error";
 import LoadingScreen from "./components/LoadingScreen";
 import ErrorPage from "./ui/ErrorPage";
 import Admin from "./ui/Admin";
+import Login from "./admin-components/Login";
+import { Authenticated } from "./utils/utils";
 
 const Home = lazy(() => import("./ui/Home"));
 const About = lazy(() => import("./ui/About"));
@@ -20,6 +27,10 @@ const AddGalleryImages = lazy(
 );
 
 function App() {
+  function ProtectedElement() {
+    return Authenticated() ? <Outlet /> : <Navigate to="/admin" replace />;
+  }
+
   const router = createBrowserRouter([
     {
       element: <AppLayout />,
@@ -86,23 +97,36 @@ function App() {
           children: [
             {
               index: true,
+              element: <Navigate to="login" replace />,
+            },
+            {
+              path: "login",
               element: (
                 <Suspense fallback={<LoadingScreen />}>
-                  <Admin />
+                  <Login />
                 </Suspense>
               ),
             },
             {
-              path: "add-news",
-              element: <AddNews />,
-            },
-            {
-              path: "add-events",
-              element: <AddEvents />,
-            },
-            {
-              path: "add-gallery-images",
-              element: <AddGalleryImages />,
+              element: <ProtectedElement />,
+              children: [
+                {
+                  path: "upload",
+                  element: <Admin />,
+                },
+                {
+                  path: "add-news",
+                  element: <AddNews />,
+                },
+                {
+                  path: "add-events",
+                  element: <AddEvents />,
+                },
+                {
+                  path: "add-gallery-images",
+                  element: <AddGalleryImages />,
+                },
+              ],
             },
           ],
         },

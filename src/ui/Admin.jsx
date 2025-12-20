@@ -4,22 +4,22 @@ function Admin() {
   return (
     <div className="flex flex-col justify-center items-center gap-y-8 mt-15">
       <Link
-        className="border-none rounded-lg bg-amber-300 px-2 py-1 hover:bg-amber-400"
-        to="add-news"
+        className="border-none rounded-lg bg-amber-400 px-4 py-2 hover:bg-amber-500 text-center"
+        to="/admin/add-news"
       >
-        Add news
+        Add News
       </Link>
       <Link
-        className="border-none rounded-lg bg-amber-300 px-2 py-1 hover:bg-amber-400"
-        to="add-events"
+        className="border-none rounded-lg bg-amber-400 px-4 py-2 hover:bg-amber-500 text-center"
+        to="/admin/add-events"
       >
         Add Events
       </Link>
       <Link
-        className="border-none rounded-lg bg-amber-300 px-2 py-1 hover:bg-amber-400"
-        to="add-gallery-images"
+        className="border-none rounded-lg bg-amber-400 px-4 py-2 hover:bg-amber-500 text-center"
+        to="/admin/add-gallery-images"
       >
-        Add Gallery images
+        Add Gallery Images
       </Link>
     </div>
   );

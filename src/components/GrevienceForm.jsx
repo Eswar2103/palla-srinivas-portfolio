@@ -1,6 +1,7 @@
 import { Form } from "react-router-dom";
 import { useRef, useState } from "react";
 import { storeData } from "../utils/utils";
+import { Loading } from "../ui/utils";
 
 function GrevienceForm() {
   const [description, setDescription] = useState("");
@@ -153,15 +154,6 @@ function GrevienceForm() {
           </button>
         </div>
       </Form>
-    </div>
-  );
-}
-
-function Loading() {
-  return (
-    <div className="flex items-center justify-center">
-      <div className="animate-spin rounded-full h-4 w-4 border-t-4 border-black border-solid mr-4"></div>
-      <span className="text-sm text-black font-semibold">Submitting...</span>
     </div>
   );
 }
