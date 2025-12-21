@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import Timeline from "../features/about/Timeline";
+import Timeline from "../components/Timeline";
 import { SocialMediaLinks } from "../features/utils/utils";
-import Biography from "../features/about/Biography";
+import Biography from "../components/Biography";
 
 function About() {
   const [showText, setShowText] = useState(false);
@@ -27,7 +27,7 @@ function About() {
       <div className="pt-18 grid sm:grid-cols-2 gap-y-8 justify-center">
         <div className="flex flex-col items-center">
           <img
-            className="rounded-full h-[200px] w-[200px] sm:h-[380px] sm:w-[400px] mb-10"
+            className="rounded-full h-50 w-50 sm:h-95 sm:w-100 mb-10"
             src="/images/media.jpg"
           />
           <div>

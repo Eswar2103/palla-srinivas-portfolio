@@ -7,7 +7,7 @@ function EventsViewPage({ event }) {
     <section aria-label="Events modal view">
       <div className="flex justify-between gap-x-2">
         <p className="text-left font-bold text-md sm:text-3xl mb-5">{title}</p>
-        <div className="flex flex-col text-xs w-[200px] justify-end items-end pb-3">
+        <div className="flex flex-col text-xs w-50 justify-end items-end pb-3">
           <p>Published on</p>
           <p className="font-sans font-bold">{publishedOn}</p>
         </div>
