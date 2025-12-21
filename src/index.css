@@ -1,1 +1,43 @@
 @import "tailwindcss";
+
+@theme {
+  --color-brown-400: #c4a28d;
+  --color-brown-500: #b88f75;
+  --color-brown-600: #ac7b5d;
+  --color-brown-700: #94684c;
+  --color-brown-800: #7d5740;
+  --color-brown-900: #664835;
+}
+
+@layer components {
+  .input {
+    @apply rounded-full border border-stone-300 bg-white px-3 py-1 text-sm transition-all duration-300 placeholder:text-stone-400 focus:outline-none focus:ring-1 focus:ring-yellow-400 w-1/2 md:px-6 md:py-3;
+  }
+
+  .description {
+    @apply rounded-2xl border border-stone-300 bg-white px-3 py-2 text-sm transition-all duration-300 placeholder:text-stone-400 focus:outline-none focus:ring-1 focus:ring-yellow-400 h-[300px] overflow-auto md:px-6 md:py-3;
+  }
+
+  .input-base {
+    @apply mb-5 w-sm sm:w-2xl flex justify-center flex-row items-center;
+  }
+
+  .grid-auto-fit {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 375px));
+  }
+  .grid-auto-fit-speeches {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(750px, 1fr));
+  }
+}
+
+@layer base {
+  .custom-calendar .react-calendar {
+    @apply border-0 shadow-none rounded-4xl w-[338px] sm:w-[400px];
+  }
+
+  .custom-calendar .react-calendar__tile {
+    @apply border-0 rounded-lg;
+  }
+}

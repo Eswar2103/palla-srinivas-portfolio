@@ -6,7 +6,7 @@ on:
       - main
 
 permissions:
-  id-token: write   # REQUIRED for OIDC
+  id-token: write # REQUIRED for OIDC
   contents: read
 
 jobs:
@@ -20,10 +20,10 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: 22
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
       - name: Build React app
         run: npm run build
@@ -31,23 +31,25 @@ jobs:
       - name: Configure AWS credentials via OIDC
         uses: aws-actions/configure-aws-credentials@v4
         with:
-          role-to-assume: arn:aws:iam::${{ secrets.ID }}:role/github-ci-palla-srinivas-rao 
+          role-to-assume: arn:aws:iam::${{ secrets.ID }}:role/github-ci-palla-srinivas-rao
           aws-region: ${{ secrets.REGION }}
 
       - name: Debug build output
         run: |
           pwd
           ls -la
+          cd dist
+          ls -la
 
       - name: Clean S3 bucket (keep photos)
         run: |
-          aws s3 rm s3://${{ secrets.BUCKET_NAME }} \
+          aws s3 rm s3://${{ secrets.BUCKET_NAME }}/web \
             --recursive \
             --exclude "photos/*"
 
       - name: Upload build to S3
         run: |
-          aws s3 sync dist/ s3://${{ secrets.BUCKET_NAME }} --delete
+          aws s3 sync dist/ s3://${{ secrets.BUCKET_NAME }}/web --delete
 
       - name: Invalidate CloudFront
         run: |
