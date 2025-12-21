@@ -31,8 +31,13 @@ jobs:
       - name: Configure AWS credentials via OIDC
         uses: aws-actions/configure-aws-credentials@v4
         with:
-          role-to-assume: arn:aws:iam::242201303033:role/github-ci-palla-srinivas-rao 
-          aws-region: ap-south-2
+          role-to-assume: arn:aws:iam::${{ secrets.ID }}:role/github-ci-palla-srinivas-rao 
+          aws-region: ${{ secrets.REGION }}
+
+      - name: Debug build output
+        run: |
+          pwd
+          ls -la
 
       - name: Clean S3 bucket (keep photos)
         run: |
@@ -42,7 +47,7 @@ jobs:
 
       - name: Upload build to S3
         run: |
-          aws s3 sync build/ s3://${{ secrets.BUCKET_NAME }} --delete
+          aws s3 sync dist/ s3://${{ secrets.BUCKET_NAME }} --delete
 
       - name: Invalidate CloudFront
         run: |
