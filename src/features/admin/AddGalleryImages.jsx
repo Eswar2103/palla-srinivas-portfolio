@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
 import { Form, useNavigate } from "react-router-dom";
-import { storeData, compressImage } from "../utils/utils";
-import { LoadingButton } from "../ui/utils";
+import { storeData, compressImage } from "../../utils/utils";
+import { LoadingButton } from "../../features/utils/utils";
 
 function AddGalleryImages() {
   const formRef = useRef(null);

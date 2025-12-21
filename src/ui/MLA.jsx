@@ -1,5 +1,5 @@
 import DevelopmentInitiatives from "../components/DevelopmentInitiatives";
-import Gallery from "../components/Gallery";
+import Gallery from "../features/gallery/Gallery";
 import Manifesto from "../components/Manifesto";
 
 function MLA() {

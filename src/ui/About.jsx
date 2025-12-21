@@ -1,7 +1,7 @@
-import Timeline from "../components/Timeline";
-import { SocialMediaLinks } from "./utils";
-import Biography from "../components/Biography";
 import { useEffect, useState } from "react";
+import Timeline from "../features/about/Timeline";
+import { SocialMediaLinks } from "../features/utils/utils";
+import Biography from "../features/about/Biography";
 
 function About() {
   const [showText, setShowText] = useState(false);

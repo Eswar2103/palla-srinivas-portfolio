@@ -1,16 +1,16 @@
 import { createContext } from "react";
-import Modal from "./Modal";
-import ViewEvents from "./ViewEvents";
+import Modal from "../modal/Modal";
+import Photos from "./Photos";
 
 const ModalContext = createContext();
 
-function Events({ type }) {
+function Gallery({ type }) {
   return (
     <Modal ModalContext={ModalContext}>
-      <ViewEvents type={type} ModalContext={ModalContext} />
+      <Photos type={type} ModalContext={ModalContext} />
       <Modal.Window ModalContext={ModalContext} />
     </Modal>
   );
 }
 
-export default Events;
+export default Gallery;
