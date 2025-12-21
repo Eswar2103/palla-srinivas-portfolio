@@ -87,7 +87,6 @@ function Timeline() {
           />
         </button>
         <div className="overflow-hidden w-full max-w-[930px] h-auto py-4">
-          {/* <div className="overflow-x-scroll overflow-y-hidden flex items-center w-full max-w-[800px] h-[250px] px-4 py-8 border-4 border-red-800"> */}
           <div
             className="flex h-[250px] max-w-[930px] justify-evenly items-center px-0 gap-x-2 duration-500 ease-in-out"
             style={{
@@ -97,15 +96,11 @@ function Timeline() {
             {events.map((event, idx) => (
               <div
                 key={idx}
-                className={`flex flex-col items-center justify-start flex-shrink-0 h-[250px] w-[300px] px-2`}
-                // className="flex flex-col items-center justify-center flex-shrink-0 w-[250px] h-[240px] py-4 border-2 border-green-600"
+                className={`flex flex-col items-center justify-start shrink-0 h-[250px] w-75 px-2`}
               >
                 <div className="w-5 h-5 bg-amber-400 rounded-full border-4 border-white z-10"></div>
                 <div className="mt-4 text-center">
                   <p className="text-lg font-bold text-black">{event.year}</p>
-                  {/* <p className="font-semibold text-lg text-amber-700">
-                    {event.title}
-                  </p> */}
                   <p className="text-black font-semibold text-md sm:text-lg">
                     {event.description}
                   </p>

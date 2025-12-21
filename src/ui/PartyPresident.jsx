@@ -11,12 +11,12 @@ function PartyPresident() {
       <div className="px-2 flex flex-col items-center gap-y-3 py-4 border-amber-500 border-4 rounded-3xl">
         <div className="flex flex-col sm:flex-row gap-x-20 gap-y-6 px-2 justify-center">
           <img
-            className="w-[400px] h-[400px] sm:w-[400px] sm:h-[400px] rounded-4xl"
+            className="w-100 h-100 rounded-4xl"
             src="/images/MLA.jpg"
             alt="palla srinivas and chandra babu naidu photo"
           />
           <img
-            className="w-[400px] h-[300px] sm:w-[400px] sm:h-[400px] rounded-4xl"
+            className="w-100 h-75 sm:w-100 sm:h-100 rounded-4xl"
             src="/images/SPP_photo.jpg"
             alt="palla srinivas and lokesh photo"
           />
@@ -29,7 +29,7 @@ function PartyPresident() {
           </span>
         </p>
       </div>
-      <div className="px-4 sm:px-20 mt-6 text-lg/6 font-[500] text-justify">
+      <div className="px-4 sm:px-20 mt-6 text-lg/6 font-medium text-justify">
         <p>
           With the triumph victory as MLA with state highest majority in 2024
           General Elections, TDP Supremo and Chief Minister Shri Nara Chandra
@@ -78,29 +78,11 @@ function PartyPresident() {
           </button>
         )}
       </div>
-      {/* <div className="flex justify-center items-center  font-serif py-14 gap-x-4">
-        <div className="border border-gray-300 rounded-lg p-6 m-4 max-w-4xl w-full bg-yellow-50 shadow-xl shadow-amber-300 h-[250px]">
-          <p className="font-extrabold text-center mb-5 text-2xl">Mission</p>
-          <p className="tracking-wide">
-            To serve the people of Gajuwaka with dedication and integrity,
-            prioritizing their needs and concerns, and working tirelessly.
-          </p>
-        </div>
-        <div className="border border-gray-300 rounded-lg p-6 m-4 max-w-4xl w-full bg-yellow-50 shadow-xl shadow-amber-300 h-[250px]">
-          <p className="font-extrabold text-center mb-5 text-2xl">Vision</p>
-          <p className="tracking-wide">
-            Transforming Gajuwaka into a thriving, sustainable, and inclusive
-            hub, where every citizen enjoys access to quality infrastructure,
-            healthcare, education, and economic opportunities, while preserving
-            the environment and promoting social justice.
-          </p>
-        </div>
-      </div> */}
       <div className="max-w-6xl mx-auto px-3 py-6 space-y-10">
         <section>
           <div className="flex flex-col mb-6 justify-center items-center gap-y-1">
             <h2 className="text-4xl font-extrabold">Key Milestones</h2>
-            <p className="w-[120px] bg-amber-400 h-1 rounded-2xl"></p>
+            <p className="w-30 bg-amber-400 h-1 rounded-2xl"></p>
           </div>
 
           <div className="grid gap-6">

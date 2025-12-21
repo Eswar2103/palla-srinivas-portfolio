@@ -102,17 +102,17 @@ function ViewEvents({ type, ModalContext }) {
 
   return (
     <section>
-      <div className="w-full h-[100px] font-extrabold tracking-wider text-5xl flex justify-center items-center text-amber-500">
+      <div className="w-full h-25 font-extrabold tracking-wider text-5xl flex justify-center items-center text-amber-500">
         Main Events
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 px-10 sm:px-30 py-15 font-sans">
         {events.map((e) => (
           <div
             key={e.publishedOn}
-            className="border-none rounded-t-2xl rounded-b-lg flex flex-col justify-between bg-stone-200 hover:bg-amber-400 overflow-hidden hover:translate-y-[-5px] transform-transition duration-300"
+            className="border-none rounded-t-2xl rounded-b-lg flex flex-col justify-between bg-stone-200 hover:bg-amber-400 overflow-hidden hover:-translate-y-1.25 transform-transition duration-300"
             onClick={() => handleEventClick(event)}
           >
-            <img src={e.mainImage} className="w-auto h-[200px] mb-2" />
+            <img src={e.mainImage} className="w-auto h-50 mb-2" />
             {/* <a href={event.link} target="_blank" rel="noopener noreferrer">
             {event.title}
           </a> */}
