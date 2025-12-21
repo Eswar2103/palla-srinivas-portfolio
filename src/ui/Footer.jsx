@@ -1,6 +1,6 @@
 import { FaHandshake } from "react-icons/fa";
 import { BiDonateHeart } from "react-icons/bi";
-import { SocialMediaLinks } from "./utils";
+import { SocialMediaLinks } from "../features/utils/utils";
 
 function Footer() {
   const insta = "https://www.instagram.com/jai_tdp?igsh=dnp0dzRrNTlvd3o2";

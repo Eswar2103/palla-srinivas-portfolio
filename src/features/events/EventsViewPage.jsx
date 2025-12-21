@@ -1,4 +1,4 @@
-import PhotoView from "./PhotoView";
+import PhotoView from "../gallery/PhotoView";
 
 function EventsViewPage({ event }) {
   const { title, description, coverPhoto, photos, publishedOn } = event;

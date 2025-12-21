@@ -1,4 +1,4 @@
-import Menu from "./Menu";
+import Menu from "../components/Menu";
 
 function ResponsiveHeader({ isOpen, onMenuItemClick }) {
   return (

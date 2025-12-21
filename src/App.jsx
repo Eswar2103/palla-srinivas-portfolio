@@ -7,10 +7,10 @@ import {
 import { Suspense, lazy } from "react";
 import AppLayout from "./ui/AppLayout";
 import Error from "./ui/Error";
-import LoadingScreen from "./components/LoadingScreen";
+import { LoadingScreen } from "./features/utils/utils";
 import ErrorPage from "./ui/ErrorPage";
 import Admin from "./ui/Admin";
-import Login from "./admin-components/Login";
+import Login from "./features/admin/Login";
 import { Authenticated } from "./utils/utils";
 
 const Home = lazy(() => import("./ui/Home"));
@@ -18,12 +18,12 @@ const About = lazy(() => import("./ui/About"));
 const Connect = lazy(() => import("./ui/Connect"));
 const MLA = lazy(() => import("./ui/MLA"));
 const PartyPresident = lazy(() => import("./ui/PartyPresident"));
-const Events = lazy(() => import("./components/Events"));
-const Gallery = lazy(() => import("./components/Gallery"));
-const AddNews = lazy(() => import("./admin-components/AddNews"));
-const AddEvents = lazy(() => import("./admin-components/AddEvents"));
+const Events = lazy(() => import("./features/events/Events"));
+const Gallery = lazy(() => import("./features/gallery/Gallery"));
+const AddNews = lazy(() => import("./features/admin/AddNews"));
+const AddEvents = lazy(() => import("./features/admin/AddEvents"));
 const AddGalleryImages = lazy(
-  () => import("./admin-components/AddGalleryImages")
+  () => import("./features/admin/AddGalleryImages")
 );
 
 function App() {

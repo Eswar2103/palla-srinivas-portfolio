@@ -108,16 +108,6 @@ function DevelopmentInitiativesCard({ img, title, description }) {
         className="text-md sm:text-[16px]"
         dangerouslySetInnerHTML={{ __html: description }}
       />
-      {/* The Visakhapatnam Metropolitan Regional Development Authority (VMRDA) is
-        setting up a massive open auditorium in Gajuwaka, expected to boost the
-        local economy.
-        <br />
-        <br />
-        Gajuwaka is experiencing growth due to its proximity to industries, IT
-        parks, and educational institutions, making it an attractive location
-        for residential and commercial real estate investments. */}
-      {/* <div dangerouslySetInnerHTML={{ __html: description }} /> */}
-      {/* </ul> */}
     </>
   );
 }

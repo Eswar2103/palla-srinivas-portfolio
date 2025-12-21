@@ -1,8 +1,7 @@
 import { Link } from "react-router-dom";
-import { EventCard } from "./ComponentUtils";
+import { EventCard } from "../utils/utils";
 import { useContext } from "react";
 import EventsViewPage from "./EventsViewPage";
-// import { ModalContext } from "./Modal";
 
 function ViewEvents({ type, ModalContext }) {
   const { openModal } = useContext(ModalContext);
@@ -18,7 +17,6 @@ function ViewEvents({ type, ModalContext }) {
 
   function handleEventClick(event) {
     openModal(<EventsViewPage event={event} />);
-    // setModalContent(<EventsViewPage event={event} />);
   }
 
   const events = [

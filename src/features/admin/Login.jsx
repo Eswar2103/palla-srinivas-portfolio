@@ -2,8 +2,8 @@ import { useRef, useState, useEffect } from "react";
 import { toast } from "react-toastify";
 import { Form, useNavigate } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import { Loading } from "../ui/utils";
-import LoadingScreen from "../components/LoadingScreen";
+import { LoadingScreen } from "../../features/utils/utils";
+import { LoadingButton } from "../../features/utils/utils";
 
 function Login() {
   const [showPassword, setShowPassword] = useState(false);
@@ -75,13 +75,11 @@ function Login() {
           </div>
         </div>
         <div className="flex justify-center mt-8">
-          <button
-            className={`cursor-pointer font-bold text-black px-3 py-2 bg-amber-400 rounded-lg hover:bg-amber-500 disabled:opacity-70 disabled:cursor-not-allowed`}
-            type="submit"
-            disabled={isLoading}
-          >
-            {isLoading ? <Loading text="Logging in" /> : "Login"}
-          </button>
+          <LoadingButton
+            text1="Logging in..."
+            text2="Login"
+            isLoading={isLoading}
+          />
         </div>
       </Form>
     </div>

@@ -1,7 +1,7 @@
 import { Form } from "react-router-dom";
 import { useRef, useState } from "react";
 import { storeData } from "../utils/utils";
-import { Loading } from "../ui/utils";
+import { LoadingButton } from "../features/utils/utils";
 
 function GrevienceForm() {
   const [description, setDescription] = useState("");
@@ -145,13 +145,11 @@ function GrevienceForm() {
           </div>
         </div>
         <div className="input-base">
-          <button
-            className={`rounded-xl w-[15rem] sm:w-[30rem] font-bold border border-black/40 px-3 py-1 bg-amber-400 left-2 ${isLoading ? "cursor-not-allowed" : "hover:bg-amber-500"}`}
-            type="submit"
-            disabled={isLoading}
-          >
-            {isLoading ? <Loading /> : "Submit"}
-          </button>
+          <LoadingButton
+            text1="Submitting..."
+            text2="Submit"
+            isLoading={isLoading}
+          />
         </div>
       </Form>
     </div>

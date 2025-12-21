@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { FaTimes } from "react-icons/fa";
 import Menu from "../components/Menu";
-import ResponsiveHeader from "../components/ResponsiveHeader";
+import ResponsiveHeader from "./ResponsiveHeader";
 
 function Header() {
   const [scroll, setScroll] = useState(4);
