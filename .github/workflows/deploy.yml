@@ -31,7 +31,7 @@ jobs:
       - name: Configure AWS credentials via OIDC
         uses: aws-actions/configure-aws-credentials@v4
         with:
-          role-to-assume: arn:aws:iam::242201303033::role/github-ci-palla-srinivas-rao 
+          role-to-assume: arn:aws:iam::242201303033:role/github-ci-palla-srinivas-rao 
           aws-region: ap-south-2
 
       - name: Clean S3 bucket (keep photos)
