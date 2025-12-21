@@ -1,0 +1,51 @@
+name: Deploy App
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  id-token: write   # REQUIRED for OIDC
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build React app
+        run: npm run build
+
+      - name: Configure AWS credentials via OIDC
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: arn:aws:iam::${{ secrets.ID }}:role/github-react-deploy
+          aws-region: ap-south-1
+
+      - name: Clean S3 bucket (keep photos)
+        run: |
+          aws s3 rm s3://${{ secrets.BUCKET_NAME }} \
+            --recursive \
+            --exclude "photos/*"
+
+      - name: Upload build to S3
+        run: |
+          aws s3 sync build/ s3://${{ secrets.BUCKET_NAME }} --delete
+
+      - name: Invalidate CloudFront
+        run: |
+          aws cloudfront create-invalidation \
+            --distribution-id ${{ secrets.DISTRIBUTION_ID }} \
+            --paths "/*"
