@@ -21,7 +21,7 @@ function EventsViewPage({ event }) {
       {photos.length > 0 && (
         <p className="text-[#9f1a1a] mb-3 font-bold">Event photos:</p>
       )}
-      <PhotoView photos={photos} />
+      <PhotoView photos={photos} alt={title} />
     </section>
   );
 }

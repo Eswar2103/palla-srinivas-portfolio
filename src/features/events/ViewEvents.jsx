@@ -112,7 +112,7 @@ function ViewEvents({ type, ModalContext }) {
             className="border-none rounded-t-2xl rounded-b-lg flex flex-col justify-between bg-stone-200 hover:bg-amber-400 overflow-hidden hover:-translate-y-1.25 transform-transition duration-300"
             onClick={() => handleEventClick(event)}
           >
-            <img src={e.mainImage} className="w-auto h-50 mb-2" />
+            <img src={e.mainImage} alt={e.title} className="w-auto h-50 mb-2" />
             {/* <a href={event.link} target="_blank" rel="noopener noreferrer">
             {event.title}
           </a> */}
