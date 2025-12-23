@@ -27,7 +27,7 @@ function GrevienceForm() {
     setIsLoading(true);
     const formData = new FormData(e.target);
     const { name, phone, type, description } = Object.fromEntries(
-      formData.entries()
+      formData.entries(),
     );
     const params = {
       method: "POST",
@@ -83,7 +83,7 @@ function GrevienceForm() {
             placeholder="Phone Number"
             onInvalid={(e) =>
               e.target.setCustomValidity(
-                "Please enter a valid 10-digit phone number"
+                "Please enter a valid 10-digit phone number",
               )
             }
             onChange={(e) => e.target.setCustomValidity("")}

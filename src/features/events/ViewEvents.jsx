@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { EventCard } from "../utils/utils";
 import { useContext } from "react";
 import EventsViewPage from "./EventsViewPage";
 
@@ -118,7 +117,7 @@ function ViewEvents({ type, ModalContext }) {
           </a> */}
             <div className="px-2 mb-2">
               <p className="capitalize px-2 mb-3">{e.description}</p>
-              <p className="flex items-end justify-end px-2 text-black/60">
+              <p className="flex items-end justify-end px-2 text-black/80">
                 {e.publishedOn}
               </p>
             </div>
@@ -126,6 +125,31 @@ function ViewEvents({ type, ModalContext }) {
         ))}
       </div>
     </section>
+  );
+}
+
+function EventCard({ event, modalClick }) {
+  return (
+    <div
+      className="flex flex-col sm:flex-row justify-center items-center"
+      onClick={modalClick}
+    >
+      <div className="border border-none bg-white w-[350px] sm:w-150 flex flex-col sm:flex-row group/event cursor-pointer hover:translate-y-[-5px] transform-transition duration-300">
+        <img
+          src={event.mainImage}
+          alt={event.title}
+          className="h-40 w-auto p-2"
+        />
+        <div className="flex flex-col justify-between px-3 py-2 gap-y-2">
+          <p className="font-extrabold group-hover/event:text-[#760b0b]">
+            {event.description}
+          </p>
+          <p className="text-stone-800/80 group-hover/event:text-[#760b0b] font-bold text-sm font-mono flex justify-end sm:justify-start">
+            {event.publishedOn}
+          </p>
+        </div>
+      </div>
+    </div>
   );
 }
 

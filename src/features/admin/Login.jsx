@@ -33,7 +33,7 @@ function Login() {
     }
     const res = await fetch(
       "https://18en4k39hg.execute-api.ap-south-2.amazonaws.com/default/login",
-      { method: "POST", headers: { "x-password": password } }
+      { method: "POST", headers: { "x-password": password } },
     );
     const json = await res.json();
     setIsLoading(false);

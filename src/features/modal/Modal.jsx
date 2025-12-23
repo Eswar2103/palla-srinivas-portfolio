@@ -58,9 +58,9 @@ function Window({ ModalContext }) {
   if (!isModalOpen) return null;
 
   return createPortal(
-    <div className="fixed inset-0 bg-black/50 backdrop-blur-xs z-50">
+    <div className="fixed inset-0 bg-black/80 backdrop-blur-xs z-50">
       <div
-        className="fixed px-4 sm:px-10 py-15 sm:py-20 w-[90%] sm:w-[60%] max-h-[88vh] sm:max-h-[95vh] flex justify-center top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 bg-white/80 overflow-auto z-100"
+        className="fixed px-4 sm:px-10 py-15 sm:py-20 w-[90%] sm:w-[60%] max-h-[88vh] sm:max-h-[95vh] flex justify-center top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 bg-white/60 overflow-auto z-100"
         ref={ref}
       >
         <div
@@ -72,7 +72,7 @@ function Window({ ModalContext }) {
         {modalContent}
       </div>
     </div>,
-    document.body
+    document.body,
   );
 }
 

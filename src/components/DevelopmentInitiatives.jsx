@@ -14,7 +14,11 @@ function DevelopmentInitiatives() {
       <section className="grid sm:grid-cols-2 grid-cols-1 grid-rows-3 gap-x-4 gap-y-4">
         <div className="bg-gray-200 shadow py-2 px-6 rounded-xl row-span-2">
           <p className="font-bold mt-4 text-xl sm:text-[18px] mb-4 flex items-center gap-x-3">
-            <img src="/icons/infra.png" alt="Infrastructure Projects" className="w-12 h-12" />
+            <img
+              src="/icons/infra.png"
+              alt="Infrastructure Projects"
+              className="w-12 h-12"
+            />
             Infrastructure Projects:
           </p>
           <ul className="text-md sm:text-[16px]">
@@ -35,7 +39,11 @@ function DevelopmentInitiatives() {
         </div>
         <div className="bg-gray-200 shadow py-2 px-6 rounded-xl">
           <p className="font-bold mt-4 text-xl sm:text-[18px] mb-4 flex items-center gap-x-3">
-            <img src="/icons/statue.png" alt="Statue Erection" className="w-12 h-12" />
+            <img
+              src="/icons/statue.png"
+              alt="Statue Erection"
+              className="w-12 h-12"
+            />
             Statue Erection:
           </p>
           <ul className="text-md sm:text-[16px]">
@@ -45,7 +53,11 @@ function DevelopmentInitiatives() {
         </div>
         <div className="bg-gray-200 shadow py-2 px-6 rounded-xl">
           <p className="font-bold mt-4  text-xl sm:text-[18px] mb-4 flex items-center gap-x-3">
-            <img src="/icons/power.png" alt="Power Line Modifications" className="w-12 h-12" />
+            <img
+              src="/icons/power.png"
+              alt="Power Line Modifications"
+              className="w-12 h-12"
+            />
             Power Line Modifications:
           </p>
           <ul className="text-md sm:text-[16px]">
@@ -56,7 +68,11 @@ function DevelopmentInitiatives() {
         </div>
         <div className="bg-gray-200 shadow py-2 px-6 rounded-xl">
           <p className="font-bold mt-4  text-xl sm:text-[18px] mb-4 flex items-center gap-x-3">
-            <img src="/icons/land_rights.png" alt="Land Rights" className="w-12 h-12" />
+            <img
+              src="/icons/land_rights.png"
+              alt="Land Rights"
+              className="w-12 h-12"
+            />
             Land Rights:
           </p>
           <ul className="text-md sm:text-[16px]">
@@ -67,7 +83,11 @@ function DevelopmentInitiatives() {
         </div>
         <div className="bg-gray-200 shadow py-2 px-6 rounded-xl">
           <div className="flex items-center gap-x-3">
-            <img src="/icons/womens_hostel.png" alt="Working Women's Hostel" className="w-12 h-12" />
+            <img
+              src="/icons/womens_hostel.png"
+              alt="Working Women's Hostel"
+              className="w-12 h-12"
+            />
             <p className="font-bold mt-4 text-xl sm:text-[18px] mb-4 text-center">
               Working Women&#39;s Hostel:
             </p>

@@ -39,7 +39,7 @@ function Corousel() {
       },
       {
         threshold: 0.5,
-      }
+      },
     );
 
     if (corouselRef.current) {

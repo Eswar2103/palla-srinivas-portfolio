@@ -30,10 +30,7 @@ function Header() {
       <header
         className={`sticky top-0 z-50 flex items-center justify-between bg-amber-400 px-6 py-${scroll} duration-300 transition-all ease-linear`}
       >
-        <Link
-          to="/"
-          aria-label="Go to Telugu Desam Party homepage"
-        >
+        <Link to="/" aria-label="Go to Telugu Desam Party homepage">
           <img
             className={`h-11 w-11 duration-300 transition-all rounded-xl`}
             src="/images/tdp-logo.jpg"

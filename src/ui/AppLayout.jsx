@@ -16,7 +16,11 @@ function AppLayout() {
   return (
     <>
       <Header />
-      <div role="main" id="main-content" className="overflow-auto bg-yellow-300/10 min-h-[550px]">
+      <div
+        role="main"
+        id="main-content"
+        className="overflow-auto bg-yellow-300/10 min-h-[550px]"
+      >
         <ScrollToTop />
         <Outlet />
       </div>
