@@ -135,7 +135,11 @@ function EventCard({ event, modalClick }) {
       onClick={modalClick}
     >
       <div className="border border-none bg-white w-[350px] sm:w-150 flex flex-col sm:flex-row group/event cursor-pointer hover:translate-y-[-5px] transform-transition duration-300">
-        <img src={event.mainImage} alt={event.title} className="h-40 w-auto p-2" />
+        <img
+          src={event.mainImage}
+          alt={event.title}
+          className="h-40 w-auto p-2"
+        />
         <div className="flex flex-col justify-between px-3 py-2 gap-y-2">
           <p className="font-extrabold group-hover/event:text-[#760b0b]">
             {event.description}

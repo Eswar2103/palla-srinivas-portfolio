@@ -23,13 +23,13 @@ function AddGalleryImages() {
             file = await compressImage(file);
           }
           return file;
-        })
+        }),
       );
       setFiles(f);
     } catch (err) {
       console.error("Error during image handling:", err);
       setError(
-        "An error occurred while processing the images, please check and upload again."
+        "An error occurred while processing the images, please check and upload again.",
       );
       return;
     }

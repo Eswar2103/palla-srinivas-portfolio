@@ -23,7 +23,7 @@ const AddEvents = lazy(() => import("./features/admin/AddEvents"));
 const Login = lazy(() => import("./features/admin/Login"));
 const Admin = lazy(() => import("./ui/Admin"));
 const AddGalleryImages = lazy(
-  () => import("./features/admin/AddGalleryImages")
+  () => import("./features/admin/AddGalleryImages"),
 );
 
 function App() {
