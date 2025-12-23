@@ -15,7 +15,6 @@ function Modal({ children, ModalContext }) {
     return () => document.body.classList.remove("overflow-hidden");
   }, [isModalOpen]);
 
-  console.log("before Modal is open:", isModalOpen);
   function openModal(element) {
     setIsModalOpen(true);
     setModalContent(element);
@@ -42,7 +41,6 @@ function Modal({ children, ModalContext }) {
 
 function Window({ ModalContext }) {
   const { isModalOpen, closeModal, modalContent } = useContext(ModalContext);
-  console.log("Modal is open:", isModalOpen);
   const ref = useRef();
 
   useEffect(() => {

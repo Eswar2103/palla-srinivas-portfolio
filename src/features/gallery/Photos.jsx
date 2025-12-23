@@ -74,16 +74,17 @@ function Photos({ type, ModalContext }) {
 
   return (
     <section>
-      <div className="w-full h-[100px] font-extrabold tracking-wider text-5xl flex justify-center items-center text-amber-500">
+      <div className="w-full h-25 font-extrabold tracking-wider text-5xl flex justify-center items-center text-amber-500">
         Gallery
       </div>
       <div className="grid sm:grid-cols-3 place-items-center px-5 sm:px-40 gap-y-14 my-6">
-        {images.map((img) => {
+        {images.map((img, i) => {
           return (
             <ImageCard
               key={img.src[0]}
               img={img}
               handleImageClick={handleImageClick}
+              alt={`Gallery image ${i + 1}`}
             />
           );
         })}
@@ -92,15 +93,16 @@ function Photos({ type, ModalContext }) {
   );
 }
 
-function ImageCard({ img, handleImageClick }) {
+function ImageCard({ img, handleImageClick, alt }) {
   return (
     <div
-      className="relative rounded-2xl w-[350px] h-[200px] group overflow-hidden"
+      className="relative rounded-2xl w-[350px] h-50 group overflow-hidden"
       onClick={() => handleImageClick(img)}
     >
       <img
         className="w-full h-full object-cover rounded-2xl transition-transform duration-500 group-hover:scale-110"
         src={img.src[0]}
+        alt={alt}
       />
       <div className="absolute bottom-0 left-0 text-white font-bold w-full px-3 py-3 text-md bg-gradient-to-t from-black/80 via-black/80 to-transparent rounded-b-2xl">
         <p>{img.description}</p>

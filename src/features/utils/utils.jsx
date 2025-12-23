@@ -7,13 +7,25 @@ function SocialMediaLinks({ insta, fb, x }) {
     <>
       {/* <p className="text-xl mb-3">Follow {entity}</p> */}
       <div className="flex gap-8 sm:gap-6 text-3xl">
-        <SocialMediaButton onClick={() => window.open(x, "_blank")}>
+        <SocialMediaButton
+          href={x}
+          ariaLabel="Open palla srinivas rao X profile"
+          title="Open X"
+        >
           <FaSquareXTwitter />
         </SocialMediaButton>
-        <SocialMediaButton onClick={() => window.open(fb, "_blank")}>
+        <SocialMediaButton
+          href={fb}
+          ariaLabel="Open palla srinivas rao Facebook profile"
+          title="Open Facebook"
+        >
           <FaFacebookSquare className="text-blue-700" />
         </SocialMediaButton>
-        <SocialMediaButton onClick={() => window.open(insta, "_blank")}>
+        <SocialMediaButton
+          href={insta}
+          ariaLabel="Open palla srinivas rao Instagram profile"
+          title="Open Instagram"
+        >
           <FaSquareInstagram className="text-pink-700" />
         </SocialMediaButton>
       </div>
@@ -21,14 +33,35 @@ function SocialMediaLinks({ insta, fb, x }) {
   );
 }
 
-function SocialMediaButton({ children, onClick }) {
+function SocialMediaButton({ children, href, ariaLabel, title }) {
+  const baseClass = "text-3xl transition-all duration-200 hover:scale-120";
+  if (href) {
+    const srText = `${ariaLabel || title || "Open link"} (opens in a new tab)`;
+    return (
+      <a
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label={ariaLabel}
+        title={title}
+        className={`${baseClass} cursor-pointer focus:outline-none focus:ring-2 focus:ring-red-800 rounded`}
+      >
+        {children}
+        <span className="sr-only">{srText}</span>
+      </a>
+    );
+  }
+  // Fallback non-interactive element when no href provided
+  const fallbackText = ariaLabel || title || "Unavailable";
   return (
-    <button
-      onClick={onClick}
-      className="text-3xl cursor-pointer transition-all duration-200 hover:scale-120"
+    <span
+      aria-disabled="true"
+      title={title}
+      className={`${baseClass} opacity-50 cursor-not-allowed select-none`}
     >
       {children}
-    </button>
+      <span className="sr-only">{fallbackText}</span>
+    </span>
   );
 }
 
@@ -61,7 +94,7 @@ function EventCard({ event, modalClick }) {
       className="flex flex-col sm:flex-row justify-center items-center"
       onClick={modalClick}
     >
-      <div className="border border-none bg-white w-[350px] sm:w-[600px] flex flex-col sm:flex-row group/event cursor-pointer hover:translate-y-[-5px] transform-transition duration-300">
+      <div className="border border-none bg-white w-[350px] sm:w-150 flex flex-col sm:flex-row group/event cursor-pointer hover:translate-y-[-5px] transform-transition duration-300">
         <img src={event.mainImage} className="h-40 w-auto p-2" />
         <div className="flex flex-col justify-between px-3 py-2 gap-y-2">
           <p className="font-extrabold group-hover/event:text-[#760b0b]">

@@ -106,9 +106,10 @@ function Corousel() {
             >
               <img
                 src={images[corouselImageIndex].url}
-                alt="corousel image"
+                alt={`corousel image ${index + 1}`}
                 aria-hidden={index === corouselImageIndex}
-                className="h-[250px] sm:h-[350px] md:h-[700px] w-[1300px] sm:rounded-3xl"
+                className="h-[250px] sm:h-[350px] md:h-175 w-325 sm:rounded-3xl"
+                fetchPriority="high"
               />
             </div>
           ))}
@@ -118,7 +119,7 @@ function Corousel() {
         aria-label="Previous slide"
         role="button"
         onClick={() => handleCorouselLeft()}
-        className="hidden group-hover:block absolute -translate-x-0 translate-y-[-50%] top-[50%] z-10 left-5 text-2xl rounded-2xl bg-black/50 p-[5px] text-stone-400 hover:text-stone-100 cursor-pointer"
+        className="hidden group-hover:block absolute translate-x-0 translate-y-[-50%] top-[50%] z-10 left-5 text-2xl rounded-2xl bg-black/50 p-[5px] text-stone-400 hover:text-stone-100 cursor-pointer"
       >
         <BsChevronCompactLeft />
       </button>
@@ -126,7 +127,7 @@ function Corousel() {
         aria-label="Next slide"
         role="button"
         onClick={() => handlerCorouselRight()}
-        className="hidden group-hover:block absolute -translate-x-0 translate-y-[-50%] top-[50%] z-10 right-5 text-2xl rounded-2xl bg-black/50 p-[5px] text-stone-400 hover:text-stone-100 cursor-pointer"
+        className="hidden group-hover:block absolute translate-x-0 translate-y-[-50%] top-[50%] z-10 right-5 text-2xl rounded-2xl bg-black/50 p-[5px] text-stone-400 hover:text-stone-100 cursor-pointer"
       >
         <BsChevronCompactRight />
       </button>

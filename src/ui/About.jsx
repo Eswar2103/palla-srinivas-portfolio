@@ -29,6 +29,7 @@ function About() {
           <img
             className="rounded-full h-50 w-50 sm:h-95 sm:w-100 mb-10"
             src="/images/media.jpg"
+            alt="Palla Srinivas Rao"
           />
           <div>
             <p className="text-xl mb-3">Follow on</p>

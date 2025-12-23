@@ -64,7 +64,7 @@ function News() {
                 window.open(n.link, "_blank");
               }}
             >
-              <img src={n.image} className="w-auto h-[200px] mb-2" />
+              <img src={n.image} alt={n.title} className="w-auto h-50 mb-2" />
               <p
                 // href={n.link}
                 // target="_blank"

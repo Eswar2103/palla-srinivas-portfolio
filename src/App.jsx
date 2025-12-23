@@ -9,8 +9,6 @@ import AppLayout from "./ui/AppLayout";
 import Error from "./ui/Error";
 import { LoadingScreen } from "./features/utils/utils";
 import ErrorPage from "./ui/ErrorPage";
-import Admin from "./ui/Admin";
-import Login from "./features/admin/Login";
 import { Authenticated } from "./utils/utils";
 
 const Home = lazy(() => import("./ui/Home"));
@@ -22,6 +20,8 @@ const Events = lazy(() => import("./features/events/Events"));
 const Gallery = lazy(() => import("./features/gallery/Gallery"));
 const AddNews = lazy(() => import("./features/admin/AddNews"));
 const AddEvents = lazy(() => import("./features/admin/AddEvents"));
+const Login = lazy(() => import("./features/admin/Login"));
+const Admin = lazy(() => import("./ui/Admin"));
 const AddGalleryImages = lazy(
   () => import("./features/admin/AddGalleryImages")
 );
