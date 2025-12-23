@@ -19,3 +19,7 @@
 .pulse-border:hover {
   animation: borderPulse 1.8s ease-in-out infinite;
 }
+
+.play-fair {
+  font-family: "Playfair Display", serif;
+}

@@ -16,7 +16,7 @@ function Speeches() {
       description: "Speech in ananthapur meeting about supex six.",
     },
     {
-      url: "https://www.youtube.com/embed/nN86yEKxkPU?si=B8ufFXoiVo55WYRL",
+      url: "https://www.youtube-nocookie.com/embed/nN86yEKxkPU?si=B8ufFXoiVo55WYRL",
       title: "ananthapur speech",
       description:
         "Palla Srinivasa Rao Powerful Speech at TDP Mahanadu 2025 Public Meeting.",
