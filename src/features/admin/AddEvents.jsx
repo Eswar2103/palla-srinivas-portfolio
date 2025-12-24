@@ -21,7 +21,7 @@ function AddEvents() {
       setMainPhotoError(null);
       if (!["image/jpeg", "image/png", "image/jpg"].includes(data.type)) {
         setMainPhotoError(
-          "Please select a valid image file (jpg or png or jpeg)",
+          "Please select a valid image file (jpg or png or jpeg)"
         );
         return;
       }
@@ -34,7 +34,7 @@ function AddEvents() {
     } catch (error) {
       console.error("Error during image handling:", error);
       setMainPhotoError(
-        "An error occurred while processing the cover photo, please check and upload again.",
+        "An error occurred while processing the cover photo, please check and upload again."
       );
       return;
     }
@@ -56,13 +56,13 @@ function AddEvents() {
             file = await compressImage(file);
           }
           return file;
-        }),
+        })
       );
       setSubFiles(f);
     } catch (error) {
       console.error("Error during sub image handling:", error);
       setSubPhotosError(
-        "An error occurred while processing sub photos, please check and upload again.",
+        "An error occurred while processing sub photos, please check and upload again."
       );
       return;
     }
@@ -223,6 +223,13 @@ function AddEvents() {
             isLoading={isLoading}
           />
         </div>
+        <button
+          type="button"
+          className="mt-8 ml-4 text-sm sm:text-md text-blue-600 underline"
+          onClick={() => navigate("/admin")}
+        >
+          Go Back to admin Panel
+        </button>
       </Form>
     </div>
   );

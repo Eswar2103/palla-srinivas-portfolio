@@ -137,6 +137,13 @@ function AddNews() {
             isLoading={isLoading}
           />
         </div>
+        <button
+          type="button"
+          className="mt-8 ml-4 text-sm sm:text-md text-blue-600 underline"
+          onClick={() => navigate("/admin")}
+        >
+          Go Back to admin Panel
+        </button>
       </Form>
     </div>
   );
