@@ -8,6 +8,9 @@ async function storeData(url, params) {
       toast.error("Unauthorized access, please login again");
       return "unauthorized";
     }
+    if (!response.ok) {
+      throw new Error(`${response.status}`);
+    }
     const json = await response.json();
     if (json.error) {
       toast.error(json.error);
@@ -18,6 +21,26 @@ async function storeData(url, params) {
   } catch (err) {
     console.error("Error occurred while submitting data:", err);
     toast.error("Failed to submit data");
+  }
+}
+
+async function getData(url, params = { method: "GET" }) {
+  try {
+    const response = await fetch(url, params);
+    // if (!response.ok) {
+    //   throw new Error(`HTTP error! status: ${response.status}`);
+    // }
+    const json = await response.json();
+    console.log("json-----:", json);
+    if (json.result) {
+      return json.result;
+    } else if (json.error) {
+      throw new Error(json.error);
+    }
+  } catch (err) {
+    console.error("Error occurred while fetching data:", err);
+    toast.error("Failed to fetch data");
+    return null;
   }
 }
 
@@ -47,4 +70,18 @@ function Authenticated() {
   }
 }
 
-export { storeData, compressImage, Authenticated };
+function computedDescription(description, maxLength = 90) {
+  if (description.length <= maxLength) {
+    return description;
+  }
+  const truncated = description.slice(0, maxLength) + "...";
+  return truncated;
+}
+
+export {
+  storeData,
+  compressImage,
+  Authenticated,
+  computedDescription,
+  getData,
+};
