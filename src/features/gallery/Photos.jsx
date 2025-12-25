@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import PhotoView from "./PhotoView";
 import { Link } from "react-router-dom";
+import { computedDescription } from "../../utils/utils";
 
 function Photos({ type, ModalContext }) {
   const { openModal } = useContext(ModalContext);
@@ -12,7 +13,8 @@ function Photos({ type, ModalContext }) {
   const images = [
     {
       src: ["/images/palla-news1.png", "/images/palla-news2.png"],
-      description: "Test description for image gallery.",
+      description:
+        "Test description for image gallery. Test description for image gallery. Test description for image gallery.",
       publishedOn: "Nov 15, 2025",
     },
     {
@@ -104,8 +106,8 @@ function ImageCard({ img, handleImageClick, alt }) {
         src={img.src[0]}
         alt={alt}
       />
-      <div className="absolute bottom-0 left-0 text-white font-bold w-full px-3 py-3 text-md bg-gradient-to-t from-black/80 via-black/80 to-transparent rounded-b-2xl">
-        <p>{img.description}</p>
+      <div className="absolute bottom-0 left-0 text-white font-bold w-full px-3 py-3 text-md bg-linear-to-t from-black/80 via-black/80 to-transparent rounded-b-2xl">
+        <p>{computedDescription(img.description, 40)}</p>
         <p>{img.publishedOn}</p>
       </div>
     </div>
