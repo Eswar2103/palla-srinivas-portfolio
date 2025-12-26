@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { BsChevronCompactLeft, BsChevronCompactRight } from "react-icons/bs";
 
-function PhotoView({ photos, description, alt }) {
+function PhotoViewCard({ photos, description, alt }) {
   const [index, setImageIndex] = useState(0);
   if (photos.length === 0) return null;
   const imageLength = photos.length - 1;
@@ -32,7 +32,7 @@ function PhotoView({ photos, description, alt }) {
             alt={alt}
           />
         </div>
-        <p className="text-center mt-3">{description}</p>
+        <p className="text-center mt-3 font-bold">{description}</p>
         {photos.length > 1 && (
           <>
             <button
@@ -58,4 +58,4 @@ function PhotoView({ photos, description, alt }) {
   );
 }
 
-export default PhotoView;
+export default PhotoViewCard;

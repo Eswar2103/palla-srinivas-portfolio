@@ -1,7 +1,7 @@
 import Corousel from "../components/Corousel";
 import Events from "../features/events/Events";
 import Impact from "../components/Impact";
-import News from "../components/News";
+import News from "../features/news/News";
 import Speeches from "../components/Speeches";
 
 function Home() {
@@ -10,7 +10,7 @@ function Home() {
       <Corousel />
       <Speeches />
       <Impact />
-      <News />
+      <News type="home" />
       <Events type="home" />
     </>
   );

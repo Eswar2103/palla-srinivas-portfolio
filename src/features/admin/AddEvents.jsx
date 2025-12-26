@@ -19,12 +19,6 @@ function AddEvents() {
       const data = e.target.files[0];
       if (!data) return;
       setMainPhotoError(null);
-      if (!["image/jpeg", "image/png", "image/jpg"].includes(data.type)) {
-        setMainPhotoError(
-          "Please select a valid image file (jpg or png or jpeg)",
-        );
-        return;
-      }
       let f = data;
       const size = f.size / (1024 * 1024);
       if (size.toFixed(2) > 2.5) {
@@ -34,7 +28,7 @@ function AddEvents() {
     } catch (error) {
       console.error("Error during image handling:", error);
       setMainPhotoError(
-        "An error occurred while processing the cover photo, please check and upload again.",
+        "An error occurred while processing the cover photo, please check and upload again."
       );
       return;
     }
@@ -48,21 +42,25 @@ function AddEvents() {
       if (data.length === 0) return;
       let compress = true;
       if (data.length < 3) compress = false;
+      let s = 1.5;
+      if (data.length > 3) {
+        s = 1;
+      }
       setSubPhotosError(null);
       const f = await Promise.all(
         data.map(async (file) => {
           const size = file.size / (1024 * 1024);
           if (size.toFixed(2) > 1.5 && compress) {
-            file = await compressImage(file);
+            file = await compressImage(file, s);
           }
           return file;
-        }),
+        })
       );
       setSubFiles(f);
     } catch (error) {
       console.error("Error during sub image handling:", error);
       setSubPhotosError(
-        "An error occurred while processing sub photos, please check and upload again.",
+        "An error occurred while processing sub photos, please check and upload again."
       );
       return;
     }
@@ -184,6 +182,7 @@ function AddEvents() {
             hidden
             accept="image/*"
             onChange={handleImage}
+            required
           />
           {file && <p className="ml-4 text-md font-bold">{file.name}</p>}
           {mainPhotoerror && (
@@ -223,6 +222,13 @@ function AddEvents() {
             isLoading={isLoading}
           />
         </div>
+        <button
+          type="button"
+          className="mt-8 ml-4 text-sm sm:text-md text-blue-600 underline"
+          onClick={() => navigate("/admin")}
+        >
+          Go Back to admin Panel
+        </button>
       </Form>
     </div>
   );

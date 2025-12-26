@@ -1,4 +1,4 @@
-function News() {
+function News({ data }) {
   const news = [
     {
       image: "/images/palla-news3.png",

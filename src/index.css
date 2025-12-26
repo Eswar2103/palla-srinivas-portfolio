@@ -24,7 +24,7 @@
 
   .grid-auto-fit {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 375px));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 350px));
   }
   .grid-auto-fit-speeches {
     display: grid;

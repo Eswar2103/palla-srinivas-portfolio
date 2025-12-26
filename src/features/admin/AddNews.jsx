@@ -14,10 +14,6 @@ function AddNews() {
     const data = e.target.files[0];
     if (!data) return;
     setError(null);
-    if (!["image/jpeg", "image/png", "image/jpg"].includes(data.type)) {
-      setError("Please select a valid image file (jpg or png or jpeg)");
-      return;
-    }
     let f = data;
     const size = f.size / (1024 * 1024);
     if (size.toFixed(2) > 2.5) {
@@ -137,6 +133,13 @@ function AddNews() {
             isLoading={isLoading}
           />
         </div>
+        <button
+          type="button"
+          className="mt-8 ml-4 text-sm sm:text-md text-blue-600 underline"
+          onClick={() => navigate("/admin")}
+        >
+          Go Back to admin Panel
+        </button>
       </Form>
     </div>
   );

@@ -6,30 +6,56 @@ import { LoadingButton } from "../../features/utils/utils";
 function AddGalleryImages() {
   const formRef = useRef(null);
   const navigate = useNavigate();
-  const [files, setFiles] = useState([]);
-  const [error, setError] = useState(null);
+  const [file, setFile] = useState([]);
+  const [subFiles, setSubFiles] = useState([]);
+  const [mainPhotoerror, setMainPhotoError] = useState(null);
+  const [subPhotoserror, setSubPhotosError] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
 
-  async function handleImages(e) {
+  async function handleImage(e) {
     try {
-      const files = e.target.files;
-      if (!files) return;
-      const data = Object.values(files);
-      setError(null);
+      const data = e.target.files[0];
+      if (!data) return;
+      setMainPhotoError(null);
+      let f = data;
+      const size = f.size / (1024 * 1024);
+      if (size.toFixed(2) > 2.5) {
+        f = await compressImage(f);
+      }
+      setFile(f);
+    } catch (error) {
+      console.error("Error during image handling:", error);
+      setMainPhotoError(
+        "An error occurred while processing the cover photo, please check and upload again."
+      );
+      return;
+    }
+  }
+
+  async function handleSubImages(e) {
+    try {
+      const images = e.target.files;
+      if (!images) return;
+      const data = Object.values(images);
+      setSubPhotosError(null);
+      let s = 1.5;
+      if (data.length > 3) {
+        s = 1;
+      }
       const f = await Promise.all(
         data.map(async (file) => {
           const size = file.size / (1024 * 1024);
           if (size.toFixed(2) > 2) {
-            file = await compressImage(file);
+            file = await compressImage(file, s);
           }
           return file;
-        }),
+        })
       );
-      setFiles(f);
+      setSubFiles(f);
     } catch (err) {
       console.error("Error during image handling:", err);
-      setError(
-        "An error occurred while processing the images, please check and upload again.",
+      setSubPhotosError(
+        "An error occurred while processing the images, please check and upload again."
       );
       return;
     }
@@ -38,15 +64,17 @@ function AddGalleryImages() {
   async function handleSubmit(e) {
     e.preventDefault();
     setIsLoading(true);
-    if (!files) {
-      setError("Please select a cover photo");
+    if (!subFiles) {
+      setSubPhotosError("Please select a cover photo");
       return;
     }
     const formData = new FormData(formRef.current);
     formData.delete("cover-photo");
+    formData.delete("sub-photo");
     formData.append("id", `${Date.now()}-${Math.floor(Math.random() * 10000)}`);
-    files.forEach((f) => {
-      formData.append(`photos`, f, f.name);
+    formData.append("mainPhoto", file, file.name);
+    subFiles.forEach((f) => {
+      formData.append(`subPhotos`, f, f.name);
     });
     const url =
       "https://18en4k39hg.execute-api.ap-south-2.amazonaws.com/default/StoreNewsImages";
@@ -60,8 +88,9 @@ function AddGalleryImages() {
     };
     const res = await storeData(url, params);
     formRef.current.reset();
-    setFiles([]);
+    setSubFiles([]);
     setIsLoading(false);
+    setFile(null);
     if (res === "unauthorized") {
       navigate("/admin", { replace: true });
     }
@@ -94,7 +123,7 @@ function AddGalleryImages() {
           </label>
           <input name="publishedDate" type="date" className="input" required />
         </div>
-        <div className="flex flex-col justify-center items-center">
+        <div className="flex flex-col justify-center items-center mb-6">
           <label
             htmlFor="cover-photo"
             className="text-sm sm:text-[16px] border-none p-2 rounded-lg bg-stone-300 hover:bg-stone-400 cursor-pointer"
@@ -106,17 +135,40 @@ function AddGalleryImages() {
             id="cover-photo"
             type="file"
             hidden
+            accept="image/*"
+            onChange={handleImage}
+            required
+          />
+          {file && <p className="ml-4 text-md font-bold">{file.name}</p>}
+          {mainPhotoerror && (
+            <p className="text-red-500 text-sm">{mainPhotoerror}</p>
+          )}
+        </div>
+        <div className="flex flex-col justify-center items-center">
+          <label
+            htmlFor="sub-photo"
+            className="text-sm sm:text-[16px] border-none p-2 rounded-lg bg-stone-300 hover:bg-stone-400 cursor-pointer"
+          >
+            upload sub photos
+          </label>
+          <input
+            name="sub-photo"
+            id="sub-photo"
+            type="file"
+            hidden
             multiple
             accept="image/*"
-            onChange={handleImages}
+            onChange={handleSubImages}
           />
-          {files &&
-            files.map((f, idx) => (
+          {subFiles &&
+            subFiles.map((f, idx) => (
               <p key={idx} className="ml-4 text-md font-bold">
                 {f.name}
               </p>
             ))}
-          {error && <p className="text-red-500 text-sm">{error}</p>}
+          {subPhotoserror && (
+            <p className="text-red-500 text-sm">{subPhotoserror}</p>
+          )}
         </div>
         <div className="flex justify-center mt-8">
           <LoadingButton
@@ -125,6 +177,13 @@ function AddGalleryImages() {
             isLoading={isLoading}
           />
         </div>
+        <button
+          type="button"
+          className="mt-8 ml-4 text-sm sm:text-md text-blue-600 underline"
+          onClick={() => navigate("/admin")}
+        >
+          Go Back to admin Panel
+        </button>
       </Form>
     </div>
   );
