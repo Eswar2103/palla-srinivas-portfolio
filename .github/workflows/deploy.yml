@@ -41,15 +41,15 @@ jobs:
           cd dist
           ls -la
 
-      - name: Clean S3 bucket (keep photos)
+      - name: Clean S3 bucket (keep admin photos)
         run: |
-          aws s3 rm s3://${{ secrets.BUCKET_NAME }}/web \
+          aws s3 rm s3://${{ secrets.BUCKET_NAME }} \
             --recursive \
-            --exclude "photos/*"
+            --exclude "admin/*"
 
       - name: Upload build to S3
         run: |
-          aws s3 sync dist/ s3://${{ secrets.BUCKET_NAME }}/web --delete
+          aws s3 sync dist/ s3://${{ secrets.BUCKET_NAME }} --delete
 
       - name: Invalidate CloudFront
         run: |
