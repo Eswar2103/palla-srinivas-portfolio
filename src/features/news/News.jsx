@@ -6,7 +6,6 @@ import Pagination from "../../components/Pagination";
 import { LoadingScreen } from "../utils/utils";
 
 function News({ type }) {
-  console.log("type----:", type);
   const [data, setData] = useState(null);
   const [nextKey, setNextKey] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
@@ -23,11 +22,9 @@ function News({ type }) {
         method: "GET",
         headers,
       });
-      console.log("response---:", response);
       if (response?.Items && response.Items.length > 0) {
         setData(response.Items);
       }
-      console.log("response----:", response);
       if (response.LastEvaluatedKey) {
         setNextKey(response.LastEvaluatedKey);
       } else {

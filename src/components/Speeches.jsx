@@ -8,20 +8,20 @@ const ModalContext = createContext();
 function Speeches() {
   const speeches = [
     {
-      url: "https://www.youtube-nocookie.com/embed/HSdz_9mQa4c?si=TKIJfhbjRodCBQrI",
+      url: "https://www.youtube.com/embed/HSdz_9mQa4c?si=TKIJfhbjRodCBQrI",
       title: "ananthapur speech",
       description: "Speech in ananthapur meeting about supex six.",
       thumbnail: "/images/video3-thumbnail.png",
     },
     {
-      url: "https://www.youtube-nocookie.com/embed/nN86yEKxkPU?si=B8ufFXoiVo55WYRL",
+      url: "https://www.youtube.com/embed/nN86yEKxkPU?si=B8ufFXoiVo55WYRL",
       title: "ananthapur speech",
       description:
         "Palla Srinivasa Rao Powerful Speech at TDP Mahanadu 2025 Public Meeting.",
       thumbnail: "/images/video1-thumbnail.png",
     },
     {
-      url: "https://www.youtube-nocookie.com/embed/YD8grlYJghg?si=uOBmKUiUOD9-rViA",
+      url: "https://www.youtube.com/embed/YD8grlYJghg?si=uOBmKUiUOD9-rViA",
       title: "mahanadu speech",
       description:
         "Speech in mahanadu about the six principle's introduced by Nara Lokesh.",
