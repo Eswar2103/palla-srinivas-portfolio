@@ -14,10 +14,6 @@ function AddNews() {
     const data = e.target.files[0];
     if (!data) return;
     setError(null);
-    if (!["image/jpeg", "image/png", "image/jpg"].includes(data.type)) {
-      setError("Please select a valid image file (jpg or png or jpeg)");
-      return;
-    }
     let f = data;
     const size = f.size / (1024 * 1024);
     if (size.toFixed(2) > 2.5) {

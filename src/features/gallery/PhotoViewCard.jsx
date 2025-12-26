@@ -32,7 +32,7 @@ function PhotoViewCard({ photos, description, alt }) {
             alt={alt}
           />
         </div>
-        <p className="text-center mt-3">{description}</p>
+        <p className="text-center mt-3 font-bold">{description}</p>
         {photos.length > 1 && (
           <>
             <button

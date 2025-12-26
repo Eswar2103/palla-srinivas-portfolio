@@ -88,7 +88,7 @@ function NewsCard({ data }) {
       key={data.publishedOn}
       className="border-none rounded-b-2xl px-2 py-2 flex flex-col justify-between bg-stone-300 hover:bg-amber-400 hover:scale-105 duration-300 cursor-pointer"
       onClick={() => {
-        window.open(data.link, "_blank");
+        window.open(data.url, "_blank");
       }}
     >
       <img src={data.photo} alt={data.title} className="w-auto h-40 mb-2" />

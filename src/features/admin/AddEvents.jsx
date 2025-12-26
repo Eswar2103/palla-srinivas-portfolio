@@ -19,12 +19,6 @@ function AddEvents() {
       const data = e.target.files[0];
       if (!data) return;
       setMainPhotoError(null);
-      if (!["image/jpeg", "image/png", "image/jpg"].includes(data.type)) {
-        setMainPhotoError(
-          "Please select a valid image file (jpg or png or jpeg)"
-        );
-        return;
-      }
       let f = data;
       const size = f.size / (1024 * 1024);
       if (size.toFixed(2) > 2.5) {
@@ -48,12 +42,16 @@ function AddEvents() {
       if (data.length === 0) return;
       let compress = true;
       if (data.length < 3) compress = false;
+      let s = 1.5;
+      if (data.length > 3) {
+        s = 1;
+      }
       setSubPhotosError(null);
       const f = await Promise.all(
         data.map(async (file) => {
           const size = file.size / (1024 * 1024);
           if (size.toFixed(2) > 1.5 && compress) {
-            file = await compressImage(file);
+            file = await compressImage(file, s);
           }
           return file;
         })
@@ -184,6 +182,7 @@ function AddEvents() {
             hidden
             accept="image/*"
             onChange={handleImage}
+            required
           />
           {file && <p className="ml-4 text-md font-bold">{file.name}</p>}
           {mainPhotoerror && (

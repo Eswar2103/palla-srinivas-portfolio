@@ -108,7 +108,7 @@ function ViewGallery({ type, ModalContext }) {
 function ImageCard({ img, handleImageClick, alt }) {
   return (
     <div
-      className="relative rounded-2xl w-[350px] h-50 group overflow-hidden"
+      className="relative rounded-2xl w-[380px] h-60 group overflow-hidden"
       onClick={() => handleImageClick(img)}
     >
       <img
@@ -117,7 +117,7 @@ function ImageCard({ img, handleImageClick, alt }) {
         alt={alt}
       />
       <div className="absolute bottom-0 left-0 text-white font-bold w-full px-3 py-3 text-md bg-linear-to-t from-black/80 via-black/80 to-transparent rounded-b-2xl">
-        <p>{computedDescription(img.description, 40)}</p>
+        <p>{computedDescription(img.description, 85)}</p>
         <p>{img.publishedDate.split("#")[0]}</p>
       </div>
     </div>
