@@ -41,15 +41,9 @@ jobs:
           cd dist
           ls -la
 
-      - name: Clean S3 bucket (keep admin photos)
+      - name: Upload build to S3 (preserve admin)
         run: |
-          aws s3 rm s3://${{ secrets.BUCKET_NAME }} \
-            --recursive \
-            --exclude "admin/*"
-
-      - name: Upload build to S3
-        run: |
-          aws s3 sync dist/ s3://${{ secrets.BUCKET_NAME }} --delete
+          aws s3 sync dist/ s3://${{ secrets.BUCKET_NAME }} --delete --exclude "admin/*"  --dryrun
 
       - name: Invalidate CloudFront
         run: |
