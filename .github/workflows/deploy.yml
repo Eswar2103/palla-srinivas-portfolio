@@ -43,7 +43,7 @@ jobs:
 
       - name: Upload build to S3 (preserve admin)
         run: |
-          aws s3 sync dist/ s3://${{ secrets.BUCKET_NAME }} --delete --exclude "admin/*"  --dryrun
+          aws s3 sync dist/ s3://${{ secrets.BUCKET_NAME }} --delete --exclude "admin/*"
 
       - name: Invalidate CloudFront
         run: |
