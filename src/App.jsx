@@ -25,6 +25,7 @@ const Admin = lazy(() => import("./ui/Admin"));
 const AddGalleryImages = lazy(
   () => import("./features/admin/AddGalleryImages")
 );
+const News = lazy(() => import("./features/news/News"));
 
 function App() {
   function ProtectedElement() {
@@ -89,6 +90,14 @@ function App() {
           element: (
             <Suspense fallback={<LoadingScreen />}>
               <Gallery />
+            </Suspense>
+          ),
+        },
+        {
+          path: "/news",
+          element: (
+            <Suspense fallback={<LoadingScreen />}>
+              <News type="page" />
             </Suspense>
           ),
         },

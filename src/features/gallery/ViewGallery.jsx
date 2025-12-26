@@ -1,4 +1,4 @@
-import { useContext, useState, useEffect } from "react";
+import { useContext, useState, useEffect, useMemo } from "react";
 import PhotoViewCard from "./PhotoViewCard";
 import { Link } from "react-router-dom";
 import { computedDescription, getData } from "../../utils/utils";
@@ -12,13 +12,16 @@ function ViewGallery({ type, ModalContext }) {
   const [isLoading, setIsLoading] = useState(false);
   const uri =
     "https://18en4k39hg.execute-api.ap-south-2.amazonaws.com/default/StoreNewsImages";
+  const headers = useMemo(() => {
+    return { "x-type": "gallery" };
+  }, []);
 
   useEffect(() => {
     async function fetchData() {
       setIsLoading(true);
       const response = await getData(uri, {
         method: "GET",
-        headers: { "x-type": "gallery" },
+        headers,
       });
       if (response?.Items && response.Items.length > 0) {
         setData(response.Items);
@@ -31,7 +34,7 @@ function ViewGallery({ type, ModalContext }) {
       setIsLoading(false);
     }
     fetchData();
-  }, []);
+  }, [headers]);
 
   function handleImageClick(img) {
     openModal(
@@ -76,7 +79,7 @@ function ViewGallery({ type, ModalContext }) {
           Gallery
         </div>
         {isLoading && <LoadingScreen text="Loading images..." />}
-        <div className="grid sm:grid-cols-3 place-items-center px-5 sm:px-40 gap-y-14 my-6">
+        <div className="grid sm:grid-cols-3 place-items-center px-5 sm:px-40 gap-y-14  py-15">
           {data?.length &&
             data.map((img, i) => {
               return (
@@ -95,7 +98,7 @@ function ViewGallery({ type, ModalContext }) {
         setData={setData}
         setNextKey={setNextKey}
         nextKey={nextKey}
-        headers={{ "x-type": "gallery" }}
+        headers={headers}
         setIsLoading={setIsLoading}
       />
     </section>
