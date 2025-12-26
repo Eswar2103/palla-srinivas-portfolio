@@ -50,7 +50,7 @@ function ViewEvents({ type, ModalContext }) {
                 <EventCard
                   key={e.itemId}
                   event={e}
-                  modalClick={() => handleEventClick(event)}
+                  modalClick={() => handleEventClick(e)}
                 />
               ))}
         </div>
