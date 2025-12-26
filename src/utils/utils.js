@@ -31,7 +31,6 @@ async function getData(url, params = { method: "GET" }) {
     //   throw new Error(`HTTP error! status: ${response.status}`);
     // }
     const json = await response.json();
-    console.log("json-----:", json);
     if (json.result) {
       return json.result;
     } else if (json.error) {

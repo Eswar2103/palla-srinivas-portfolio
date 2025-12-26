@@ -1,6 +1,6 @@
-import PhotoView from "../gallery/PhotoView";
+import PhotoViewCard from "../gallery/PhotoViewCard";
 
-function EventsViewPage({ event }) {
+function EventsViewCard({ event }) {
   const { title, description, mainPhoto, subPhotos, publishedDate } = event;
 
   return (
@@ -21,9 +21,9 @@ function EventsViewPage({ event }) {
       {subPhotos.length > 0 && (
         <p className="text-[#9f1a1a] mb-3 font-bold">Event photos:</p>
       )}
-      <PhotoView photos={subPhotos} alt={title} />
+      <PhotoViewCard photos={subPhotos} alt={title} />
     </section>
   );
 }
 
-export default EventsViewPage;
+export default EventsViewCard;

@@ -1,13 +1,13 @@
 import { createContext } from "react";
 import Modal from "../modal/Modal";
-import Photos from "./Photos";
+import ViewGallery from "./ViewGallery";
 
 const ModalContext = createContext();
 
 function Gallery({ type }) {
   return (
     <Modal ModalContext={ModalContext}>
-      <Photos type={type} ModalContext={ModalContext} />
+      <ViewGallery type={type} ModalContext={ModalContext} />
       <Modal.Window ModalContext={ModalContext} />
     </Modal>
   );
