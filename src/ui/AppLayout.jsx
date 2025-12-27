@@ -19,7 +19,7 @@ function AppLayout() {
       <div
         role="main"
         id="main-content"
-        className="overflow-auto bg-yellow-300/10 min-h-[550px]"
+        className="overflow-auto bg-yellow-300/10 min-h-[550px] font-libre"
       >
         <ScrollToTop />
         <Outlet />

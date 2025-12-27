@@ -23,7 +23,7 @@ function PhotoViewCard({ photos, description, alt }) {
     }
   }
   return (
-    <div className=" w-[90%] sm:w-[70%] mx-auto pb-10 flex justify-center items-center">
+    <div className=" w-[90%] sm:w-[70%] mx-auto pb-10 flex justify-center items-center font-libre">
       <div className="relative flex flex-col w-full items-center">
         <div className="overflow-hidden w-[320px] sm:w-150 ">
           <img
