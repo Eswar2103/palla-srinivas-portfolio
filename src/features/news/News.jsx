@@ -96,7 +96,7 @@ function NewsCard({ data }) {
         // href={n.link}
         // target="_blank"
         // rel="noopener noreferrer"
-        className="mb-2 px-2"
+        className="mb-2 px-2 "
       >
         {computedDescription(data.title)}
       </p>

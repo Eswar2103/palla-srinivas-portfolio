@@ -108,18 +108,45 @@ function ViewGallery({ type, ModalContext }) {
 function ImageCard({ img, handleImageClick, alt }) {
   return (
     <div
-      className="relative rounded-2xl w-[380px] h-60 group overflow-hidden"
+      className="relative rounded-2xl w-[380px] h-60 overflow-hidden transition-transform duration-500 hover:scale-105"
       onClick={() => handleImageClick(img)}
     >
-      <img
+      {/* <img
         className="w-full h-full object-cover rounded-2xl transition-transform duration-500 group-hover:scale-110"
         src={img.photos[0]}
         alt={alt}
-      />
+      /> */}
+      <ImageWithFloat src={img.photos[0]} alt={alt} />
       <div className="absolute bottom-0 left-0 text-white font-bold w-full px-3 py-3 text-md bg-linear-to-t from-black/80 via-black/80 to-transparent rounded-b-2xl">
         <p>{computedDescription(img.description, 85)}</p>
         <p>{img.publishedDate.split("#")[0]}</p>
       </div>
+    </div>
+  );
+}
+
+function ImageWithFloat({ src, alt }) {
+  const [loaded, setLoaded] = useState(false);
+  return (
+    <div className="relative w-full h-full max-h-[250px] bg-amber-100 ">
+      {!loaded && (
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="flex space-x-4">
+            <div className="w-4 h-4 bg-amber-300 rounded-full animate-bounce"></div>{" "}
+            <div className="w-4 h-4 bg-amber-300 rounded-full animate-bounce delay-100"></div>{" "}
+            <div className="w-4 h-4 bg-amber-300 rounded-full animate-bounce delay-200"></div>{" "}
+          </div>
+        </div>
+      )}
+
+      <img
+        src={src}
+        alt={alt}
+        onLoad={() => setLoaded(true)}
+        className={`w-full h-full max-h-[250px] object-cover transition-opacity duration-500${
+          loaded ? "opacity-100" : "opacity-0"
+        }`}
+      />
     </div>
   );
 }
