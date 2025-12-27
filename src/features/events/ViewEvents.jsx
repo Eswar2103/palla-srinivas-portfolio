@@ -121,7 +121,7 @@ function EventCard({ event, modalClick }) {
         <img
           src={event.mainPhoto}
           alt={event.title}
-          className="h-40 w-auto p-2"
+          className="h-50 w-auto p-2"
         />
         <div className="flex flex-col justify-between px-3 py-2 gap-y-2">
           <p className="font-extrabold group-hover/event:text-[#760b0b]">
